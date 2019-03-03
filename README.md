@@ -3,6 +3,7 @@
 ## Container Opening Range 容器开启范围
 
 [联机版（服务端Mod）](https://steamcommunity.com/sharedfiles/filedetails/?id=1664346446)
+
 [单机版](https://steamcommunity.com/sharedfiles/filedetails/?id=1672034886)
 
 修改冰箱等容器的开启范围，使得当角色离容器较远时依然保持容器开启状态，只支持联机版。
