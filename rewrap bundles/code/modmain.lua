@@ -9,7 +9,6 @@ local key_map = {
 
 -- 直接根据mod的id判断mod是否启动
 local function IsModEnabled(modid)
-    print("8329483920859028590")
     return _G.KnownModIndex:IsModEnabled("workshop-"..tostring(modid))
 end
 
