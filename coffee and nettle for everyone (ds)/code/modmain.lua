@@ -49,7 +49,7 @@ AddComponentPostInit("eater", function(self)
 
     for k, v in pairs(_G.getmetatable(self)) do
         if type(v) == "function" and k ~= "SetCarnivore" and string.sub(k, 1, 3) == "Set" then
-            _oldSetFunc = v
+            local _oldSetFunc = v
             self[k] = function(self, ...)
                 _oldSetFunc(self, ...)
                 ModifyFoodTable(self.foodprefs)

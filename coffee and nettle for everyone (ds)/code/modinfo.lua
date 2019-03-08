@@ -1,7 +1,7 @@
 name = "coffee and nettle for everyone 所有人都能吃咖啡和荨麻"
 description = "coffee and nettle for everyone 所有人都能吃咖啡和荨麻"
 author = "linjinzhen"
-version = "1.0.5"
+version = "1.0.6"
 forumthread = ""
 
 api_version = 6
