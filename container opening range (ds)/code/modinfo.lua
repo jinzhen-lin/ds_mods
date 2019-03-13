@@ -1,7 +1,7 @@
 name = "Container Opening Range 容器开启范围"
 description = "Modify container opening range 修改容器开启范围"
 author = "linjinzhen"
-version = "1.0.5"
+version = "1.0.6"
 forumthread = ""
 
 api_version = 6
@@ -49,6 +49,12 @@ configuration_options =
   {
     name = "OTHER_COOKER",
     label = "Other Cooker-like Container",
+    options = num_options,
+    default = 3,
+  },
+  {
+    name = "BOAT",
+    label = "Boat",
     options = num_options,
     default = 3,
   }

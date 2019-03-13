@@ -7,6 +7,7 @@ container_map.icebox = "ICEBOX"
 container_map.chest = "OTHER_CHEST"
 container_map.cookpot = "COOKPOT"
 container_map.cooker = "OTHER_COOKER"
+container_map.boat = "BOAT"
 
 local function ModifyContainerRange(self)
     function self:OnUpdate(dt)
@@ -14,7 +15,7 @@ local function ModifyContainerRange(self)
         if container_config_name == nil then
             container_config_name = container_map[self.container.components.container.type]
         end
-        local d = GetModConfigData(container_config_name)
+        local d = GetModConfigData(container_config_name) or 3
         if self.isopen and self.owner and self.container then
     		if not (self.container.components.inventoryitem and self.container.components.inventoryitem:IsHeldBy(self.owner)) then
     			local distsq = self.owner:GetDistanceSqToInst(self.container)
