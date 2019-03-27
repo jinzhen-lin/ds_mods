@@ -15,7 +15,7 @@ local function ModifyContainerRange(self)
         if container_config_name == nil then
             container_config_name = container_map[self.container.components.container.type]
         end
-        local d = GetModConfigData(container_config_name) or 3
+        local d = GetModConfigData(container_config_name) or GetModConfigData("OTHER") or 3
         if self.isopen and self.owner and self.container then
     		if not (self.container.components.inventoryitem and self.container.components.inventoryitem:IsHeldBy(self.owner)) then
     			local distsq = self.owner:GetDistanceSqToInst(self.container)

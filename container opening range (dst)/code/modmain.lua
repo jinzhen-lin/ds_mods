@@ -14,7 +14,7 @@ local function ModifyContainerRange(self)
         if container_config_name == nil then
           container_config_name = container_map[self["type"]]
         end
-        local d = GetModConfigData(container_config_name) or 3
+        local d = GetModConfigData(container_config_name) or GetModConfigData("OTHER") or 3
         if self.opener == nil then
             self.inst:StopUpdatingComponent(self)
         elseif not (self.inst.components.inventoryitem ~= nil and

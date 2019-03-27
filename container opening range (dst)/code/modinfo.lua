@@ -1,7 +1,7 @@
 name = "Container Opening Range 容器开启范围"
 description = "Modify container opening range 修改容器开启范围"
 author = "linjinzhen"
-version = "1.0.6"
+version = "1.1.0"
 
 api_version = 10
 
@@ -20,47 +20,54 @@ for i = 1, 12 do num_options[i] = {description = ""..i.."", data = i} end
 
 configuration_options = 
 {
-  {
-    name = "TREASURECHEST",
-    label = "Treasure Chest",
-    hover = "Treasure Chest 宝箱",
-    options = num_options,
-    default = 3,
-  },
-  {
-    name = "CHESTER",
-    label = "Chester And Hutch",
-    hover = "Chester And Hutch 切斯特和哈奇",
-    options = num_options,
-    default = 3,
-  },
-  {
-    name = "ICEBOX",
-    label = "Icebox",
-    hover = "Icebox 冰箱",
-    options = num_options,
-    default = 5,
-  },
-  {
-    name = "OTHER_CHEST",
-    label = "Other Chest-like Container",
-    hover = "Other Chest-like Container 其他像箱子的容器",
-    options = num_options,
-    default = 3,
-  },
-  {
-    name = "COOKPOT",
-    label = "Cookpot",
-    hover = "Cookpot 烹煮锅",
-    options = num_options,
-    default = 3,
-  },
-  {
-    name = "OTHER_COOKER",
-    label = "Other Cooker-like Container",
-    hover = "Other Cooker-like Container 其他像锅的容器",
-    options = num_options,
-    default = 3,
-  }
+    {
+        name = "TREASURECHEST",
+        label = "Treasure Chest",
+        hover = "Treasure Chest 宝箱",
+        options = num_options,
+        default = 3,
+    },
+    {
+        name = "CHESTER",
+        label = "Chester And Hutch",
+        hover = "Chester And Hutch 切斯特和哈奇",
+        options = num_options,
+        default = 3,
+    },
+    {
+        name = "ICEBOX",
+        label = "Icebox",
+        hover = "Icebox 冰箱",
+        options = num_options,
+        default = 5,
+    },
+    {
+        name = "OTHER_CHEST",
+        label = "Other Chest-like Container",
+        hover = "Other Chest-like Container 其他像箱子的容器",
+        options = num_options,
+        default = 3,
+    },
+    {
+        name = "COOKPOT",
+        label = "Cookpot",
+        hover = "Cookpot 烹煮锅",
+        options = num_options,
+        default = 3,
+    },
+    {
+        name = "OTHER_COOKER",
+        label = "Other Cooker-like Container",
+        hover = "Other Cooker-like Container 其他像锅的容器",
+        options = num_options,
+        default = 3,
+    },
+    {
+        name = "OTHER",
+        label = "Other Container",
+        hover = "Other Container 其他容器",
+        options = num_options,
+        default = 3,
+    }
 }
 
