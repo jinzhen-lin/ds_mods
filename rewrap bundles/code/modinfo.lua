@@ -2,7 +2,7 @@ name = "Rewrap Bundles 重新打包包裹"
 description = "Quickly rewrap bundles and gifts\n快速重新打包包裹以及礼物"
 forumthread = ""
 author = "linjinzhen"
-version = "1.1.0"
+version = "1.1.1"
 priority = -10
 
 api_version = 6

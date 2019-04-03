@@ -362,7 +362,7 @@ local DSTAction = function(data)
 end
 
 -- 新的拆开包裹动作：打开包裹，并重新制作包装纸（物品掉落）
-local UNWRAP_NEW = DSTAction({priority = 500, instant = false, rmb = true})
+local UNWRAP_NEW = DSTAction({priority = 20.9, instant = false, rmb = true})
 UNWRAP_NEW.id = "UNWRAP_NEW"
 UNWRAP_NEW.str = _G.STRINGS.ACTIONS.UNWRAP
 UNWRAP_NEW.strfn  = _G.STRINGS.ACTIONS.UNWRAP.strfn
@@ -375,7 +375,7 @@ AddStategraphActionHandler("wilson_client", _G.ActionHandler(_G.ACTIONS.UNWRAP_N
 
 
 -- 新的拆开包裹动作：打开包裹，并重新制作包装纸（物品不掉落）
-local UNWRAP_NEW_NODROP = DSTAction({priority = 500, instant = false, rmb = true})
+local UNWRAP_NEW_NODROP = DSTAction({priority = 20.9, instant = false, rmb = true})
 UNWRAP_NEW_NODROP.id = "UNWRAP_NEW_NODROP"
 UNWRAP_NEW_NODROP.str = _G.STRINGS.ACTIONS.UNWRAP
 UNWRAP_NEW_NODROP.strfn  = _G.STRINGS.ACTIONS.UNWRAP.strfn
@@ -388,7 +388,7 @@ AddStategraphActionHandler("wilson_client", _G.ActionHandler(_G.ACTIONS.UNWRAP_N
 
 
 -- 新的拆开包裹动作：打开包裹，并重新制作包装纸（物品不掉落）
-local UNWRAP_NODROP = DSTAction({priority = 500, instant = false, rmb = true})
+local UNWRAP_NODROP = DSTAction({priority = 20.9, instant = false, rmb = true})
 UNWRAP_NODROP.id = "UNWRAP_NODROP"
 UNWRAP_NODROP.str = _G.STRINGS.ACTIONS.UNWRAP
 UNWRAP_NODROP.strfn  = _G.STRINGS.ACTIONS.UNWRAP.strfn
@@ -401,7 +401,7 @@ AddStategraphActionHandler("wilson_client", _G.ActionHandler(_G.ACTIONS.UNWRAP_N
 
 
 -- 重新打包的动作：打开包裹后重新进入打包模式
-local REWRAP = DSTAction({priority = 500, instant = false, rmb = true})
+local REWRAP = DSTAction({priority = 20.9, instant = false, rmb = true})
 REWRAP.id = "REWRAP"
 REWRAP.str = _G.STRINGS.ACTIONS.REWRAP
 REWRAP.strfn  = function(act)
@@ -416,7 +416,7 @@ AddStategraphActionHandler("wilson_client", _G.ActionHandler(_G.ACTIONS.REWRAP, 
 
 
 -- 重新打包的动作：打开包裹后重新进入打包模式
-local REWRAP_NODROP = DSTAction({priority = 500, instant = false, rmb = true})
+local REWRAP_NODROP = DSTAction({priority = 20.9, instant = false, rmb = true})
 REWRAP_NODROP.id = "REWRAP_NODROP"
 REWRAP_NODROP.str = _G.STRINGS.ACTIONS.REWRAP
 REWRAP_NODROP.strfn  = function(act)
