@@ -9,6 +9,8 @@ local SearchScreen = Class(Screen, function(self, config)
     self:DoInit()
 end)
 
+local VALID_CHARS = [[ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,:;[]\@!#$%&()'*+-/=?^_{|}~"]]
+
 function SearchScreen:OnBecomeActive()
     SearchScreen._base.OnBecomeActive(self)
     if self.config.activefn ~= nil then
@@ -88,6 +90,7 @@ function SearchScreen:DoInit()
     self.edit_text = self.root:AddChild( TextEdit( DEFAULTFONT, self.config.fontsize, "" ) )
     self.edit_text:SetPosition(self.config.pos)
     self.edit_text:SetRegionSize( self.config.size[1], self.config.size[2] )
+	self.edit_text:SetCharacterFilter( VALID_CHARS )
     self.edit_text.OnTextEntered = function() self:OnTextEntered() end
     self.edit_text.OnRawKey = function(self, key, down)
         if TextEdit._base.OnRawKey(self, key, down) then return true end
