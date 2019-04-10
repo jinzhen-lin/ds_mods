@@ -48,6 +48,7 @@ function TMI_Inventory:Build()
 	local num_slots = #list
 	local maxtemp = math.ceil(num_slots / MAXSLOTS)
 	local maxpages = maxtemp == 0 and 1 or maxtemp
+    self.currentpage = (maxpages < self.currentpage) and maxpages or self.currentpage
 	local limit = MAXSLOTS * self.currentpage
 	if limit > num_slots then limit = num_slots end
 	local positions = 0

@@ -2,125 +2,124 @@ local Image = require "widgets/image"
 local Text = require "widgets/text"
 local Widget = require "widgets/widget"
 
-local DEFAULT_ATLAS = "images/inventoryimages.xml"
-
 local ItemTile = Class(Widget, function(self, invitem)
-		Widget._ctor(self, "ItemTile")
-		self.oitem = invitem
-		self.item = TOOMANYITEMS.LIST.prefablist[invitem] or invitem
-		self.desc = self:DescriptionInit()
+    Widget._ctor(self, "ItemTile")
+    self.item = invitem
+    self.desc = self:DescriptionInit()
 
-		if TOOMANYITEMS.LIST.showimagelist[self.item] or TOOMANYITEMS.DATA.listinuse == "special" or TOOMANYITEMS.DATA.listinuse == "others" then
-			self:TrySetImage()
-		else
-			if self:IsShowImage() then
-				self:SetImage()
-			else
-				self:SetText()
-			end
-		end
-
-	end)
+    self:SetImage()
+end)
 
 function ItemTile:SetText()
-	self.image = self:AddChild( Image("images/global.xml", "square.tex") )
-	self.image:SetTint(0,0,0,.8)
+    self.image = self:AddChild( Image("images/global.xml", "square.tex") )
+    self.image:SetTint(0, 0, 0, .8)
 
-	self.text = self.image:AddChild(Text(BODYTEXTFONT, 36, ""))
-	self.text:SetHorizontalSqueeze(.85)
-	self.text:SetMultilineTruncatedString(self:GetDescriptionString(), 2, 68, 8, true)
+    self.text = self.image:AddChild(Text(BODYTEXTFONT, 36, ""))
+    self.text:SetHorizontalSqueeze(.85)
+    self.text:SetString("????")
 end
 
 function ItemTile:SetImage()
-	local atlas, image = self:GetAsset()
-
-	self.image = self:AddChild(Image(atlas, image, "blueprint.tex"))
-
-end
-
-function ItemTile:TrySetImage()
-	local atlas, image = self:GetAsset(true)
-	self.image = self:AddChild(Image(atlas, image))
-	local w,h = self.image:GetSize()
-	if math.max(w,h) < 50 then
-		self.image:Kill()
-		self.image = nil
-		self:SetText()
-	end
+    local atlas_list, image_list = self:GetAsset()
+    local final_atlas
+    local final_image
+    for _, image in pairs(image_list) do
+        for _, atlas in pairs(atlas_list) do
+            local atlas_path = softresolvefilepath(atlas)
+            if atlas_path and TheSim:AtlasContains(atlas_path, image) then
+                final_atlas = atlas
+                final_image = image
+                break
+            end
+        end
+        if final_atlas and final_image then
+            break
+        end
+    end
+    if final_atlas and final_image then
+        local img = Image(final_atlas, final_image)
+        img:SetSize(60, 60)
+        self.image = self:AddChild(img)
+    else
+        self:SetText()
+    end
 end
 
 function ItemTile:GetAsset(find)
-	local itematlas = DEFAULT_ATLAS
-	local itemimage = self.item .. ".tex"
+    local itematlas_list = {}
+    local itemimage_list = {}
+    local listinuse = TOOMANYITEMS.DATA.listinuse
+    if table.contains({"living", "building"}, listinuse) then
+        if TOOMANYITEMS.LIST.noninventory_imgname[self.item] then
+            table.insert(itemimage_list, TOOMANYITEMS.LIST.noninventory_imgname[self.item]..".tex")
+        end
+        if listinuse == "living" then
+            table.insert(itematlas_list, "images/tmi/living.xml")
+        elseif listinuse == "building" then
+            table.insert(itematlas_list, "images/tmi/building.xml")
+        end      
+    elseif TOOMANYITEMS.LIST.inventory_imgname[self.item] then
+        table.insert(itemimage_list, TOOMANYITEMS.LIST.inventory_imgname[self.item]..".tex")
+    elseif AllRecipes[self.item] and AllRecipes[self.item].atlas and AllRecipes[self.item].image then
+        table.insert(itematlas_list, AllRecipes[self.item].atlas)
+        table.insert(itemimage_list, AllRecipes[self.item].image)
+    end
 
-	if find then
-		if STRINGS.CHARACTER_NAMES[self.item] then
-			local character_item = "skull_"..self.item
-			itematlas = DEFAULT_ATLAS
-			itemimage = character_item .. ".tex"
-		elseif AllRecipes[self.item] and AllRecipes[self.item].atlas and AllRecipes[self.item].image then
-			itematlas = AllRecipes[self.item].atlas
-			itemimage = AllRecipes[self.item].image
-		elseif PREFABDEFINITIONS[self.item] then
-			for _,asset in ipairs(PREFABDEFINITIONS[self.item].assets) do
-				if asset.type == "INV_IMAGE" then
-					itemimage = asset.file..'.tex'
-				elseif asset.type == "ATLAS" then
-					itematlas = asset.file
-				end
-			end
-		end
-	end
+    table.insert(itematlas_list, "images/inventoryimages.xml")
+    table.insert(itematlas_list, "images/inventoryimages_2.xml")
+    if not table.contains(itemimage_list, self.item..".tex") and type(self.item) == "string" then
+        table.insert(itemimage_list, self.item..".tex")
+        local item_base = self.item:gsub("|.*", ""):gsub("+.*", "")
+        if self.item ~= item_base then
+            table.insert(itemimage_list, item_base..".tex")
+        end
+    end
 
-	return itematlas, itemimage
+    return itematlas_list, itemimage_list
 end
 
 function ItemTile:OnControl(control, down)
-	self:UpdateTooltip()
-	return false
+    self:UpdateTooltip()
+    return false
 end
 
 function ItemTile:UpdateTooltip()
-	self:SetTooltip(self:GetDescriptionString())
-end
-
-function ItemTile:IsShowImage()
-	local name = TOOMANYITEMS.DATA.listinuse
-	if name == "living" then
-		return false
-	elseif name == "building" then
-		return false
-	end
-	return true
+    self:SetTooltip(self:GetDescriptionString())
 end
 
 function ItemTile:GetDescriptionString()
-	return self.desc
+    return self.desc
 end
 
 function ItemTile:DescriptionInit()
-	local str = self.item
+    local item
+    local item_plus
+    local str = ""
+    if type(self.item) == "string" then
+        item = self.item:gsub("|.*", ""):gsub("+.*", "")
+        item_plus = self.item:gsub("|[^+]*", "")
+    end
 
-	if self.item ~= nil and self.item ~= "" then
-		local itemtip = string.upper(self.item)
-		if STRINGS.NAMES[itemtip] ~= nil and STRINGS.NAMES[itemtip] ~= "" then
-			str = STRINGS.NAMES[itemtip]
-		end
-	end
+    if item ~= nil and item ~= "" then
+        local itemtip = string.upper(item)
+        if STRINGS.NAMES[itemtip] ~= nil and STRINGS.NAMES[itemtip] ~= "" then
+            if type(STRINGS.NAMES[itemtip]) == "string" then
+                str = STRINGS.NAMES[itemtip]
+            end
+        end
+        if TOOMANYITEMS.LIST.descname[item_plus] then
+            str = TOOMANYITEMS.LIST.descname[item_plus]
+        end
+    end
 
-	if TOOMANYITEMS.LIST.desclist[self.item] then
-		str = TOOMANYITEMS.LIST.desclist[self.item]
-	end
-
-	if TOOMANYITEMS.LIST.desclist[self.oitem] then
-		str = TOOMANYITEMS.LIST.desclist[self.oitem]
-	end
-
-	return str
+    if type(str) == "string" and type(self.item) == "string" then
+        str = str.."\n"..self.item
+    end
+    return str
 end
 
 function ItemTile:OnGainFocus()
-	self:UpdateTooltip()
+    self:UpdateTooltip()
 end
 
 return ItemTile

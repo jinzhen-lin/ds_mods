@@ -1,30 +1,40 @@
 _G = GLOBAL
-if _G.TheNet and ( ( _G.TheNet:GetIsServer() and _G.TheNet:GetServerIsDedicated() ) or ( _G.TheNet:GetIsClient() and not _G.TheNet:GetIsServerAdmin() ) ) then return end
 
 Assets =
 {
-	Asset("IMAGE", "images/healthmeter.tex"),
-	Asset("ATLAS", "images/healthmeter.xml"),
-	Asset("IMAGE", "images/sanity.tex"),
-	Asset("ATLAS", "images/sanity.xml"),
-	Asset("IMAGE", "images/hunger.tex"),
-	Asset("ATLAS", "images/hunger.xml"),
-	Asset("IMAGE", "images/logmeter.tex"),
-	Asset("ATLAS", "images/logmeter.xml"),
-	Asset("IMAGE", "images/wetness_meter.tex"),
-	Asset("ATLAS", "images/wetness_meter.xml"),
-	Asset("IMAGE", "images/thermal_measurer_build.tex"),
-	Asset("ATLAS", "images/thermal_measurer_build.xml"),
-	Asset("ATLAS", "images/close.xml"),
-	Asset("IMAGE", "images/close.tex"),
-	Asset("ATLAS", "images/creativemode.xml"),
-	Asset("IMAGE", "images/creativemode.tex"),
-	Asset("ATLAS", "images/godmode.xml"),
-	Asset("IMAGE", "images/godmode.tex"),
-	Asset("ATLAS", "images/debug.xml"),
-	Asset("IMAGE", "images/debug.tex"),
+	Asset("IMAGE", "images/tmi/healthmeter.tex"),
+	Asset("ATLAS", "images/tmi/healthmeter.xml"),
+	Asset("IMAGE", "images/tmi/sanity.tex"),
+	Asset("ATLAS", "images/tmi/sanity.xml"),
+	Asset("IMAGE", "images/tmi/hunger.tex"),
+	Asset("ATLAS", "images/tmi/hunger.xml"),
+	Asset("IMAGE", "images/tmi/logmeter.tex"),
+	Asset("ATLAS", "images/tmi/logmeter.xml"),
+	Asset("IMAGE", "images/tmi/wetness_meter.tex"),
+	Asset("ATLAS", "images/tmi/wetness_meter.xml"),
+	Asset("IMAGE", "images/tmi/thermal_measurer_build.tex"),
+	Asset("ATLAS", "images/tmi/thermal_measurer_build.xml"),
+	Asset("ATLAS", "images/tmi/close.xml"),
+	Asset("IMAGE", "images/tmi/close.tex"),
+	Asset("ATLAS", "images/tmi/creativemode.xml"),
+	Asset("IMAGE", "images/tmi/creativemode.tex"),
+	Asset("ATLAS", "images/tmi/godmode.xml"),
+	Asset("IMAGE", "images/tmi/godmode.tex"),
+	Asset("ATLAS", "images/tmi/debug.xml"),
+	Asset("IMAGE", "images/tmi/debug.tex"),
+    Asset("ATLAS", "images/tmi/delete.xml"),
+	Asset("IMAGE", "images/tmi/delete.tex"),
+    Asset("ATLAS", "images/tmi/living.xml"),
+	Asset("IMAGE", "images/tmi/living.tex"),
+    Asset("ATLAS", "images/tmi/building.xml"),
+	Asset("IMAGE", "images/tmi/building.tex"),
+    Asset("ATLAS", "images/tmi/pause.xml"),
+	Asset("IMAGE", "images/tmi/pause.tex"),
+    Asset("ATLAS", "images/tmi/poison.xml"),
+	Asset("IMAGE", "images/tmi/poison.tex"),
 }
 
+_G.AllRecipes = _G.GetAllRecipes()
 _G.TOOMANYITEMS = {
 	DATA_FILE = "mod_config_data/toomanyitems_data_save",
 	TELEPORT_DATA_FILE = "mod_config_data/",
@@ -40,6 +50,18 @@ _G.TOOMANYITEMS = {
 	SEARCH_HISTORY_NUM = GetModConfigData("TMI_SEARCH_HISTORY_NUM"),
 }
 
+_G.TmiGetListFromFile = function(filename)
+    if not filename then
+        return
+    end
+    local list = {}
+    for line in _G.io.lines(filename) do 
+        local prefab = line:gsub("%s", "")
+        table.insert(list, prefab)
+    end
+    return list
+end
+
 if _G.TOOMANYITEMS.DATA_SAVE == -1 then
 	local filepath = _G.TOOMANYITEMS.DATA_FILE
 	_G.TheSim:GetPersistentString(filepath, function(load_success, str) if load_success then _G.ErasePersistentString(filepath, nil) end end)
@@ -50,7 +72,7 @@ elseif _G.TOOMANYITEMS.DATA_SAVE == 1 then
 		_G.TheSim:GetPersistentString(filepath,
 			function(load_success, str)
 				if load_success == true then
-					local success, savedata = _G.RunInSandboxSafe(str)
+					local success, savedata = _G.RunInSandbox(str)
 					if success and string.len(str) > 0 then
 						data = savedata
 					else
@@ -73,45 +95,59 @@ elseif _G.TOOMANYITEMS.DATA_SAVE == 1 then
 	_G.TOOMANYITEMS.SaveNormalData = function()
 		_G.TOOMANYITEMS.SaveData(_G.TOOMANYITEMS.DATA_FILE, _G.TOOMANYITEMS.DATA)
 	end
-
+    
+    _G.TOOMANYITEMS.GetTeleportSavePath = function()
+        local current_slot = _G.SaveGameIndex:GetCurrentSaveSlot()
+        local current_mode = _G.SaveGameIndex:GetCurrentMode()
+        local world_id = "world"
+        local function OnGetSaveData(savedata)
+            if type(savedata) == "table" and type(savedata) == "table" then
+                -- 使用地图生成的种子（其实就是时间戳）作为该世界的唯一标识
+                world_id = savedata.meta.seed or world_id
+            end
+        end
+        _G.SaveGameIndex:GetSaveData(current_slot, current_mode, OnGetSaveData)
+        local savepath = _G.TOOMANYITEMS.TELEPORT_DATA_FILE .. "toomanyitems_teleport_save_"..tostring(world_id)
+        return savepath
+    end
 end
 
 STRINGS = _G.STRINGS
 STRINGS.TOO_MANY_ITEMS_UI = {}
 
-local steam_support_languages = {
-	schinese = "chs",
-	tchinese = "cht",
-	russian = "ru",
-	brazilian = "br",
-}
 
 local support_languages = {
-	chs = true,
-	cht = true,
+    chs = "chs",
 	cn = "chs",
 	zh_CN = "chs",
-	TW = "cht",
-	ru = true,
-	br = true,
+    lmu = "chs",
+    TW = "cht",
+    cht = "cht",
 }
 
 local function LoadTranslation()
-	local steamlang = _G.TheNet:GetLanguageCode() or nil
-	if steamlang and steam_support_languages[steamlang] then
-		print("[TooManyItems] Get your language from steam!")
-		modimport("Stringslocalization_"..steam_support_languages[steamlang]..".lua")
+    modimport("Stringslocalization.lua")
+    local configlang = GetModConfigData("LANG")
+	if configlang and table.contains({"en", "cht", "chs"}, configlang) then
+		if configlang ~= "en" then
+            modimport("Stringslocalization_"..configlang..".lua")
+        end
 	else
 		local lang = _G.LanguageTranslator.defaultlang or nil
 		if lang ~= nil and support_languages[lang] ~= nil then
-			if support_languages[lang] ~= true then
-				lang = support_languages[lang]
-			end
+			lang = support_languages[lang]
 			print("[TooManyItems] Get your language from language mod!")
 			modimport("Stringslocalization_"..lang..".lua")
 		else
-			modimport("Stringslocalization.lua")
-		end
+            local enabledmods = _G.ModManager:GetEnabledModNames()
+            for _, mod in pairs(enabledmods) do
+                local modinfo = _G.KnownModIndex:GetModInfo(mod)
+                if modinfo.name:find("中文") or modinfo.name:find("汉化") then
+                    modimport("Stringslocalization_chs.lua")
+                    break
+                end
+            end
+        end
 	end
 end
 
@@ -154,11 +190,21 @@ local function DataInit()
 		_G.TOOMANYITEMS.DATA.currentpage = {}
 	end
 
-	_G.TOOMANYITEMS.LIST = _G.require "TMI/prefablist"
-	for _, v in pairs(_G.TOOMANYITEMS.LIST.prefablist) do
-		_G.TOOMANYITEMS.LIST.showimagelist[v] = true
-	end
-
+	_G.TOOMANYITEMS.LIST = _G.require "TMI/prefabinfolist"
+    local delete_list = _G.require "TMI/list/deleteitem_list"
+    _G.TOOMANYITEMS.LIST.deleteitem_list = delete_list.deleteitem_list
+    --local crash_item_mod = GetModConfigData("CRASH_ITEM")
+    local crash_item_mod = "Delete"
+    if crash_item_mod == "Cannot Spawn" then
+        _G.TOOMANYITEMS.LIST.deleteitem_list_config = delete_list.deleteitem_list_config
+    else
+        _G.TOOMANYITEMS.LIST.deleteitem_list_config = {}
+        for k, v in pairs(delete_list.deleteitem_list_config) do
+            if v then
+                table.insert(_G.TOOMANYITEMS.LIST.deleteitem_list, k)
+            end
+        end
+    end
 end
 
 local function IsHUDScreen()

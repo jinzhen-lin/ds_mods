@@ -1,18 +1,14 @@
-name = "[DST]Too Many Items"
-forumthread = "" --http://forums.kleientertainment.com/files/file/806-too-many-items/
-version = "1.0.4"
+name = "[DST->DS]Too Many Items"
+forumthread = ""
+version = "1.1.1"
 description = "Too Many Items Version:"..version.."\n\nAllows you to spawn any item you want and more powerful features.\nYou must be a Admin to use this.\nPress (T) to open spawn menu.\nLeft Click to spawn 1 item.\nRight Click to spawn 10 items.\n\nToggle Button and spawn num are Configurable\nYou can customize a special item list.(Add or Delete a item by hold down the ctrl key and click.)\n\nCodes by C.J.B. | Items and bug fix by GaRAnTuLA. | DST version by Skull."
-author = "CJB & GaRAnTuLA & Skull"
-api_version = 10
-priority = -7000
-dont_starve_compatible = false
-reign_of_giants_compatible = false
-shipwrecked_compatible = false
-dst_compatible = true
-version_compatible = "1.0.0"
-all_clients_require_mod = false
-client_only_mod = true
-server_filter_tags = { }
+author = "CJB & GaRAnTuLA & Skull & linjinzhen"
+api_version = 6
+priority = -10000
+dont_starve_compatible = true
+reign_of_giants_compatible = true
+shipwrecked_compatible = true
+
 
 icon_atlas = "TooManyItems.xml"
 icon = "TooManyItems.tex"
@@ -86,5 +82,17 @@ configuration_options =
 		},
 		default = 10,
 	},
-
+    {
+		name = "LANG",
+		label = "Display Language",
+		hover = "Display Language",
+		options =
+		{
+			{description = "English", data = "en"},
+			{description = "Simplified Chinese", data = "chs"},
+			{description = "Traditional Chinese", data = "cht"},
+            {description = "Follow Mods", data = "mod"}
+		},
+		default = "mod",
+	},
 }
