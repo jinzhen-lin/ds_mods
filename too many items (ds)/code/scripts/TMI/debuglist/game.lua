@@ -1,9 +1,12 @@
 local function GotoMode(targetmode)
+    if not IsDLCEnabled(PORKLAND_DLC) and not IsDLCEnabled(CAPY_DLC) then
+        return
+    end
     local _oldTravelBetweenWorlds = TravelBetweenWorlds
     local function cancel()
         TravelBetweenWorlds = _oldTravelBetweenWorlds
-		SetPause(false, "console")
-	end
+        SetPause(false, "console")
+    end
     return function()
         SetPause(true, "console")
         local portal_event = ""
@@ -12,6 +15,9 @@ local function GotoMode(targetmode)
             local savescreen
             if IsDLCEnabled(PORKLAND_DLC) then
                 savescreen = SaveIntegrationScreen(targetmode, portal_event, cancel)
+                TravelBetweenWorlds = function(targetmode, playerevent, waittime, dropitems, customoptions, mergefromslot)
+                    _oldTravelBetweenWorlds(targetmode, "", 0, dropitems, customoptions, mergefromslot)
+                end
             else
                 savescreen = SaveIntegrationScreen(targetmode, cancel)
                 TravelBetweenWorlds = function(playerevent, waittime, dropitems, customoptions, mergefromslot)
