@@ -103,7 +103,8 @@ return {
                     if obj.components and
                     obj.components.follower ~= nil and
                     player.components.leader ~= nil and
-                    player.components.leader:IsFollower(obj) then
+                    player.components.leader:IsFollower(obj) and
+                    obj.components.follower.maxfollowtime then
                         obj.components.follower.targettime = obj.components.follower.maxfollowtime + GetTime()
                         if obj.components.domesticatable then
                             obj.components.domesticatable:DeltaObedience(1)
