@@ -62,11 +62,25 @@ _G.TmiGetListFromFile = function(filename)
     return list
 end
 
+_G.TOOMANYITEMS.GetTeleportSavePath = function()
+    local current_slot = _G.SaveGameIndex:GetCurrentSaveSlot()
+    local current_mode = _G.SaveGameIndex:GetCurrentMode()
+    local world_id = "world"
+    local function OnGetSaveData(savedata)
+        if type(savedata) == "table" and type(savedata) == "table" then
+            -- 使用地图生成的种子（其实就是时间戳）作为该世界的唯一标识
+            world_id = savedata.meta.seed or world_id
+        end
+    end
+    _G.SaveGameIndex:GetSaveData(current_slot, current_mode, OnGetSaveData)
+    local savepath = _G.TOOMANYITEMS.TELEPORT_DATA_FILE .. "toomanyitems_teleport_save_"..tostring(world_id)
+    return savepath
+end
+
 if _G.TOOMANYITEMS.DATA_SAVE == -1 then
 	local filepath = _G.TOOMANYITEMS.DATA_FILE
 	_G.TheSim:GetPersistentString(filepath, function(load_success, str) if load_success then _G.ErasePersistentString(filepath, nil) end end)
 elseif _G.TOOMANYITEMS.DATA_SAVE == 1 then
-
 	_G.TOOMANYITEMS.LoadData = function(filepath)
 		local data = nil
 		_G.TheSim:GetPersistentString(filepath,
@@ -95,21 +109,6 @@ elseif _G.TOOMANYITEMS.DATA_SAVE == 1 then
 	_G.TOOMANYITEMS.SaveNormalData = function()
 		_G.TOOMANYITEMS.SaveData(_G.TOOMANYITEMS.DATA_FILE, _G.TOOMANYITEMS.DATA)
 	end
-    
-    _G.TOOMANYITEMS.GetTeleportSavePath = function()
-        local current_slot = _G.SaveGameIndex:GetCurrentSaveSlot()
-        local current_mode = _G.SaveGameIndex:GetCurrentMode()
-        local world_id = "world"
-        local function OnGetSaveData(savedata)
-            if type(savedata) == "table" and type(savedata) == "table" then
-                -- 使用地图生成的种子（其实就是时间戳）作为该世界的唯一标识
-                world_id = savedata.meta.seed or world_id
-            end
-        end
-        _G.SaveGameIndex:GetSaveData(current_slot, current_mode, OnGetSaveData)
-        local savepath = _G.TOOMANYITEMS.TELEPORT_DATA_FILE .. "toomanyitems_teleport_save_"..tostring(world_id)
-        return savepath
-    end
 end
 
 STRINGS = _G.STRINGS
