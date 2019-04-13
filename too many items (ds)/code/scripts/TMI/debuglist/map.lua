@@ -1,5 +1,5 @@
-
 local lastfound = -1
+local interiorspawner = GetWorld().components.interiorspawner
 local function findnext_entity(prefablist, musttags, canttags, mustoneoftags)
     local player = GetPlayer()
     local radius = 10000
@@ -33,7 +33,6 @@ local function findnext_entity(prefablist, musttags, canttags, mustoneoftags)
     return found
 end
 
-
 local function goto_interior(to_interior, to_target)
     if to_target == nil then
         to_target = GetPlayer()
@@ -41,100 +40,76 @@ local function goto_interior(to_interior, to_target)
     local is_invincible = GetPlayer().components.health:IsInvincible()
     GetPlayer().components.health:SetInvincible(true)
     GetWorld().doorfreeze = true
-    local interiorspawner = GetWorld().components.interiorspawner
     interiorspawner.to_target = to_target
     interiorspawner.to_interior = to_interior
     interiorspawner:FadeOutFinished()
     GetPlayer().components.health:SetInvincible(is_invincible)
 end
 
-
 local function InitAllInteriors()
     -- 显示遗迹内的全部房间
-    local intervel_time = 0.1
-    local show_mode = "dungeon"  -- 先定死只显示当前遗迹的房间，不包括其他遗迹内的
-    local interiorspawner = GetWorld().components.interiorspawner
-    local current_interior = interiorspawner and interiorspawner.current_interior or nil
-    if not current_interior then
-        return
-    end
-    local interior_list = {}
-    local dungeon_name = interiorspawner.current_interior.dungeon_name
-    if show_mode == "dungeon" and not dungeon_name then
-        return
-    end
-    for k, interior in pairs(interiorspawner.interiors) do
-        if not interior.visited then
-            if show_mode == "all" or (show_mode == "dungeon" and interior.dungeon_name == dungeon_name) then
-                table.insert(interior_list, interior)
-            end
+    local intervel_time = FRAMES * 3
+    local current_interior = interiorspawner.current_interior    
+    if current_interior then
+        local interiors = interiorspawner:GetInteriorsByDungeonName(current_interior.dungeon_name)
+        local i = 0
+        for _, v in pairs(interiors) do
+            -- 给每个房间足够的时间初始化
+            -- 某些房间里的物品需要一定时间才能完成初始化，如果未完成就的话会导致崩溃
+            -- 比如末日时钟
+            GetWorld():DoTaskInTime(intervel_time * i, function()
+                interiorspawner:UnloadInterior()
+                interiorspawner:LoadInterior(v)
+            end)
+            i = i + 1
         end
-    end
-    if #interior_list == 0 then
-        return
-    end
-    
-    -- 每隔intervel_time这么长时间访问一个遗迹
-    local i = 1
-    GetWorld().doorfreeze = true
-    local is_invincible = GetPlayer().components.health:IsInvincible()
-    GetPlayer().components.health:SetInvincible(true)
-    local oldExecuteTeleport = interiorspawner.ExecuteTeleport
-    interiorspawner.ExecuteTeleport = function(self) end
-    for k, interior in pairs(interior_list) do
-        GetPlayer():DoTaskInTime(intervel_time * i, function()
-            goto_interior(interior.unique_name)
-            GetWorld().doorfreeze = true
+        GetWorld():DoTaskInTime(intervel_time * i, function()
+            interiorspawner:UnloadInterior()
+            interiorspawner:LoadInterior(current_interior)
         end)
-        i = i + 1
     end
-    
-    -- 全部访问结束之后回到原来的位置
-    GetPlayer():DoTaskInTime(intervel_time * i, function()
-        goto_interior(current_interior.unique_name)
-        interiorspawner.ExecuteTeleport = oldExecuteTeleport
-        GetPlayer().components.health:SetInvincible(is_invincible)
-    end)
 end
 
+local function water_teleport_handle(inst, x, y, z)
+    local allow_water = true
+    local boating = inst.components.driver and inst.components.driver:GetIsDriving()
+    local onwater
+    if GROUND.OCEAN_SHALLOW then
+        onwater = GetWorld().Map:GetTileAtPoint(x, y, z) >= GROUND.OCEAN_SHALLOW
+    else
+        allow_water = false
+    end
+
+    if boating and onwater == false then
+        -- 在船上但目标在地面，则将船停在原处
+        if not allow_water then
+            return
+        end
+        inst.components.driver:OnDismount()
+    elseif not boating and onwater == true then
+        -- 不在船上但目标在水上，则生成一艘木筏并乘上船
+        if not allow_water then
+            return
+        end
+        local boat = SpawnPrefab("lograft")
+        if boat then
+            inst.components.driver:OnMount(boat)
+            boat.components.drivable:OnMounted(inst)
+        end
+    end
+end
 
 local function gotoswitch(prefablist, musttags, canttags, mustoneoftags)
     return function()
-        local allow_water = true
         local found = findnext_entity(prefablist, musttags, canttags, mustoneoftags)
-        if not found then
+        local player = GetPlayer()
+        if not found or not player then
             return 
         end
-        
-        -- 是否在船上
-        local boating = GetPlayer().components.driver and GetPlayer().components.driver:GetIsDriving()
-        
-        -- 目标是否在水上
+
         local x, y, z = found:GetPosition():Get()
-        local onwater
-        if GROUND.OCEAN_SHALLOW then
-            onwater = GetWorld().Map:GetTileAtPoint(x, y, z) >= GROUND.OCEAN_SHALLOW
-        else
-            allow_water = false
-        end
+        water_teleport_handle(player, x, y, z)
 
-        if boating and onwater == false then
-            -- 在船上但目标在地面，则将船停在原处
-            if not allow_water then
-                return
-            end
-            GetPlayer().components.driver:OnDismount()
-        elseif not boating and onwater == true then
-            -- 不在船上但目标在水上，则生成一艘木筏并乘上船
-            if not allow_water then
-                return
-            end
-            local boat = SpawnPrefab("lograft")
-            GetPlayer().components.driver:OnMount(boat)
-            boat.components.drivable:OnMounted(GetPlayer())
-        end
-
-        local interiorspawner = GetWorld().components.interiorspawner
         if interiorspawner then
             if not interiorspawner.current_interior and found.ininterior then
                 -- 目标在室内但玩家不在室内
@@ -245,7 +220,7 @@ local MAP_LIST = {
             name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_MAP_PIGRUINS_COMMON_FORMAT:format(STRINGS.NAMES.PIG_RUINS_ENTRANCE),
         },
         {
-            {"pig_ruins_entrance", "pig_ruins_entrance2", "pig_ruins_entrance3", "pig_ruins_entrance4"},
+            {"pig_ruins_entrance", "pig_ruins_entrance2", "pig_ruins_entrance3", "pig_ruins_entrance4", "pig_ruins_entrance5"},
             name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_MAP_PIGRUINS_SPECIAL_FORMAT:format(STRINGS.NAMES.PIG_RUINS_ENTRANCE),
         },
         {{"deco_ruins_fountain"}},
