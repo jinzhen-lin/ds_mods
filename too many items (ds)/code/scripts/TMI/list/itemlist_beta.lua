@@ -1,26 +1,26 @@
 return {
-	["food"] = {
+    ["food"] = {
 
-	},
-	["resource"] = {
+    },
+    ["resource"] = {
 
-	},
-	["weapon"] = {
+    },
+    ["weapon"] = {
 
-	},
-	["tool"] = {
+    },
+    ["tool"] = {
 
-	},
-	["clothe"] = {
+    },
+    ["clothe"] = {
 
-	},
-	["gift"] = {
+    },
+    ["gift"] = {
 
-	},
-	["living"] = {
+    },
+    ["living"] = {
 
-	},
-	["building"] = {
+    },
+    ["building"] = {
 
-	},
+    },
 }

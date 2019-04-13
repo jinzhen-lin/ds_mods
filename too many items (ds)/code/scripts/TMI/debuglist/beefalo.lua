@@ -1,6 +1,6 @@
 local function GetDomesticateStr(tendencytype, saddle)
     return function ()
-    	local player = GetPlayer() 
+        local player = GetPlayer() 
         local x,y,z = player.Transform:GetWorldPosition() 
         local beef = c_spawn('beefalo') 
         beef.components.domesticatable:DeltaDomestication(1) 

@@ -90,7 +90,7 @@ function SearchScreen:DoInit()
     self.edit_text = self.root:AddChild( TextEdit( DEFAULTFONT, self.config.fontsize, "" ) )
     self.edit_text:SetPosition(self.config.pos)
     self.edit_text:SetRegionSize( self.config.size[1], self.config.size[2] )
-	self.edit_text:SetCharacterFilter( VALID_CHARS )
+    self.edit_text:SetCharacterFilter( VALID_CHARS )
     self.edit_text.OnTextEntered = function() self:OnTextEntered() end
     self.edit_text.OnRawKey = function(self, key, down)
         if TextEdit._base.OnRawKey(self, key, down) then return true end
@@ -112,23 +112,23 @@ function SearchScreen:DoInit()
     self.edit_text.OnControl = function(self, control, down)
         if TextEdit._base.OnControl(self, control, down) then return true end
 
-    	if self.editing and (control ~= CONTROL_CANCEL and control ~= CONTROL_OPEN_DEBUG_CONSOLE and control ~= CONTROL_ACCEPT) then
-    		return true
-    	end
+        if self.editing and (control ~= CONTROL_CANCEL and control ~= CONTROL_OPEN_DEBUG_CONSOLE and control ~= CONTROL_ACCEPT) then
+            return true
+        end
 
-    	if self.editing and not down and control == CONTROL_CANCEL then
-    		self:SetEditing(false)
-    		return true
-    	end
+        if self.editing and not down and control == CONTROL_CANCEL then
+            self:SetEditing(false)
+            return true
+        end
 
-    	if not down and control == CONTROL_ACCEPT then
+        if not down and control == CONTROL_ACCEPT then
             if not self.editing then
                 self:SetEditing(true)
             else
                 self:OnProcess()
             end
-    		return true
-    	end
+            return true
+        end
     end
     self.edit_text:SetEditing(self.config.isediting)
     TheInput:EnableDebugToggle(false)
