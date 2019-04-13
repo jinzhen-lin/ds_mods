@@ -48,15 +48,17 @@ local function LoadTeleportData(slot_num)
     if slot_num and type(slot_num) == "number" then
         slot_num = "slot"..slot_num
         local interior = TOOMANYITEMS.TELEPORT_DATA[slot_num] and TOOMANYITEMS.TELEPORT_DATA[slot_num]["interior"]
-        local current_interior = interiorspawner.current_interior and interiorspawner.current_interior.unique_name or nil
-        local door
-        for _, v in ipairs(interiorspawner:GetInteriorDoors(interior)) do
-            door = v
+        if interiorspawner then
+            local current_interior = interiorspawner.current_interior and interiorspawner.current_interior.unique_name or nil
+            local door
+            for _, v in ipairs(interiorspawner:GetInteriorDoors(interior)) do
+                door = v
+                break
+            end
+            if current_interior ~= interior and door then
+                goto_interior(interior, door.inst)
+            end
         end
-        if interiorspawner and current_interior ~= interior and door then
-            goto_interior(interior, door.inst)
-        end
-
         local x = TOOMANYITEMS.TELEPORT_DATA[slot_num] and TOOMANYITEMS.TELEPORT_DATA[slot_num]["x"]
         local z = TOOMANYITEMS.TELEPORT_DATA[slot_num] and TOOMANYITEMS.TELEPORT_DATA[slot_num]["z"]
 
