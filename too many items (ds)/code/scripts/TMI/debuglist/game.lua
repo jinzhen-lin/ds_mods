@@ -1,6 +1,6 @@
 local function GotoMode(targetmode)
     if not IsDLCEnabled(PORKLAND_DLC) and not IsDLCEnabled(CAPY_DLC) then
-        return
+        return function() end
     end
     local _oldTravelBetweenWorlds = TravelBetweenWorlds
     local function cancel()
@@ -89,8 +89,8 @@ return {
         {
             beta = false,
             pos = function()
-                local can_goto_porkland = IsDLCEnabled(PORKLAND_DLC) or IsDLCEnabled(CAPY_DLC)
-                return not SaveGameIndex:IsModeShipwrecked() and can_goto_porkland
+                local can_goto_shipwrecked = IsDLCEnabled(PORKLAND_DLC) or IsDLCEnabled(CAPY_DLC)
+                return not SaveGameIndex:IsModeShipwrecked() and can_goto_shipwrecked
             end,
             name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_GAME_TRAWELWORLD_FORMAT:format(STRINGS.UI.SAVEINTEGRATION.SHIPWRECKED),
             tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_GAME_TRAWELWORLDTIP_FORMAT:format(STRINGS.UI.SAVEINTEGRATION.SHIPWRECKED),

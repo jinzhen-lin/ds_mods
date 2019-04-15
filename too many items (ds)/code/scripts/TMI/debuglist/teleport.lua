@@ -16,26 +16,16 @@ local function goto_interior(to_interior, to_target)
 end
 
 local function water_teleport_handle(inst, x, y, z)
-    local allow_water = true
-    local boating = inst.components.driver and inst.components.driver:GetIsDriving()
-    local onwater
-    if GROUND.OCEAN_SHALLOW then
-        onwater = GetWorld().Map:GetTileAtPoint(x, 0, z) >= GROUND.OCEAN_SHALLOW
-    else
-        allow_water = false
+    if not GROUND.OCEAN_SHALLOW then
+        return
     end
-    
+    local boating = inst.components.driver and inst.components.driver:GetIsDriving()
+    local onwater = GetWorld().Map:GetTileAtPoint(x, y, z) >= GROUND.OCEAN_SHALLOW
     if boating and onwater == false then
         -- 在船上但目标在地面，则将船停在原处
-        if not allow_water then
-            return
-        end
         inst.components.driver:OnDismount()
     elseif not boating and onwater == true then
         -- 不在船上但目标在水上，则生成一艘木筏并乘上船
-        if not allow_water then
-            return
-        end
         local boat = SpawnPrefab("lograft")
         if boat then
             inst.components.driver:OnMount(boat)
