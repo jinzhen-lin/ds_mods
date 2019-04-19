@@ -111,10 +111,9 @@ local function RemoveBackpack()
     end
 end
 
-local paused = false
+
 local function TogglePause()
-    paused = not paused
-    SetPause(paused, "console")
+    SetPause(not IsPaused(), "console")
 end
 
 
@@ -129,6 +128,8 @@ local function PoisonSet()
         end
     end
 end
+
+local variables = _TMI.locals()
 
 local Menu = Class(function(self, owner, pos)
     self.owner = owner
@@ -256,7 +257,9 @@ local Menu = Class(function(self, owner, pos)
             pos = {pos[9], pos_y2},
         },
     }
-
+    for _, fn in pairs(_TMI.IconbuttonlistPostInit) do
+        self.menu = fn(self.menu, variables)
+    end
     self:MainButton()
 end)
 

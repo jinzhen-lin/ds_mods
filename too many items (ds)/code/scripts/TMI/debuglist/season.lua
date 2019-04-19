@@ -2,8 +2,9 @@ local function SeasonButtonTip(self)
     return STRINGS.TOO_MANY_ITEMS_UI.DEBUG_SEASON_TIP:format(self.name)
 end
 
-return {
+local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_SEASON,
+    tag = "season",
     list = {
         {
             beta = false,
@@ -91,3 +92,5 @@ return {
         },
     },
 }
+
+return _TMI.ModifyDebuglist(res, "season", _TMI.locals())

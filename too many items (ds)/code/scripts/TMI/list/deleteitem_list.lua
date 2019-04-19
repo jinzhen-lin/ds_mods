@@ -6,7 +6,7 @@ local IS_SW_BASE = SaveGameIndex:GetCurrentMode() == "shipwrecked"
 local IS_VOLCANO = SaveGameIndex:GetCurrentMode() == "volcano"
 local IS_HAMLET = SaveGameIndex:IsModePorkland()
 
-local deleteitem_list = TmiGetListFromFile(softresolvefilepath("scripts/TMI/list/deleteitem_list.txt"))
+local deleteitem_list = TOOMANYITEMS.GetListFromFile(softresolvefilepath("scripts/TMI/list/deleteitem_list.txt"))
 local deleteitem_list_config = {
     bandittreasure = not IS_HAMLET,
     pigbandit = not IS_HAMLET,

@@ -49,5 +49,5 @@ if __name__ == '__main__':
         altas_path = os.path.join(modpath, "images/tmi/")
         atlas_file = os.path.join(altas_path, "%s.xml" % typename)
         img_files = os.path.join(typepath_new, "*.png")
-        os.system("ktech %s %s --atlas %s" % (img_files, altas_path, atlas_file))
+        os.system("ktech %s \"%s\" --atlas \"%s\"" % (img_files, altas_path, atlas_file))
         

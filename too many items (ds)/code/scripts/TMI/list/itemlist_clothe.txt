@@ -56,3 +56,10 @@ walrushat
 watermelonhat
 winterhat
 woodlegshat
+
+armorvortexcloak
+
+gogglesnormalhat
+gogglesheathat
+gogglesarmorhat
+gogglesshoothat

@@ -1,0 +1,10 @@
+name = "TMI API EXAMPLE"
+forumthread = ""
+version = "1.0.0"
+description = name.." Version "..version
+author = "linjinzhen"
+api_version = 6
+priority = 0  -- must be greater than -10000
+dont_starve_compatible = true
+reign_of_giants_compatible = true
+shipwrecked_compatible = true

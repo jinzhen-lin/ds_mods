@@ -1,5 +1,6 @@
-return {
+local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_WEATHER_TEXT,
+    tag = "weather",
     list = {
         {
             beta = false,
@@ -64,3 +65,5 @@ return {
         },
     },
 }
+
+return _TMI.ModifyDebuglist(res, "weather", _TMI.locals())

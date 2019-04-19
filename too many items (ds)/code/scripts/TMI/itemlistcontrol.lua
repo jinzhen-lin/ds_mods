@@ -45,10 +45,11 @@ function ItemListControl:Init()
     local n = 1
     local dont_add_item = TOOMANYITEMS.LIST.deleteitem_list
     self.list["all"] = {}
-    for k,v in pairs(Listload) do
+    for k, v in pairs(Listload) do
         local path = "TMI/list/itemlist_"..k
+        local item_list = _TMI.ModifyItemlist(require(path), k)
         self.list[k] = {}
-        for i, item in pairs(require(path)) do
+        for i, item in pairs(item_list) do
             local item_base = item:gsub("+[^|]*", "")
             local can_add = not table.contains(dont_add_item, item_base) and not table.contains(dont_add_item, item)
             if can_add and table.contains(Prefabname_list, item_base) then
@@ -72,21 +73,21 @@ function ItemListControl:Init()
             end
         end
     end
-
+    self.list["all"] = _TMI.ModifyItemlist(self.list["all"], "all")
     self:SortList(self.list["all"])
 
     self.list["others"] = {}
 
     for _, v in pairs(Prefabs) do
-        local item_type = v.path:match("/(.*)/"..v.name)
-        if not item_type or table.contains({"monsters", "inventory", "trees", "objects"}, item_type) then
-            if v.assets and self:CanAddOthers(v.name) then
-                table.insert(self.list["others"], v.name)
-            end
+        if v.assets and self:CanAddOthers(v.name) then
+            table.insert(self.list["others"], v.name)
         end
     end
-
+    self.list["others"] = _TMI.ModifyItemlist(self.list["others"], "others")
     self:SortList(self.list["others"])
+    for _, fn in pairs(_TMI.AllItemlistPostInit) do
+        self.list = fn(self.list)
+    end
 end
 
 function ItemListControl:GetList()
@@ -111,7 +112,7 @@ function ItemListControl:Search()
     local list = self:GetList()
     local item = TOOMANYITEMS.DATA.search
 
-    for _,v in ipairs(list) do
+    for _, v in ipairs(list) do
         if string.find(v, item) then
             table.insert(searchlist, v)
         end
@@ -123,7 +124,7 @@ function ItemListControl:Search()
             if table.contains(list, prefab) and string.find(string.lower(v), item) and not table.contains(searchlist, prefab) then
                 table.insert(searchlist, prefab)
             end
-        end 
+        end
     end
 
     self:SortList(searchlist)

@@ -38,7 +38,6 @@ _G.AllRecipes = _G.GetAllRecipes()
 _G.TOOMANYITEMS = {
     DATA_FILE = "mod_config_data/toomanyitems_data_save",
     TELEPORT_DATA_FILE = "mod_config_data/",
-    CHARACTER_USERID = "",
     DATA = {},
     TELEPORT_DATA = {},
     LIST = {},
@@ -48,9 +47,12 @@ _G.TOOMANYITEMS = {
     R_CLICK_NUM = GetModConfigData("TMI_R_CLICK_NUM"),
     DATA_SAVE = GetModConfigData("TMI_DATA_SAVE"),
     SEARCH_HISTORY_NUM = GetModConfigData("TMI_SEARCH_HISTORY_NUM"),
+    OTHER_MODS = GetModConfigData("OTHER_MODS"),
 }
 
-_G.TmiGetListFromFile = function(filename)
+modimport("tmi_utils_main.lua")
+
+_G.TOOMANYITEMS.GetListFromFile = function(filename)
     if not filename then
         return
     end
@@ -145,6 +147,16 @@ local function LoadTranslation()
                     modimport("Stringslocalization_chs.lua")
                     break
                 end
+            end
+        end
+    end
+    
+    for _, v in pairs(_G._TMI.Translation) do
+        local string_table = v[1]
+        local fn = v[2]
+        if (type(fn) == "boolean" and fn) or (type(fn) == "function" and fn()) then
+            for k0, v0 in pairs(string_table) do
+                STRINGS.TOO_MANY_ITEMS_UI[k0] = v0
             end
         end
     end

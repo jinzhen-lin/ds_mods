@@ -1,1 +1,1 @@
-return TmiGetListFromFile(softresolvefilepath("scripts/TMI/list/itemlist_clothe.txt"))
+return TOOMANYITEMS.GetListFromFile(softresolvefilepath("scripts/TMI/list/itemlist_clothe.txt"))

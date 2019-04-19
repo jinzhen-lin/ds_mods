@@ -1,5 +1,6 @@
-return {
+local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_TIME_TEXT,
+    tag = "time",
     list = {
         {
             beta = false,
@@ -38,3 +39,5 @@ return {
         },
     },
 }
+
+return _TMI.ModifyDebuglist(res, "time", _TMI.locals())

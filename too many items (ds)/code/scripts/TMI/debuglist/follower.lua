@@ -1,5 +1,6 @@
-return {
+local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_FOLLOWER_TEXT,
+    tag = "follower",
     list = {
         {
             beta = false,
@@ -115,3 +116,5 @@ return {
         },
     },
 }
+
+return _TMI.ModifyDebuglist(res, "follower", _TMI.locals())

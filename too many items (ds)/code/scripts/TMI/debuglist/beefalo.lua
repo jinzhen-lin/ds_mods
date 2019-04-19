@@ -15,8 +15,9 @@ local function GetDomesticateStr(tendencytype, saddle)
 end
 
 
-return {
+local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_BEEFALO_TEXT,
+    tag = "beefalo",
     list = {
         {
             beta = false,
@@ -48,3 +49,5 @@ return {
         },
     },
 }
+
+return _TMI.ModifyDebuglist(res, "beefalo", _TMI.locals())

@@ -12,6 +12,7 @@ end)
 local VALID_CHARS = [[ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,:;[]\@!#$%&()'*+-/=?^_{|}~"]]
 
 function SearchScreen:OnBecomeActive()
+    SetPause(true, "console")
     SearchScreen._base.OnBecomeActive(self)
     if self.config.activefn ~= nil then
         self.config.activefn()
@@ -21,6 +22,7 @@ function SearchScreen:OnBecomeActive()
 end
 
 function SearchScreen:OnBecomeInactive()
+    SetPause(false, "console")
     SearchScreen._base.OnBecomeInactive(self)
 end
 

@@ -70,6 +70,7 @@ mermhouse_fisher
 rock_ice
 topiary_4
 moondial
+thumper
 luggagechest
 ruins_statue_head
 thunderbirdnest
@@ -297,6 +298,7 @@ quagmire_mealingstone
 beequeenhivegrown
 maxwellphonograph
 pig_ruins_spear_trap
+telipad
 monkeybarrel
 wall_limestone
 perdshrine

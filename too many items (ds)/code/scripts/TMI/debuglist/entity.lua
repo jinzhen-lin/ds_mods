@@ -248,9 +248,29 @@ local function ExtinguishEntity()
     end
 end
 
+local function BlockFlooding()
+    local player = GetPlayer()
+    local x, y, z = player.Transform:GetWorldPosition()
+    local r = 12
+    for cx = -r, r, 1 do
+        for cz = -r, r, 1 do
+            if (cx ^ 2 + cz ^ 2) <= r ^ 2 then
+                GetWorld().Flooding:SetIsPositionBlocked(x + cx, 0, z + cz, true, true)
+                GetWorld().Flooding:SetIsPositionBlocked(x + cx, 0, z + cz, false, false)
+            end
+        end
+    end
+end
 
-return {
+
+local function ClearSnow()
+    GetSeasonManager().ground_snow_level = 0
+end
+
+
+local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_TEXT,
+    tag = "entity",
     list = {
         {
             beta = false,
@@ -300,6 +320,22 @@ return {
             name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_EXTINGUISH,
             tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_EXTINGUISHTIP,
             fn = ExtinguishEntity,
+        },
+        {
+            beta = false,
+            pos = "shipwrecked",
+            name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_BLOCKFLOODING,
+            tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_BLOCKFLOODINGTIP,
+            fn = BlockFlooding,
+        },
+        {
+            beta = false,
+            pos = "forest",
+            name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_CLEARSNOW,
+            tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_CLEARSNOWTIP,
+            fn = ClearSnow,
         }
     },
 }
+
+return _TMI.ModifyDebuglist(res, "entity", _TMI.locals())

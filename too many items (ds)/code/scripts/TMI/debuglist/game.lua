@@ -36,8 +36,9 @@ local function GotoMode(targetmode)
 end
 
 
-return {
+local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_GAME_TEXT,
+    tag = "game",
     list = {
         {
             beta = false,
@@ -78,6 +79,15 @@ return {
         },
         {
             beta = false,
+            pos = "all",
+            name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_GAME_CLEARMORGUE,
+            tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_GAME_CLEARMORGUETIP,
+            fn = function()
+                ErasePersistentString("morgue")
+            end,
+        },
+        {
+            beta = false,
             pos = function()
                 local can_goto_porkland = IsDLCEnabled(PORKLAND_DLC)
                 return not SaveGameIndex:IsModePorkland() and can_goto_porkland
@@ -107,3 +117,5 @@ return {
         },
     }
 }
+
+return _TMI.ModifyDebuglist(res, "game", _TMI.locals())

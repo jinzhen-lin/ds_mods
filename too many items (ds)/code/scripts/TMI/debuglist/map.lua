@@ -223,6 +223,7 @@ local MAP_LIST = {
 
 local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_MAP_TEXT,
+    tag = "map",
     list = {
         {
             beta = false,
@@ -264,4 +265,4 @@ for k1, v1 in pairs(MAP_LIST) do
     end
 end
 
-return res
+return _TMI.ModifyDebuglist(res, "map", _TMI.locals())

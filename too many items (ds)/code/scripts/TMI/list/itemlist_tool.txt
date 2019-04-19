@@ -117,3 +117,7 @@ woodlegs_boatcannon
 woodlegssail
 yellowamulet
 yellowstaff
+
+telebrella
+trusty_shooter
+wheeler_tracker

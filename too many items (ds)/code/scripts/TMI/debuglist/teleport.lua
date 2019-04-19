@@ -83,30 +83,35 @@ local function SaveTeleportData(slot_num)
     end
 end
 
-local function GetTeleportList(Teleportfn)
+local function Teleport(slot_num)
+    return function()
+        if TheInput:IsKeyDown(KEY_CTRL) then
+            SaveTeleportData(slot_num)
+        else
+            LoadTeleportData(slot_num)
+        end
+    end
+end
+
+local function GetTeleportList()
     local telelist = {}
     for i = 1, 7 do
         telelist[i] = {
             beta = false,
             pos = "all",
             name = '[ '..i..' ]',
-            tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_TELEPORT_SLOT.." "..i,
-            fn = {
-                TeleportNum = i,
-                TeleportFn = Teleportfn,
-            },
+            tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_TELEPORT_TIP,
+            fn = Teleport(i),
         }
     end
     return telelist
 end
 
-return {
-    {
-        tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_TELEPORT_SAVE_TEXT,
-        list = GetTeleportList(SaveTeleportData)
-    },
-    {
-        tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_TELEPORT_LOAD_TEXT,
-        list = GetTeleportList(LoadTeleportData)
-    }
+
+local res = {
+    tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_TELEPORT,
+    tag = "teleport_load",
+    list = GetTeleportList()
 }
+
+return _TMI.ModifyDebuglist(res, "teleport", _TMI.locals())

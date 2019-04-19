@@ -272,5 +272,15 @@ special_spawn["telebase"] = {
     gemsocket = function(inst) inst:PushEvent("onbuilt") end
 }
 
+for item, fn in pairs(_TMI.SpecialSpawn) do
+    local _, _, prefabname, condition = item:find("(.*)+(.*)")
+    if prefabname ~= nil and condition ~= nil then
+        if special_spawn[prefabname] == nil then
+            special_spawn[prefabname] = {}
+        end
+        special_spawn[prefabname][condition] = fn
+    end
+end
+
 
 return special_spawn

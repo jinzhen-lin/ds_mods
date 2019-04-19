@@ -20,8 +20,9 @@ local function ModifySpeedMultiplier(speedmult_extra)
     end
 end
 
-return {
+local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_SPEED_TEXT,
+    tag = "speed",
     list = {
         {
             beta = false,
@@ -60,3 +61,5 @@ return {
         },
     },
 }
+
+return _TMI.ModifyDebuglist(res, "speed", _TMI.locals())

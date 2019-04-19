@@ -21,6 +21,10 @@ end
 
 function ItemTile:SetImage()
     local atlas_list, image_list = self:GetAsset()
+    for _, fn in pairs(_TMI.ItemAssetlistPostInit) do
+        atlas_list, image_list = fn(self.item, atlas_list, image_list)
+    end
+
     local final_atlas
     local final_image
     for _, image in pairs(image_list) do
