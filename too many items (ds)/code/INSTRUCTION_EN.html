@@ -66,7 +66,7 @@ In addition, there are also some small functions, such as(the effect of holding 
 [*] Speed: 0.6 times speed, normal speed, 2 times speed, 3 times speed
 [*] Weather: Lightning, starting/stopping rain and snow, starting/stopping volcanic eruptions (shipwreck), starting/stopping hurricanes (shipwreck), starting/stopping fog (Hamlet, humid season)
 [*] Players: unlock all technology (not creation mode), unlock all characters, change character and continue playing, empty morgue
-[*] Entities: Delete, fertilize, ripen, harvest, pick, freeze, extinguish, clear up flooding, clear snow
+[*] Entities: Delete, fertilize, ripen, harvest, pick, freeze, extinguish, clear up flooding, clear snow, Setting the durability of items (see the introduction later for details)
 [*] Beefalo: fight, ride, pet, normal
 [*] Followers: add, expel, health, hunger, loyal
 [*] Game: rollback, save, entering the next world, resetting the world ID to 1 (normally the ID will add 1 after entering the next world), going to the world of survival, shipwreck, Hamlet
@@ -76,3 +76,8 @@ In addition, there are also some small functions, such as(the effect of holding 
 [*] If the player is on water but the target is on land, the ship will be parked in place before teleport (otherwise the ship will be destroyed directly).
 [*] In Hamlet, the problem of geting stuck when teleport directly across rooms is avoided.[/list]
 [/list]
+
+
+For the "set durability" function, its function is to set the freshness of food or the durability of tools/weapons/clothing/armor to a preset value.
+If your mouse picks up an item and clicks on the button, only the durability of the item is set; if the mouse is empty when clicking on the button, the durability of the items in the equipslot (hand, body, head) will be set to the preset value (if the item is allowed to be set).
+By default, durability is set to full, but commands are provided to set the preset value. Specifically, open the console and enter the command "tmi_nj (xxxx)" or "tmi_durability (xxxx)", where XXX is the target durability value (the value between 0 and 1 indicates full durability). This durability value is cached with the cached data of this mod.

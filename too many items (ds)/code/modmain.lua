@@ -81,7 +81,11 @@ end
 
 if _G.TOOMANYITEMS.DATA_SAVE == -1 then
     local filepath = _G.TOOMANYITEMS.DATA_FILE
-    _G.TheSim:GetPersistentString(filepath, function(load_success, str) if load_success then _G.ErasePersistentString(filepath, nil) end end)
+    _G.TheSim:GetPersistentString(filepath, function(load_success, str) 
+        if load_success then 
+            _G.ErasePersistentString(filepath, nil) 
+        end 
+    end)
 elseif _G.TOOMANYITEMS.DATA_SAVE == 1 then
     _G.TOOMANYITEMS.LoadData = function(filepath)
         local data = nil
@@ -112,6 +116,19 @@ elseif _G.TOOMANYITEMS.DATA_SAVE == 1 then
         _G.TOOMANYITEMS.SaveData(_G.TOOMANYITEMS.DATA_FILE, _G.TOOMANYITEMS.DATA)
     end
 end
+
+_G.tmi_nj = function(val)
+    if type(val) ~= "number" or val > 1 or val < 0 then
+        print("[Too Many Item] Failed to set durability")
+        print("[Too Many Item] The parameters must be numbers between 0 and 1")
+        return
+    end
+    _G.TOOMANYITEMS.DATA.DURABILITY = val
+    if _G.TOOMANYITEMS.DATA_SAVE == 1 then
+        _G.TOOMANYITEMS.SaveNormalData()
+    end
+end
+_G.tmi_durability = _G.tmi_nj
 
 STRINGS = _G.STRINGS
 STRINGS.TOO_MANY_ITEMS_UI = {}

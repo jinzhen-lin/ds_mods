@@ -262,11 +262,50 @@ local function BlockFlooding()
     end
 end
 
-
 local function ClearSnow()
     GetSeasonManager().ground_snow_level = 0
 end
 
+local function SetDurability()
+    local player = GetPlayer()
+    if not player or not player.components.inventory then
+        return
+    end
+    local inventory = player.components.inventory
+    local items
+    local active_item = inventory:GetActiveItem()
+    if active_item ~= nil then
+        items = {active_item}
+    else
+        items = inventory.equipslots
+    end
+
+    local durability
+    if type(TOOMANYITEMS.DATA.DURABILITY) == "number" then
+        durability = TOOMANYITEMS.DATA.DURABILITY
+    else
+        durability = 1
+    end
+
+    durability = math.max(0, math.min(1, durability))
+    for k, v in pairs(items) do
+        if v.components.perishable then
+            v.components.perishable:SetPercent(durability)
+        end
+
+        if v.components.finiteuses then
+            v.components.finiteuses:SetPercent(durability)
+        end
+
+        if v.components.fueled then
+            v.components.fueled:SetPercent(durability)
+        end
+
+        if v.components.armor then
+            v.components.armor:SetPercent(durability)
+        end
+    end
+end
 
 local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_TEXT,
@@ -334,6 +373,13 @@ local res = {
             name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_CLEARSNOW,
             tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_CLEARSNOWTIP,
             fn = ClearSnow,
+        },
+        {
+            beta = false,
+            pos = "all",
+            name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_SETDURABILITY,
+            tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_SETDURABILITYTIP,
+            fn = SetDurability,
         }
     },
 }
