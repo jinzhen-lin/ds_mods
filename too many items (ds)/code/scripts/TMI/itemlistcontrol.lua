@@ -1,3 +1,4 @@
+local pinyin = require "TMI/pinyin"
 local Prefabname_list = {}
 for _, v in pairs(Prefabs) do
     table.insert(Prefabname_list, v.name)
@@ -30,9 +31,34 @@ local function MergeItemList(...)
     return ret
 end
 
+local function GetItemDesc(item)
+    if type(item) ~= "string" then
+        return ""
+    end
+    local item_plus = ""
+    local str = ""
+    item = item:gsub("|.*", ""):gsub("+.*", "")
+    item_plus = item:gsub("|[^+]*", "")
+
+    if item ~= nil and item ~= "" then
+        local itemtip = item:upper()
+        if STRINGS.NAMES[itemtip] ~= nil and STRINGS.NAMES[itemtip] ~= "" then
+            if type(STRINGS.NAMES[itemtip]) == "string" then
+                str = STRINGS.NAMES[itemtip]
+            end
+        end
+        if TOOMANYITEMS.LIST.descname[item_plus] then
+            str = TOOMANYITEMS.LIST.descname[item_plus]
+        end
+    end
+
+    return str
+end
+
 local ItemListControl = Class(function(self)
     self.beta = BRANCH ~= "release" and true or false
     self.list = {}
+    self.desclist = {}
     self.special_spawn_prefab_list = {}
     self:Init()
 end)
@@ -45,15 +71,18 @@ function ItemListControl:Init()
     local n = 1
     local dont_add_item = TOOMANYITEMS.LIST.deleteitem_list
     self.list["all"] = {}
+    self.desclist["all"] = {}
     for k, v in pairs(Listload) do
         local path = "TMI/list/itemlist_"..k
         local item_list = _TMI.ModifyItemlist(require(path), k)
         self.list[k] = {}
+        self.desclist[k] = {}
         for i, item in pairs(item_list) do
             local item_base = item:gsub("+[^|]*", "")
             local can_add = not table.contains(dont_add_item, item_base) and not table.contains(dont_add_item, item)
             if can_add and table.contains(Prefabname_list, item_base) then
                 table.insert(self.list[k], item)
+                self.desclist[k][item] = GetItemDesc(item)
                 if item ~= item_base then
                     table.insert(self.special_spawn_prefab_list, item_base)
                 end
@@ -74,9 +103,14 @@ function ItemListControl:Init()
         end
     end
     self.list["all"] = _TMI.ModifyItemlist(self.list["all"], "all")
+    for _, item in pairs(self.list["all"]) do
+        self.desclist["all"][item] = GetItemDesc(item)
+    end
+
     self:SortList(self.list["all"])
 
     self.list["others"] = {}
+    self.desclist["others"] = {}
 
     for _, v in pairs(Prefabs) do
         if v.assets and self:CanAddOthers(v.name) then
@@ -87,6 +121,9 @@ function ItemListControl:Init()
     self:SortList(self.list["others"])
     for _, fn in pairs(_TMI.AllItemlistPostInit) do
         self.list = fn(self.list)
+    end
+    for _, item in pairs(self.list["others"]) do
+        self.desclist["others"][item] = GetItemDesc(item)
     end
 end
 
@@ -110,19 +147,23 @@ end
 function ItemListControl:Search()
     local searchlist = {}
     local list = self:GetList()
+    local current_desclist = self.desclist[TOOMANYITEMS.DATA.listinuse]
     local item = TOOMANYITEMS.DATA.search
 
     for _, v in ipairs(list) do
-        if string.find(v, item) then
+        if v:find(item) then
             table.insert(searchlist, v)
         end
     end
 
-    for k, v in pairs(STRINGS.NAMES) do
-        if type(v) ~= "table" then
-            local prefab = string.lower(k)
-            if table.contains(list, prefab) and string.find(string.lower(v), item) and not table.contains(searchlist, prefab) then
-                table.insert(searchlist, prefab)
+    for k, v in pairs(current_desclist) do
+        local all_descs = pinyin.GetChineseStringPinyin(v)
+        if all_descs[1] ~= v then
+            table.insert(all_descs, v)
+        end
+        for _, desc in pairs(all_descs) do
+            if table.contains(list, k) and desc:lower():find(item:lower()) and not table.contains(searchlist, k) then
+                table.insert(searchlist, k)
             end
         end
     end

@@ -4,7 +4,6 @@ local TextButton = require "widgets/textbutton"
 local ImageButton = require "widgets/imagebutton"
 local Widget = require "widgets/widget"
 
-local WriteableWidget = require "screens/TMI_writeablewidget"
 local TMI_menubar = require "widgets/TMI_menubar"
 
 local function SendCommand(fnstr)

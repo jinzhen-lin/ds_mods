@@ -1,3 +1,5 @@
+local SetDurabilityScreen = require "screens/TMI_setdurability"
+
 local function DeleteEntity()
     local player = GetPlayer()
     local function InInv(b)
@@ -267,6 +269,11 @@ local function ClearSnow()
 end
 
 local function SetDurability()
+    if TheInput:IsKeyDown(KEY_CTRL) then
+        TheFrontEnd:PushScreen(SetDurabilityScreen())
+        return
+    end
+    
     local player = GetPlayer()
     if not player or not player.components.inventory then
         return
