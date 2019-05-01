@@ -32,7 +32,18 @@ Assets =
     Asset("IMAGE", "images/tmi/pause.tex"),
     Asset("ATLAS", "images/tmi/poison.xml"),
     Asset("IMAGE", "images/tmi/poison.tex"),
+    Asset("ATLAS", "images/selectscreen_portraits.xml"),
+    Asset("IMAGE", "images/selectscreen_portraits.tex"),
+    Asset("ATLAS", "bigportraits/locked.xml"),
+    Asset("IMAGE", "bigportraits/locked.tex"),
+    Asset("ANIM", "anim/portrait_frame.zip"),
 }
+
+for i, char in ipairs(CHARACTERLIST) do
+	table.insert(Assets, Asset("ATLAS", "bigportraits/"..char..".xml"))
+	table.insert(Assets, Asset("IMAGE", "bigportraits/"..char..".tex"))
+end
+
 
 _G.AllRecipes = _G.GetAllRecipes()
 _G.TOOMANYITEMS = {

@@ -231,12 +231,60 @@ function TooManyItems:OnRawKey(key, down)
 end
 
 function TooManyItems:ShowCharacterMenu()
+    local function TMIGetActiveCharacterList() 
+        local list = MAIN_CHARACTERLIST
+
+        if IsDLCEnabled(REIGN_OF_GIANTS) then
+            list = JoinArrays(list, ROG_CHARACTERLIST)
+            if IsDLCEnabledAndInstalled(CAPY_DLC) then
+                list = JoinArrays(list, SHIPWRECKED_CHARACTERLIST)
+            end
+            if IsDLCEnabledAndInstalled(PORKLAND_DLC) then
+                list = JoinArrays(list, PORKLAND_CHARACTERLIST)
+            end         
+        end
+        if IsDLCEnabled(CAPY_DLC) then
+            if IsDLCInstalled(REIGN_OF_GIANTS) then
+                list = JoinArrays(list, ROG_CHARACTERLIST)
+            end
+            if IsDLCEnabledAndInstalled(PORKLAND_DLC) then
+                list = JoinArrays(list, PORKLAND_CHARACTERLIST)
+            end        
+            list = JoinArrays(list, SHIPWRECKED_CHARACTERLIST)
+        end
+
+        if IsDLCEnabled(PORKLAND_DLC) then
+            if IsDLCInstalled(REIGN_OF_GIANTS) then
+                list = JoinArrays(list, ROG_CHARACTERLIST)
+            end
+            if IsDLCInstalled(CAPY_DLC) then
+                list = JoinArrays(list, SHIPWRECKED_CHARACTERLIST)
+            end
+            
+            list = JoinArrays(list, PORKLAND_CHARACTERLIST)
+        end
+
+        for i=#list,1,-1 do
+            if "wilson" == list[i] then
+                table.remove(list,i)
+            else
+                for t, rchar in ipairs(RETIRED_CHARACTERLIST) do
+                    if rchar == list[i] then
+                        table.remove(list,i)
+                    end
+                end
+            end
+        end
+        return list
+    end
+    
+    
     self.totalwidth = self.shieldsize_x + self.debugwidth
     self.charactershield = self.root:AddChild( Image("images/ui.xml", "black.tex") )
     self.charactershield:SetScale(1, 1, 1)
     self.charactershield:SetPosition(0, 0, 0)
     self.charactershield:SetSize(self.shieldsize_x + self.debugwidth, self.shieldsize_y)
-    self.charactershield:SetTint(1, 1, 1, 0.6)
+    self.charactershield:SetTint(1, 1, 1, 0.8)
 
     local back_button = self.charactershield:AddChild(TextButton())
     back_button:SetFont(self.font)
@@ -250,14 +298,22 @@ function TooManyItems:ShowCharacterMenu()
         self.charactershield:Hide()
     end)
 
+    local character_tiptext = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_PLAYER_UNLOCK_ALL_CHARACTERS_UITIP
+    self.tiptext = self.charactershield:AddChild(Text(BODYTEXTFONT, 30, character_tiptext))
+    self.tiptext:SetPosition(0, self.shieldsize_y / 2 - 35, 0)
+    self.tiptext:SetColour(0.9, 0.8, 0.6, 1)
+
     local character_each_line = 8
     local character_start_x = -self.totalwidth / 2 + 80
-    local character_start_y = self.shieldsize_y / 2 - 80
+    local character_start_y = self.shieldsize_y / 2 - 100
     local character_end_x = self.totalwidth / 2 - 80
     local character_end_y = -self.shieldsize_y / 2 + 80
     local character_space = (character_end_x - character_start_x) / (character_each_line - 1)
     local character_icon_width = character_space * 1.1
-    local characterlist = GetActiveCharacterList()
+    
+    local player_profile = GetPlayer().profile
+    local unlocked_characters = player_profile.persistdata.unlocked_characters
+    local characterlist = TMIGetActiveCharacterList()
     for k, v in ipairs(characterlist) do
         local _x = math.fmod(k - 1, character_each_line)
         local _y = math.modf((k - 1) / character_each_line)
@@ -267,17 +323,18 @@ function TooManyItems:ShowCharacterMenu()
         local character_icon = self.charactershield:AddChild(
             ImageButton(character_atlas, v .. ".tex", v .. ".tex", v .. ".tex")
         )
+        local tint = unlocked_characters[v] and 1 or 0.3
+        character_icon.image:SetTint(tint, tint, tint, 1)
+
         character_icon:SetPosition(x, y, 0)
         character_icon:SetTooltip(STRINGS.NAMES[v:upper()] or v)
         local character_icon_scale = character_icon_width / character_icon:GetSize()
         character_icon:SetScale(character_icon_scale, character_icon_scale)
         character_icon:SetOnClick(function()
-            GetPlayer().components.autosaver:DoSave()
-            GetPlayer():DoTaskInTime(3, function()
-                SaveGameIndex:SetSlotCharacter(SaveGameIndex:GetCurrentSaveSlot(), v, function()
-                    StartNextInstance({reset_action=RESET_ACTION.LOAD_SLOT, save_slot = SaveGameIndex:GetCurrentSaveSlot()}, true)
-                end)
-            end)
+            unlocked_characters[v] = not unlocked_characters[v]
+            local tint = unlocked_characters[v] and 1 or 0.3
+            character_icon.image:SetTint(tint, tint, tint, 1)
+            player_profile:Save()
         end)
     end
 end
