@@ -121,3 +121,4 @@ yellowstaff
 telebrella
 trusty_shooter
 wheeler_tracker
+living_artifact

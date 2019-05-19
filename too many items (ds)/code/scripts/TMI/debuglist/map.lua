@@ -198,6 +198,7 @@ local MAP_LIST = {
             fn = InitAllInteriors,
         },
         {{"pig_palace"}},
+        {{"teleportato_hamlet_base"}},
         {{"playerhouse_city"}},
         {{"pugalisk_fountain"}},
         {{"anthill"}},

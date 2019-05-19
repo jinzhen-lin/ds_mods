@@ -11,6 +11,10 @@ teleportato_sw_box
 teleportato_sw_crank
 teleportato_sw_potato
 teleportato_sw_ring
+teleportato_hamlet_box
+teleportato_hamlet_crank
+teleportato_hamlet_potato
+teleportato_hamlet_ring
 trinket_1
 trinket_10
 trinket_11

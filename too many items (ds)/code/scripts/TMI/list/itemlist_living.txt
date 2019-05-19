@@ -180,6 +180,7 @@ lotus
 reeds_water
 pigman_miner
 bramble_core
+coral_brain_rock
 chicken
 lobster
 nettle

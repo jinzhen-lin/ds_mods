@@ -201,7 +201,6 @@ pond_cave
 atrium_rubble
 pig_ruins_torch
 chesspiece_dragonfly_stone
-coral_brain_rock
 obsidianfirepit
 hedge_cone
 gargoyle_werepighowl
@@ -222,6 +221,7 @@ teleportato_checkmate
 pig_shop_weapons
 sunken_boat
 octopuschest
+teleportato_hamlet_base
 antqueen_throne
 gargoyle_houndatk
 buriedtreasure+reveal
