@@ -289,3 +289,5 @@ local function ShowTMIMenu()
 end
 
 _G.TheInput:AddKeyUpHandler(_G.TOOMANYITEMS.TMI_TOGGLE_KEY, ShowTMIMenu)
+
+modimport("map_free_teleport.lua")
