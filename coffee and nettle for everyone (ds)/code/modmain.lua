@@ -19,7 +19,17 @@ if GetModConfigData("NETTLE") then
 end
 
 
--- 为食物类别表格添加咖啡和荨麻这两种食物类别
+if GetModConfigData("SEEDPOD") then
+    -- 改变茶树种子的食物分类
+    local function AlterSeedPod(inst)
+        inst.components.edible.foodtype = "SEEDPOD"
+    end
+    AddPrefabPostInit("teatree_nut", AlterSeedPod)
+    AddPrefabPostInit("teatree_nut_cooked", AlterSeedPod)
+end
+
+
+-- 为食物类别表格添加茶树种子、咖啡和荨麻这三种食物类别
 local function ModifyFoodTable(foodtable, carnivore)
     if type(foodtable) == "table" and (carnivore or table.contains(foodtable, "VEGGIE")) then
         if GetModConfigData("COFFEE") and not table.contains(foodtable, "COFFEE") then
@@ -29,11 +39,18 @@ local function ModifyFoodTable(foodtable, carnivore)
             table.insert(foodtable, "NETTLE")
         end
     end
+    if type(foodtable) == "table" and (carnivore or table.contains(foodtable, "SEEDS")) then
+        if GetModConfigData("SEEDPOD") and not table.contains(foodtable, "SEEDPOD") then
+            table.insert(foodtable, "SEEDPOD")
+        end
+    end
 end
 
 
--- 修改人物/生物可以吃的食物类别，为原来就可以吃蔬菜的人添加可以吃咖啡和荨麻这两种食物类别
--- 同时为肉食者添加可以吃咖啡和荨麻这两种食物类别
+-- 修改人物/生物可以吃的食物类别
+-- 为原来就可以吃蔬菜的人添加可以吃咖啡和荨麻这两种食物类别
+-- 为原来就可以吃种子的人添加可以吃茶树种子这种食物类别
+-- 同时为肉食者添加可以吃茶树种子、咖啡和荨麻这三种食物类别
 AddComponentPostInit("eater", function(self)
     local _oldSetCarnivore = self.SetCarnivore
     function self:SetCarnivore(human)

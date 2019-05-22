@@ -1,7 +1,7 @@
 name = "coffee and nettle for everyone 所有人都能吃咖啡和荨麻"
 description = "coffee and nettle for everyone 所有人都能吃咖啡和荨麻"
 author = "linjinzhen"
-version = "1.0.6"
+version = "1.0.7"
 forumthread = ""
 
 api_version = 6
@@ -16,23 +16,32 @@ dst_compatible = false
 
 configuration_options = 
 {
-  {
-    name = "COFFEE",
-    label = "Coffee",
-    options = {
-        {description = "Yes", data = true},
-        {description = "No", data = false}
+    {
+        name = "COFFEE",
+        label = "Coffee",
+        options = {
+            {description = "Yes", data = true},
+            {description = "No", data = false}
+        },
+        default = true,
     },
-    default = true,
-  },
-  {
-    name = "NETTLE",
-    label = "Nettle",
-    options = {
-        {description = "Yes", data = true},
-        {description = "No", data = false}
+    {
+        name = "NETTLE",
+        label = "Nettle",
+        options = {
+            {description = "Yes", data = true},
+            {description = "No", data = false}
+        },
+        default = true,
     },
-    default = true,
-  }
+    {
+        name = "SEEDPOD",
+        label = "Seed Pod",
+        options = {
+            {description = "Yes", data = true},
+            {description = "No", data = false}
+        },
+        default = true,
+    }
 }
 
