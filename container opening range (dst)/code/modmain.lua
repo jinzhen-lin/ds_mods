@@ -15,14 +15,20 @@ local function ModifyContainerRange(self)
           container_config_name = container_map[self["type"]]
         end
         local d = GetModConfigData(container_config_name) or GetModConfigData("OTHER") or 3
-        if self.opener == nil then
+        if (self.opener == nil and self.opencount == nil) or self.opencount == 0 then
             self.inst:StopUpdatingComponent(self)
-        elseif not (self.inst.components.inventoryitem ~= nil and
-                    self.inst.components.inventoryitem:IsHeldBy(self.opener))
-            and ((self.opener.components.rider ~= nil and self.opener.components.rider:IsRiding())
-                or not (self.opener:IsNear(self.inst, d) and
-                        GLOBAL.CanEntitySeeTarget(self.opener, self.inst))) then
-            self:Close()
+        else
+            local openlist = self.openlist or {self.opener = ""}
+            for doer, _ in pairs(openlist) do
+                if doer ~= nil
+                    and not (self.inst.components.inventoryitem ~= nil 
+                    and self.inst.components.inventoryitem:IsHeldBy(doer))
+                    and ((doer.components.rider ~= nil 
+                    and doer.components.rider:IsRiding())
+                    or not (doer:IsNear(self.inst, d) 
+                    and GLOBAL.CanEntitySeeTarget(doer, self.inst))) then
+                self:Close(doer)
+            end
         end
     end
 end
