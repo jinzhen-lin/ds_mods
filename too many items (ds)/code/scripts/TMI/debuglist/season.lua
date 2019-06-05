@@ -11,7 +11,7 @@ local res = {
             pos = {"rog_forest", "rog_cave1", "rog_cave2"},
             name = STRINGS.UI.SANDBOXMENU.SPRING,
             tip = SeasonButtonTip,
-            fn = 'GetSeasonManager():StartSpring()​',
+            fn = 'GetSeasonManager():StartSpring()',
         },
         {
             beta = false,
