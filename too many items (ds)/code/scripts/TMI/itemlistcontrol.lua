@@ -37,8 +37,8 @@ local function GetItemDesc(item)
     end
     local item_plus = ""
     local str = ""
-    item = item:gsub("|.*", ""):gsub("+.*", "")
-    item_plus = item:gsub("|[^+]*", "")
+    item = item:gsub("-.*", ""):gsub("+.*", "")
+    item_plus = item:gsub("-[^+]*", "")
 
     if item ~= nil and item ~= "" then
         local itemtip = item:upper()
@@ -78,7 +78,7 @@ function ItemListControl:Init()
         self.list[k] = {}
         self.desclist[k] = {}
         for i, item in pairs(item_list) do
-            local item_base = item:gsub("+[^|]*", "")
+            local item_base = item:gsub("+[^-]*", "")
             local can_add = not table.contains(dont_add_item, item_base) and not table.contains(dont_add_item, item)
             if can_add and table.contains(Prefabname_list, item_base) then
                 table.insert(self.list[k], item)

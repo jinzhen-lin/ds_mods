@@ -87,7 +87,7 @@ function InvSlot:GiveItem(stack_mod)
     if player ~= nil and player.Transform then
         local x, y, z = player.Transform:GetWorldPosition()
         local num = stack_mod and TOOMANYITEMS.R_CLICK_NUM or TOOMANYITEMS.L_CLICK_NUM
-        local item = self.item:gsub("|[^+]*", "")
+        local item = self.item:gsub("-[^+]*", "")
         if TOOMANYITEMS.LIST.deleteitem_list_config[item] then
             return
         end

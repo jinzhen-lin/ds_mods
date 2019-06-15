@@ -39,10 +39,10 @@ if __name__ == '__main__':
             origin_img_fullname = os.path.join(typepath, img_filename)
             basename = re.sub("\\.webp|\\.png", "", img_filename)
             target_img_fullname = os.path.join(typepath_new, basename + ".png")
-            if basename.find("|") == -1:
+            if basename.find("-") == -1:
                 prefabname_list.append(basename)
             origin_img = Image.open(origin_img_fullname)
-            target_img = pad_image(origin_img.convert("RGBA"), (56, 56))
+            target_img = pad_image(origin_img.convert("RGBA"), (64, 64))
             target_img.save(target_img_fullname)
         with open(os.path.join(modpath, "scripts/TMI/list/itemlist_%s.txt" % typename), "w") as f:
             f.write("\n".join(prefabname_list))

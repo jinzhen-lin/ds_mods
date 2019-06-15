@@ -73,7 +73,7 @@ function ItemTile:GetAsset(find)
     table.insert(itematlas_list, "images/inventoryimages_2.xml")
     if not table.contains(itemimage_list, self.item..".tex") and type(self.item) == "string" then
         table.insert(itemimage_list, self.item..".tex")
-        local item_base = self.item:gsub("|.*", ""):gsub("+.*", "")
+        local item_base = self.item:gsub("-.*", ""):gsub("+.*", "")
         if self.item ~= item_base then
             table.insert(itemimage_list, item_base..".tex")
         end
@@ -100,8 +100,8 @@ function ItemTile:DescriptionInit()
     local item_plus
     local str = ""
     if type(self.item) == "string" then
-        item = self.item:gsub("|.*", ""):gsub("+.*", "")
-        item_plus = self.item:gsub("|[^+]*", "")
+        item = self.item:gsub("-.*", ""):gsub("+.*", "")
+        item_plus = self.item:gsub("-[^+]*", "")
     end
 
     if item ~= nil and item ~= "" then

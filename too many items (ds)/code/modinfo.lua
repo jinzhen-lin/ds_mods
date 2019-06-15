@@ -1,6 +1,6 @@
 name = "[DST->DS]Too Many Items"
 forumthread = ""
-version = "1.6.1"
+version = "1.6.2"
 description = "Too Many Items Version:"..version.."\n\nAllows you to spawn any item you want and more powerful features.\nYou must be a Admin to use this.\nPress (T) to open spawn menu.\nLeft Click to spawn 1 item.\nRight Click to spawn 10 items.\n\nToggle Button and spawn num are Configurable\nYou can customize a special item list.(Add or Delete a item by hold down the ctrl key and click.)\n\nCodes by C.J.B. | Items and bug fix by GaRAnTuLA. | DST version by Skull."
 author = "CJB & GaRAnTuLA & Skull & linjinzhen"
 api_version = 6

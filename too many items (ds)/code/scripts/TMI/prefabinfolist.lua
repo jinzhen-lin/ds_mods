@@ -40,10 +40,10 @@ local inventory_imgname = {
 
 
 local noninventory_imgname = {
-    ["butterfly"] = IS_SW and "butterfly|sw" or "butterfly",
-    ["mermhouse"] = IS_SW and "mermhouse|sw" or "mermhouse",
-    ["krampus"] = IS_SW and "krampus|sw" or "krampus",
-    ["spider_warrior"] = IS_SW and "spider_warrior|sw" or "spider_warrior",
+    ["butterfly"] = IS_SW and "butterfly-sw" or "butterfly",
+    ["mermhouse"] = IS_SW and "mermhouse-sw" or "mermhouse",
+    ["krampus"] = IS_SW and "krampus-sw" or "krampus",
+    ["spider_warrior"] = IS_SW and "spider_warrior-sw" or "spider_warrior",
 }
 
 local function GetDesc(name, subname)

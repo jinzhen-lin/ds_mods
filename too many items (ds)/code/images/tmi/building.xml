@@ -1,362 +1,362 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Atlas>
 	<Texture filename="building.tex" />
 	<Elements>
-		<Element name="accomplishment_shrine.tex" u1="0.000244141" u2="0.0270996" v1="0.945801" v2="0.999512" />
-		<Element name="adventure_portal.tex" u1="0.0275879" u2="0.0544434" v1="0.945801" v2="0.999512" />
-		<Element name="ancient_altar_broken.tex" u1="0.0549316" u2="0.0817871" v1="0.945801" v2="0.999512" />
-		<Element name="ancient_altar.tex" u1="0.0822754" u2="0.109131" v1="0.945801" v2="0.999512" />
-		<Element name="antchest.tex" u1="0.109619" u2="0.136475" v1="0.945801" v2="0.999512" />
-		<Element name="antcombhome.tex" u1="0.136963" u2="0.163818" v1="0.945801" v2="0.999512" />
-		<Element name="antqueen_throne.tex" u1="0.164307" u2="0.191162" v1="0.945801" v2="0.999512" />
-		<Element name="aporkalypse_clock.tex" u1="0.19165" u2="0.218506" v1="0.945801" v2="0.999512" />
-		<Element name="atrium_gate.tex" u1="0.218994" u2="0.24585" v1="0.945801" v2="0.999512" />
-		<Element name="atrium_light.tex" u1="0.246338" u2="0.273193" v1="0.945801" v2="0.999512" />
-		<Element name="atrium_overgrowth.tex" u1="0.273682" u2="0.300537" v1="0.945801" v2="0.999512" />
-		<Element name="atrium_rubble.tex" u1="0.301025" u2="0.327881" v1="0.945801" v2="0.999512" />
-		<Element name="atrium_statue.tex" u1="0.328369" u2="0.355225" v1="0.945801" v2="0.999512" />
-		<Element name="atrium_statue|shadow.tex" u1="0.355713" u2="0.382568" v1="0.945801" v2="0.999512" />
-		<Element name="ballphinhouse.tex" u1="0.383057" u2="0.409912" v1="0.945801" v2="0.999512" />
-		<Element name="bambootree.tex" u1="0.4104" u2="0.437256" v1="0.945801" v2="0.999512" />
-		<Element name="bandittreasure+reveal.tex" u1="0.437744" u2="0.4646" v1="0.945801" v2="0.999512" />
-		<Element name="basalt_pillar.tex" u1="0.465088" u2="0.491943" v1="0.945801" v2="0.999512" />
-		<Element name="basalt.tex" u1="0.492432" u2="0.519287" v1="0.945801" v2="0.999512" />
-		<Element name="basefan.tex" u1="0.519775" u2="0.546631" v1="0.945801" v2="0.999512" />
-		<Element name="batcave.tex" u1="0.547119" u2="0.573975" v1="0.945801" v2="0.999512" />
-		<Element name="beebox.tex" u1="0.574463" u2="0.601318" v1="0.945801" v2="0.999512" />
-		<Element name="beehive.tex" u1="0.601807" u2="0.628662" v1="0.945801" v2="0.999512" />
-		<Element name="beemine_maxwell.tex" u1="0.62915" u2="0.656006" v1="0.945801" v2="0.999512" />
-		<Element name="beequeenhivegrown.tex" u1="0.656494" u2="0.68335" v1="0.945801" v2="0.999512" />
-		<Element name="bermudatriangle.tex" u1="0.683838" u2="0.710693" v1="0.945801" v2="0.999512" />
-		<Element name="birdcage.tex" u1="0.711182" u2="0.738037" v1="0.945801" v2="0.999512" />
-		<Element name="buoy.tex" u1="0.738525" u2="0.765381" v1="0.945801" v2="0.999512" />
-		<Element name="buriedtreasure+reveal.tex" u1="0.765869" u2="0.792725" v1="0.945801" v2="0.999512" />
-		<Element name="campfire.tex" u1="0.793213" u2="0.820068" v1="0.945801" v2="0.999512" />
-		<Element name="cartographydesk.tex" u1="0.820557" u2="0.847412" v1="0.945801" v2="0.999512" />
-		<Element name="catcoonden.tex" u1="0.8479" u2="0.874756" v1="0.945801" v2="0.999512" />
-		<Element name="cave_entrance.tex" u1="0.875244" u2="0.9021" v1="0.945801" v2="0.999512" />
-		<Element name="cave_entrance|ruins.tex" u1="0.902588" u2="0.929443" v1="0.945801" v2="0.999512" />
-		<Element name="cave_hole.tex" u1="0.929932" u2="0.956787" v1="0.945801" v2="0.999512" />
-		<Element name="chessjunk1.tex" u1="0.957275" u2="0.984131" v1="0.945801" v2="0.999512" />
-		<Element name="chessjunk2.tex" u1="0.000244141" u2="0.0270996" v1="0.891113" v2="0.944824" />
-		<Element name="chessjunk3.tex" u1="0.0275879" u2="0.0544434" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_bearger_marble.tex" u1="0.0549316" u2="0.0817871" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_bearger_stone.tex" u1="0.0822754" u2="0.109131" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_bishop_marble.tex" u1="0.109619" u2="0.136475" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_bishop_stone.tex" u1="0.136963" u2="0.163818" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_clayhound_marble.tex" u1="0.164307" u2="0.191162" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_clayhound_stone.tex" u1="0.19165" u2="0.218506" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_claywarg_marble.tex" u1="0.218994" u2="0.24585" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_claywarg_stone.tex" u1="0.246338" u2="0.273193" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_deerclops_marble.tex" u1="0.273682" u2="0.300537" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_deerclops_stone.tex" u1="0.301025" u2="0.327881" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_dragonfly_marble.tex" u1="0.328369" u2="0.355225" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_dragonfly_stone.tex" u1="0.355713" u2="0.382568" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_formal_marble.tex" u1="0.383057" u2="0.409912" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_formal_stone.tex" u1="0.4104" u2="0.437256" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_hornucopia_marble.tex" u1="0.437744" u2="0.4646" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_hornucopia_stone.tex" u1="0.465088" u2="0.491943" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_knight_marble.tex" u1="0.492432" u2="0.519287" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_knight_stone.tex" u1="0.519775" u2="0.546631" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_moosegoose_marble.tex" u1="0.547119" u2="0.573975" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_moosegoose_stone.tex" u1="0.574463" u2="0.601318" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_muse_marble.tex" u1="0.601807" u2="0.628662" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_muse_stone.tex" u1="0.62915" u2="0.656006" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_pawn_marble.tex" u1="0.656494" u2="0.68335" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_pawn_stone.tex" u1="0.683838" u2="0.710693" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_pipe_marble.tex" u1="0.711182" u2="0.738037" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_pipe_stone.tex" u1="0.738525" u2="0.765381" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_rook_marble.tex" u1="0.765869" u2="0.792725" v1="0.891113" v2="0.944824" />
-		<Element name="chesspiece_rook_stone.tex" u1="0.793213" u2="0.820068" v1="0.891113" v2="0.944824" />
-		<Element name="chiminea.tex" u1="0.820557" u2="0.847412" v1="0.891113" v2="0.944824" />
-		<Element name="city_lamp.tex" u1="0.8479" u2="0.874756" v1="0.891113" v2="0.944824" />
-		<Element name="coldfirepit.tex" u1="0.875244" u2="0.9021" v1="0.891113" v2="0.944824" />
-		<Element name="coldfire.tex" u1="0.902588" u2="0.929443" v1="0.891113" v2="0.944824" />
-		<Element name="cookpot.tex" u1="0.929932" u2="0.956787" v1="0.891113" v2="0.944824" />
-		<Element name="coralreef.tex" u1="0.957275" u2="0.984131" v1="0.891113" v2="0.944824" />
-		<Element name="corkchest.tex" u1="0.000244141" u2="0.0270996" v1="0.836426" v2="0.890137" />
-		<Element name="crate.tex" u1="0.0275879" u2="0.0544434" v1="0.836426" v2="0.890137" />
-		<Element name="critterlab.tex" u1="0.0549316" u2="0.0817871" v1="0.836426" v2="0.890137" />
-		<Element name="deco_cave_bat_burrow.tex" u1="0.0822754" u2="0.109131" v1="0.836426" v2="0.890137" />
-		<Element name="deco_ruins_endswell.tex" u1="0.109619" u2="0.136475" v1="0.836426" v2="0.890137" />
-		<Element name="deco_ruins_fountain.tex" u1="0.136963" u2="0.163818" v1="0.836426" v2="0.890137" />
-		<Element name="deflated_balloon_basket.tex" u1="0.164307" u2="0.191162" v1="0.836426" v2="0.890137" />
-		<Element name="deflated_balloon.tex" u1="0.19165" u2="0.218506" v1="0.836426" v2="0.890137" />
-		<Element name="doydoynest.tex" u1="0.218994" u2="0.24585" v1="0.836426" v2="0.890137" />
-		<Element name="dragonflychest.tex" u1="0.246338" u2="0.273193" v1="0.836426" v2="0.890137" />
-		<Element name="dragonflyfurnace.tex" u1="0.273682" u2="0.300537" v1="0.836426" v2="0.890137" />
-		<Element name="dragoonden.tex" u1="0.301025" u2="0.327881" v1="0.836426" v2="0.890137" />
-		<Element name="dragoonegg.tex" u1="0.328369" u2="0.355225" v1="0.836426" v2="0.890137" />
-		<Element name="dungpile.tex" u1="0.355713" u2="0.382568" v1="0.836426" v2="0.890137" />
-		<Element name="endtable.tex" u1="0.383057" u2="0.409912" v1="0.836426" v2="0.890137" />
-		<Element name="eyeturret.tex" u1="0.4104" u2="0.437256" v1="0.836426" v2="0.890137" />
-		<Element name="fast_farmplot.tex" u1="0.437744" u2="0.4646" v1="0.836426" v2="0.890137" />
-		<Element name="fence_gate.tex" u1="0.465088" u2="0.491943" v1="0.836426" v2="0.890137" />
-		<Element name="fence.tex" u1="0.492432" u2="0.519287" v1="0.836426" v2="0.890137" />
-		<Element name="firepit.tex" u1="0.519775" u2="0.546631" v1="0.836426" v2="0.890137" />
-		<Element name="firesuppressor.tex" u1="0.547119" u2="0.573975" v1="0.836426" v2="0.890137" />
-		<Element name="fish_farm.tex" u1="0.574463" u2="0.601318" v1="0.836426" v2="0.890137" />
-		<Element name="fissure_lower.tex" u1="0.601807" u2="0.628662" v1="0.836426" v2="0.890137" />
-		<Element name="flamegeyser.tex" u1="0.62915" u2="0.656006" v1="0.836426" v2="0.890137" />
-		<Element name="gargoyle_houndatk.tex" u1="0.656494" u2="0.68335" v1="0.836426" v2="0.890137" />
-		<Element name="gargoyle_hounddeath.tex" u1="0.683838" u2="0.710693" v1="0.836426" v2="0.890137" />
-		<Element name="gargoyle_werepigatk.tex" u1="0.711182" u2="0.738037" v1="0.836426" v2="0.890137" />
-		<Element name="gargoyle_werepigdeath.tex" u1="0.738525" u2="0.765381" v1="0.836426" v2="0.890137" />
-		<Element name="gargoyle_werepighowl.tex" u1="0.765869" u2="0.792725" v1="0.836426" v2="0.890137" />
-		<Element name="glassblock.tex" u1="0.793213" u2="0.820068" v1="0.836426" v2="0.890137" />
-		<Element name="glassspike_med.tex" u1="0.820557" u2="0.847412" v1="0.836426" v2="0.890137" />
-		<Element name="glassspike_short.tex" u1="0.8479" u2="0.874756" v1="0.836426" v2="0.890137" />
-		<Element name="glassspike_tall.tex" u1="0.875244" u2="0.9021" v1="0.836426" v2="0.890137" />
-		<Element name="gnatmound.tex" u1="0.902588" u2="0.929443" v1="0.836426" v2="0.890137" />
-		<Element name="gravestone.tex" u1="0.929932" u2="0.956787" v1="0.836426" v2="0.890137" />
-		<Element name="hedge_block.tex" u1="0.957275" u2="0.984131" v1="0.836426" v2="0.890137" />
-		<Element name="hedge_cone.tex" u1="0.000244141" u2="0.0270996" v1="0.781738" v2="0.835449" />
-		<Element name="hedge_layered.tex" u1="0.0275879" u2="0.0544434" v1="0.781738" v2="0.835449" />
-		<Element name="hogusporkusator.tex" u1="0.0549316" u2="0.0817871" v1="0.781738" v2="0.835449" />
-		<Element name="homesign.tex" u1="0.0822754" u2="0.109131" v1="0.781738" v2="0.835449" />
-		<Element name="houndmound.tex" u1="0.109619" u2="0.136475" v1="0.781738" v2="0.835449" />
-		<Element name="icebox.tex" u1="0.136963" u2="0.163818" v1="0.781738" v2="0.835449" />
-		<Element name="icemaker.tex" u1="0.164307" u2="0.191162" v1="0.781738" v2="0.835449" />
-		<Element name="insanityrock.tex" u1="0.19165" u2="0.218506" v1="0.781738" v2="0.835449" />
-		<Element name="klaus_sack.tex" u1="0.218994" u2="0.24585" v1="0.781738" v2="0.835449" />
-		<Element name="krakenchest.tex" u1="0.246338" u2="0.273193" v1="0.781738" v2="0.835449" />
-		<Element name="lavaarena_portal.tex" u1="0.273682" u2="0.300537" v1="0.781738" v2="0.835449" />
-		<Element name="lava_pond.tex" u1="0.301025" u2="0.327881" v1="0.781738" v2="0.835449" />
-		<Element name="lavapool.tex" u1="0.328369" u2="0.355225" v1="0.781738" v2="0.835449" />
-		<Element name="lawnornament_1.tex" u1="0.355713" u2="0.382568" v1="0.781738" v2="0.835449" />
-		<Element name="lawnornament_2.tex" u1="0.383057" u2="0.409912" v1="0.781738" v2="0.835449" />
-		<Element name="lawnornament_3.tex" u1="0.4104" u2="0.437256" v1="0.781738" v2="0.835449" />
-		<Element name="lawnornament_4.tex" u1="0.437744" u2="0.4646" v1="0.781738" v2="0.835449" />
-		<Element name="lawnornament_5.tex" u1="0.465088" u2="0.491943" v1="0.781738" v2="0.835449" />
-		<Element name="lawnornament_6.tex" u1="0.492432" u2="0.519287" v1="0.781738" v2="0.835449" />
-		<Element name="lawnornament_7.tex" u1="0.519775" u2="0.546631" v1="0.781738" v2="0.835449" />
-		<Element name="lightning_rod.tex" u1="0.547119" u2="0.573975" v1="0.781738" v2="0.835449" />
-		<Element name="lilypad.tex" u1="0.574463" u2="0.601318" v1="0.781738" v2="0.835449" />
-		<Element name="limpetrock.tex" u1="0.601807" u2="0.628662" v1="0.781738" v2="0.835449" />
-		<Element name="luggagechest.tex" u1="0.62915" u2="0.656006" v1="0.781738" v2="0.835449" />
-		<Element name="madscience_lab.tex" u1="0.656494" u2="0.68335" v1="0.781738" v2="0.835449" />
-		<Element name="magmarock_gold.tex" u1="0.683838" u2="0.710693" v1="0.781738" v2="0.835449" />
-		<Element name="magmarock.tex" u1="0.711182" u2="0.738037" v1="0.781738" v2="0.835449" />
-		<Element name="mandrakehouse.tex" u1="0.738525" u2="0.765381" v1="0.781738" v2="0.835449" />
-		<Element name="marblepillar.tex" u1="0.765869" u2="0.792725" v1="0.781738" v2="0.835449" />
-		<Element name="marbletree.tex" u1="0.793213" u2="0.820068" v1="0.781738" v2="0.835449" />
-		<Element name="maxwelllight_area.tex" u1="0.820557" u2="0.847412" v1="0.781738" v2="0.835449" />
-		<Element name="maxwelllight.tex" u1="0.8479" u2="0.874756" v1="0.781738" v2="0.835449" />
-		<Element name="maxwelllock.tex" u1="0.875244" u2="0.9021" v1="0.781738" v2="0.835449" />
-		<Element name="maxwellphonograph.tex" u1="0.902588" u2="0.929443" v1="0.781738" v2="0.835449" />
-		<Element name="maxwellthrone.tex" u1="0.929932" u2="0.956787" v1="0.781738" v2="0.835449" />
-		<Element name="meatrack.tex" u1="0.957275" u2="0.984131" v1="0.781738" v2="0.835449" />
-		<Element name="mermhead.tex" u1="0.000244141" u2="0.0270996" v1="0.727051" v2="0.780762" />
-		<Element name="mermhouse_fisher.tex" u1="0.0275879" u2="0.0544434" v1="0.727051" v2="0.780762" />
-		<Element name="mermhouse.tex" u1="0.0549316" u2="0.0817871" v1="0.727051" v2="0.780762" />
-		<Element name="mermhouse|sw.tex" u1="0.0822754" u2="0.109131" v1="0.727051" v2="0.780762" />
-		<Element name="minotaurchest.tex" u1="0.109619" u2="0.136475" v1="0.727051" v2="0.780762" />
-		<Element name="molehill.tex" u1="0.136963" u2="0.163818" v1="0.727051" v2="0.780762" />
-		<Element name="monkeybarrel.tex" u1="0.164307" u2="0.191162" v1="0.727051" v2="0.780762" />
-		<Element name="moonbase.tex" u1="0.19165" u2="0.218506" v1="0.727051" v2="0.780762" />
-		<Element name="moondial.tex" u1="0.218994" u2="0.24585" v1="0.727051" v2="0.780762" />
-		<Element name="mound.tex" u1="0.246338" u2="0.273193" v1="0.727051" v2="0.780762" />
-		<Element name="multiplayer_portal_moonrock.tex" u1="0.273682" u2="0.300537" v1="0.727051" v2="0.780762" />
-		<Element name="multiplayer_portal.tex" u1="0.301025" u2="0.327881" v1="0.727051" v2="0.780762" />
-		<Element name="mushroom_farm.tex" u1="0.328369" u2="0.355225" v1="0.727051" v2="0.780762" />
-		<Element name="mushroom_light2.tex" u1="0.355713" u2="0.382568" v1="0.727051" v2="0.780762" />
-		<Element name="mushroom_light.tex" u1="0.383057" u2="0.409912" v1="0.727051" v2="0.780762" />
-		<Element name="nightlight.tex" u1="0.4104" u2="0.437256" v1="0.727051" v2="0.780762" />
-		<Element name="nightmarelight.tex" u1="0.437744" u2="0.4646" v1="0.727051" v2="0.780762" />
-		<Element name="oasislake.tex" u1="0.465088" u2="0.491943" v1="0.727051" v2="0.780762" />
-		<Element name="obsidianfirepit.tex" u1="0.492432" u2="0.519287" v1="0.727051" v2="0.780762" />
-		<Element name="obsidian_workbench.tex" u1="0.519775" u2="0.546631" v1="0.727051" v2="0.780762" />
-		<Element name="octopuschest.tex" u1="0.547119" u2="0.573975" v1="0.727051" v2="0.780762" />
-		<Element name="palmleaf_hut.tex" u1="0.574463" u2="0.601318" v1="0.727051" v2="0.780762" />
-		<Element name="pandoraschest.tex" u1="0.601807" u2="0.628662" v1="0.727051" v2="0.780762" />
-		<Element name="perdshrine.tex" u1="0.62915" u2="0.656006" v1="0.727051" v2="0.780762" />
-		<Element name="pig_guard_tower+built.tex" u1="0.656494" u2="0.68335" v1="0.727051" v2="0.780762" />
-		<Element name="pig_guard_tower_palace+built.tex" u1="0.683838" u2="0.710693" v1="0.727051" v2="0.780762" />
-		<Element name="pighead.tex" u1="0.711182" u2="0.738037" v1="0.727051" v2="0.780762" />
-		<Element name="pighouse_city+beige.tex" u1="0.738525" u2="0.765381" v1="0.727051" v2="0.780762" />
-		<Element name="pighouse_city+brown.tex" u1="0.765869" u2="0.792725" v1="0.727051" v2="0.780762" />
-		<Element name="pighouse_city+green.tex" u1="0.793213" u2="0.820068" v1="0.727051" v2="0.780762" />
-		<Element name="pighouse_city+pink.tex" u1="0.820557" u2="0.847412" v1="0.727051" v2="0.780762" />
-		<Element name="pighouse_city+red.tex" u1="0.8479" u2="0.874756" v1="0.727051" v2="0.780762" />
-		<Element name="pighouse_city+white.tex" u1="0.875244" u2="0.9021" v1="0.727051" v2="0.780762" />
-		<Element name="pighouse_farm.tex" u1="0.902588" u2="0.929443" v1="0.727051" v2="0.780762" />
-		<Element name="pighouse_mine.tex" u1="0.929932" u2="0.956787" v1="0.727051" v2="0.780762" />
-		<Element name="pighouse.tex" u1="0.957275" u2="0.984131" v1="0.727051" v2="0.780762" />
-		<Element name="pig_palace.tex" u1="0.000244141" u2="0.0270996" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_ant.tex" u1="0.0275879" u2="0.0544434" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_artichoke.tex" u1="0.0549316" u2="0.0817871" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_dart_statue.tex" u1="0.0822754" u2="0.109131" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_head.tex" u1="0.109619" u2="0.136475" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_idol.tex" u1="0.136963" u2="0.163818" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_pig.tex" u1="0.164307" u2="0.191162" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_plaque.tex" u1="0.19165" u2="0.218506" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_sow.tex" u1="0.218994" u2="0.24585" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_spear_trap.tex" u1="0.246338" u2="0.273193" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_torch.tex" u1="0.273682" u2="0.300537" v1="0.672363" v2="0.726074" />
-		<Element name="pig_ruins_truffle.tex" u1="0.301025" u2="0.327881" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_academy.tex" u1="0.328369" u2="0.355225" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_antiquities.tex" u1="0.355713" u2="0.382568" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_arcane.tex" u1="0.383057" u2="0.409912" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_bank.tex" u1="0.4104" u2="0.437256" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_cityhall.tex" u1="0.437744" u2="0.4646" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_deli.tex" u1="0.465088" u2="0.491943" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_florist.tex" u1="0.492432" u2="0.519287" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_general.tex" u1="0.519775" u2="0.546631" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_hatshop.tex" u1="0.547119" u2="0.573975" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_hoofspa.tex" u1="0.574463" u2="0.601318" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_produce.tex" u1="0.601807" u2="0.628662" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_tinker.tex" u1="0.62915" u2="0.656006" v1="0.672363" v2="0.726074" />
-		<Element name="pig_shop_weapons.tex" u1="0.656494" u2="0.68335" v1="0.672363" v2="0.726074" />
-		<Element name="pigtorch.tex" u1="0.683838" u2="0.710693" v1="0.672363" v2="0.726074" />
-		<Element name="pillar_algae.tex" u1="0.711182" u2="0.738037" v1="0.672363" v2="0.726074" />
-		<Element name="pillar_atrium.tex" u1="0.738525" u2="0.765381" v1="0.672363" v2="0.726074" />
-		<Element name="pillar_cave.tex" u1="0.765869" u2="0.792725" v1="0.672363" v2="0.726074" />
-		<Element name="pillar_ruins.tex" u1="0.793213" u2="0.820068" v1="0.672363" v2="0.726074" />
-		<Element name="piratihatitator.tex" u1="0.820557" u2="0.847412" v1="0.672363" v2="0.726074" />
-		<Element name="playerhouse_city.tex" u1="0.8479" u2="0.874756" v1="0.672363" v2="0.726074" />
-		<Element name="poisonhole.tex" u1="0.875244" u2="0.9021" v1="0.672363" v2="0.726074" />
-		<Element name="pond_cave.tex" u1="0.902588" u2="0.929443" v1="0.672363" v2="0.726074" />
-		<Element name="pond_mos.tex" u1="0.929932" u2="0.956787" v1="0.672363" v2="0.726074" />
-		<Element name="pond.tex" u1="0.957275" u2="0.984131" v1="0.672363" v2="0.726074" />
-		<Element name="porkland_entrance.tex" u1="0.000244141" u2="0.0270996" v1="0.617676" v2="0.671387" />
-		<Element name="pottedfern.tex" u1="0.0275879" u2="0.0544434" v1="0.617676" v2="0.671387" />
-		<Element name="primeapebarrel.tex" u1="0.0549316" u2="0.0817871" v1="0.617676" v2="0.671387" />
-		<Element name="pugalisk_fountain.tex" u1="0.0822754" u2="0.109131" v1="0.617676" v2="0.671387" />
-		<Element name="quagmire_altar.tex" u1="0.109619" u2="0.136475" v1="0.617676" v2="0.671387" />
-		<Element name="quagmire_mealingstone.tex" u1="0.136963" u2="0.163818" v1="0.617676" v2="0.671387" />
-		<Element name="quagmire_portal.tex" u1="0.164307" u2="0.191162" v1="0.617676" v2="0.671387" />
-		<Element name="rabbithole.tex" u1="0.19165" u2="0.218506" v1="0.617676" v2="0.671387" />
-		<Element name="rabbithouse.tex" u1="0.218994" u2="0.24585" v1="0.617676" v2="0.671387" />
-		<Element name="rainometer.tex" u1="0.246338" u2="0.273193" v1="0.617676" v2="0.671387" />
-		<Element name="redbarrel.tex" u1="0.273682" u2="0.300537" v1="0.617676" v2="0.671387" />
-		<Element name="researchlab2.tex" u1="0.301025" u2="0.327881" v1="0.617676" v2="0.671387" />
-		<Element name="researchlab3.tex" u1="0.328369" u2="0.355225" v1="0.617676" v2="0.671387" />
-		<Element name="researchlab4.tex" u1="0.355713" u2="0.382568" v1="0.617676" v2="0.671387" />
-		<Element name="researchlab5.tex" u1="0.383057" u2="0.409912" v1="0.617676" v2="0.671387" />
-		<Element name="researchlab.tex" u1="0.4104" u2="0.437256" v1="0.617676" v2="0.671387" />
-		<Element name="resurrectionstatue.tex" u1="0.437744" u2="0.4646" v1="0.617676" v2="0.671387" />
-		<Element name="resurrectionstone.tex" u1="0.465088" u2="0.491943" v1="0.617676" v2="0.671387" />
-		<Element name="rock1.tex" u1="0.492432" u2="0.519287" v1="0.617676" v2="0.671387" />
-		<Element name="rock2.tex" u1="0.519775" u2="0.546631" v1="0.617676" v2="0.671387" />
-		<Element name="rock_charcoal.tex" u1="0.547119" u2="0.573975" v1="0.617676" v2="0.671387" />
-		<Element name="rock_flintless.tex" u1="0.574463" u2="0.601318" v1="0.617676" v2="0.671387" />
-		<Element name="rock_flippable.tex" u1="0.601807" u2="0.628662" v1="0.617676" v2="0.671387" />
-		<Element name="rock_ice.tex" u1="0.62915" u2="0.656006" v1="0.617676" v2="0.671387" />
-		<Element name="rock_moon.tex" u1="0.656494" u2="0.68335" v1="0.617676" v2="0.671387" />
-		<Element name="rock_moon_shell.tex" u1="0.683838" u2="0.710693" v1="0.617676" v2="0.671387" />
-		<Element name="rock_obsidian.tex" u1="0.711182" u2="0.738037" v1="0.617676" v2="0.671387" />
-		<Element name="rock_petrified_tree_tall.tex" u1="0.738525" u2="0.765381" v1="0.617676" v2="0.671387" />
-		<Element name="roc_nest_house.tex" u1="0.765869" u2="0.792725" v1="0.617676" v2="0.671387" />
-		<Element name="roc_nest_rusty_lamp.tex" u1="0.793213" u2="0.820068" v1="0.617676" v2="0.671387" />
-		<Element name="roottrunk_child.tex" u1="0.820557" u2="0.847412" v1="0.617676" v2="0.671387" />
-		<Element name="ruins_bowl.tex" u1="0.8479" u2="0.874756" v1="0.617676" v2="0.671387" />
-		<Element name="ruins_chair.tex" u1="0.875244" u2="0.9021" v1="0.617676" v2="0.671387" />
-		<Element name="ruins_chipbowl.tex" u1="0.902588" u2="0.929443" v1="0.617676" v2="0.671387" />
-		<Element name="ruins_plate.tex" u1="0.929932" u2="0.956787" v1="0.617676" v2="0.671387" />
-		<Element name="ruins_statue_head_nogem.tex" u1="0.957275" u2="0.984131" v1="0.617676" v2="0.671387" />
-		<Element name="ruins_statue_head_nogem|shadow.tex" u1="0.000244141" u2="0.0270996" v1="0.562988" v2="0.616699" />
-		<Element name="ruins_statue_head.tex" u1="0.0275879" u2="0.0544434" v1="0.562988" v2="0.616699" />
-		<Element name="ruins_statue_head|shadow.tex" u1="0.0549316" u2="0.0817871" v1="0.562988" v2="0.616699" />
-		<Element name="ruins_statue_mage_nogem.tex" u1="0.0822754" u2="0.109131" v1="0.562988" v2="0.616699" />
-		<Element name="ruins_statue_mage_nogem|shadow.tex" u1="0.109619" u2="0.136475" v1="0.562988" v2="0.616699" />
-		<Element name="ruins_statue_mage.tex" u1="0.136963" u2="0.163818" v1="0.562988" v2="0.616699" />
-		<Element name="ruins_statue_mage|shadow.tex" u1="0.164307" u2="0.191162" v1="0.562988" v2="0.616699" />
-		<Element name="ruins_table.tex" u1="0.19165" u2="0.218506" v1="0.562988" v2="0.616699" />
-		<Element name="ruins_vase.tex" u1="0.218994" u2="0.24585" v1="0.562988" v2="0.616699" />
-		<Element name="sacred_chest.tex" u1="0.246338" u2="0.273193" v1="0.562988" v2="0.616699" />
-		<Element name="saltlick.tex" u1="0.273682" u2="0.300537" v1="0.562988" v2="0.616699" />
-		<Element name="sandbag.tex" u1="0.301025" u2="0.327881" v1="0.562988" v2="0.616699" />
-		<Element name="sandbagsmall.tex" u1="0.328369" u2="0.355225" v1="0.562988" v2="0.616699" />
-		<Element name="sand_castle.tex" u1="0.355713" u2="0.382568" v1="0.562988" v2="0.616699" />
-		<Element name="sandhill.tex" u1="0.383057" u2="0.409912" v1="0.562988" v2="0.616699" />
-		<Element name="sanityrock.tex" u1="0.4104" u2="0.437256" v1="0.562988" v2="0.616699" />
-		<Element name="scarecrow.tex" u1="0.437744" u2="0.4646" v1="0.562988" v2="0.616699" />
-		<Element name="sculptingtable.tex" u1="0.465088" u2="0.491943" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_bishopbody+mined.tex" u1="0.492432" u2="0.519287" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_bishopbody.tex" u1="0.519775" u2="0.546631" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_bishopbody+repaired.tex" u1="0.547119" u2="0.573975" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_bishophead.tex" u1="0.574463" u2="0.601318" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_knightbody+mined.tex" u1="0.601807" u2="0.628662" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_knightbody.tex" u1="0.62915" u2="0.656006" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_knightbody+repaired.tex" u1="0.656494" u2="0.68335" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_knighthead.tex" u1="0.683838" u2="0.710693" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_rookbody+mined.tex" u1="0.711182" u2="0.738037" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_rookbody.tex" u1="0.738525" u2="0.765381" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_rookbody+repaired.tex" u1="0.765869" u2="0.792725" v1="0.562988" v2="0.616699" />
-		<Element name="sculpture_rooknose.tex" u1="0.793213" u2="0.820068" v1="0.562988" v2="0.616699" />
-		<Element name="sea_chiminea.tex" u1="0.820557" u2="0.847412" v1="0.562988" v2="0.616699" />
-		<Element name="sea_yard.tex" u1="0.8479" u2="0.874756" v1="0.562988" v2="0.616699" />
-		<Element name="sentryward.tex" u1="0.875244" u2="0.9021" v1="0.562988" v2="0.616699" />
-		<Element name="sharkittenspawner+active.tex" u1="0.902588" u2="0.929443" v1="0.562988" v2="0.616699" />
-		<Element name="sharkittenspawner+inactive.tex" u1="0.929932" u2="0.956787" v1="0.562988" v2="0.616699" />
-		<Element name="shipwrecked_entrance.tex" u1="0.957275" u2="0.984131" v1="0.562988" v2="0.616699" />
-		<Element name="shipwrecked_exit.tex" u1="0.000244141" u2="0.0270996" v1="0.508301" v2="0.562012" />
-		<Element name="siestahut.tex" u1="0.0275879" u2="0.0544434" v1="0.508301" v2="0.562012" />
-		<Element name="skullchest.tex" u1="0.0549316" u2="0.0817871" v1="0.508301" v2="0.562012" />
-		<Element name="slotmachine.tex" u1="0.0822754" u2="0.109131" v1="0.508301" v2="0.562012" />
-		<Element name="slow_farmplot.tex" u1="0.109619" u2="0.136475" v1="0.508301" v2="0.562012" />
-		<Element name="slurtlehole.tex" u1="0.136963" u2="0.163818" v1="0.508301" v2="0.562012" />
-		<Element name="smashingpot.tex" u1="0.164307" u2="0.191162" v1="0.508301" v2="0.562012" />
-		<Element name="smelter.tex" u1="0.19165" u2="0.218506" v1="0.508301" v2="0.562012" />
-		<Element name="spiderden_2.tex" u1="0.218994" u2="0.24585" v1="0.508301" v2="0.562012" />
-		<Element name="spiderden_3.tex" u1="0.246338" u2="0.273193" v1="0.508301" v2="0.562012" />
-		<Element name="spiderden.tex" u1="0.273682" u2="0.300537" v1="0.508301" v2="0.562012" />
-		<Element name="spiderhole.tex" u1="0.301025" u2="0.327881" v1="0.508301" v2="0.562012" />
-		<Element name="sprinkler.tex" u1="0.328369" u2="0.355225" v1="0.508301" v2="0.562012" />
-		<Element name="stagehand.tex" u1="0.355713" u2="0.382568" v1="0.508301" v2="0.562012" />
-		<Element name="stalagmite_full.tex" u1="0.383057" u2="0.409912" v1="0.508301" v2="0.562012" />
-		<Element name="stalagmite_tall_full.tex" u1="0.4104" u2="0.437256" v1="0.508301" v2="0.562012" />
-		<Element name="statueglommer.tex" u1="0.437744" u2="0.4646" v1="0.508301" v2="0.562012" />
-		<Element name="statueharp.tex" u1="0.465088" u2="0.491943" v1="0.508301" v2="0.562012" />
-		<Element name="statuemaxwell.tex" u1="0.492432" u2="0.519287" v1="0.508301" v2="0.562012" />
-		<Element name="succulent_potted.tex" u1="0.519775" u2="0.546631" v1="0.508301" v2="0.562012" />
-		<Element name="sunken_boat.tex" u1="0.547119" u2="0.573975" v1="0.508301" v2="0.562012" />
-		<Element name="tallbirdnest.tex" u1="0.574463" u2="0.601318" v1="0.508301" v2="0.562012" />
-		<Element name="tar_extractor.tex" u1="0.601807" u2="0.628662" v1="0.508301" v2="0.562012" />
-		<Element name="tar_pool.tex" u1="0.62915" u2="0.656006" v1="0.508301" v2="0.562012" />
-		<Element name="telebase+gemsocket.tex" u1="0.656494" u2="0.68335" v1="0.508301" v2="0.562012" />
-		<Element name="teleportato_base.tex" u1="0.683838" u2="0.710693" v1="0.508301" v2="0.562012" />
-		<Element name="teleportato_checkmate.tex" u1="0.711182" u2="0.738037" v1="0.508301" v2="0.562012" />
-		<Element name="teleportato_hamlet_base.tex" u1="0.738525" u2="0.765381" v1="0.508301" v2="0.562012" />
-		<Element name="teleportato_sw_base.tex" u1="0.765869" u2="0.792725" v1="0.508301" v2="0.562012" />
-		<Element name="telipad.tex" u1="0.793213" u2="0.820068" v1="0.508301" v2="0.562012" />
-		<Element name="tent.tex" u1="0.820557" u2="0.847412" v1="0.508301" v2="0.562012" />
-		<Element name="thumper.tex" u1="0.8479" u2="0.874756" v1="0.508301" v2="0.562012" />
-		<Element name="thunderbirdnest.tex" u1="0.875244" u2="0.9021" v1="0.508301" v2="0.562012" />
-		<Element name="tidalpool.tex" u1="0.902588" u2="0.929443" v1="0.508301" v2="0.562012" />
-		<Element name="topiary_1.tex" u1="0.929932" u2="0.956787" v1="0.508301" v2="0.562012" />
-		<Element name="topiary_2.tex" u1="0.957275" u2="0.984131" v1="0.508301" v2="0.562012" />
-		<Element name="topiary_3.tex" u1="0.000244141" u2="0.0270996" v1="0.453613" v2="0.507324" />
-		<Element name="topiary_4.tex" u1="0.0275879" u2="0.0544434" v1="0.453613" v2="0.507324" />
-		<Element name="townportal.tex" u1="0.0549316" u2="0.0817871" v1="0.453613" v2="0.507324" />
-		<Element name="treasurechest.tex" u1="0.0822754" u2="0.109131" v1="0.453613" v2="0.507324" />
-		<Element name="vampirebatcave.tex" u1="0.109619" u2="0.136475" v1="0.453613" v2="0.507324" />
-		<Element name="volcano_altar.tex" u1="0.136963" u2="0.163818" v1="0.453613" v2="0.507324" />
-		<Element name="volcano.tex" u1="0.164307" u2="0.191162" v1="0.453613" v2="0.507324" />
-		<Element name="wall_enforcedlimestone.tex" u1="0.19165" u2="0.218506" v1="0.453613" v2="0.507324" />
-		<Element name="wall_hay.tex" u1="0.218994" u2="0.24585" v1="0.453613" v2="0.507324" />
-		<Element name="wall_limestone.tex" u1="0.246338" u2="0.273193" v1="0.453613" v2="0.507324" />
-		<Element name="wall_moonrock.tex" u1="0.273682" u2="0.300537" v1="0.453613" v2="0.507324" />
-		<Element name="wall_ruins.tex" u1="0.301025" u2="0.327881" v1="0.453613" v2="0.507324" />
-		<Element name="wall_stone.tex" u1="0.328369" u2="0.355225" v1="0.453613" v2="0.507324" />
-		<Element name="wall_wood_item.tex" u1="0.355713" u2="0.382568" v1="0.453613" v2="0.507324" />
-		<Element name="wall_wood.tex" u1="0.383057" u2="0.409912" v1="0.453613" v2="0.507324" />
-		<Element name="walrus_camp.tex" u1="0.4104" u2="0.437256" v1="0.453613" v2="0.507324" />
-		<Element name="wardrobe.tex" u1="0.437744" u2="0.4646" v1="0.453613" v2="0.507324" />
-		<Element name="wargshrine.tex" u1="0.465088" u2="0.491943" v1="0.453613" v2="0.507324" />
-		<Element name="wasphive.tex" u1="0.492432" u2="0.519287" v1="0.453613" v2="0.507324" />
-		<Element name="waterchest.tex" u1="0.519775" u2="0.546631" v1="0.453613" v2="0.507324" />
-		<Element name="waterygrave.tex" u1="0.547119" u2="0.573975" v1="0.453613" v2="0.507324" />
-		<Element name="wildborehead.tex" u1="0.574463" u2="0.601318" v1="0.453613" v2="0.507324" />
-		<Element name="wildborehouse.tex" u1="0.601807" u2="0.628662" v1="0.453613" v2="0.507324" />
-		<Element name="winona_battery_high.tex" u1="0.62915" u2="0.656006" v1="0.453613" v2="0.507324" />
-		<Element name="winona_battery_low.tex" u1="0.656494" u2="0.68335" v1="0.453613" v2="0.507324" />
-		<Element name="winona_catapult.tex" u1="0.683838" u2="0.710693" v1="0.453613" v2="0.507324" />
-		<Element name="winona_spotlight.tex" u1="0.711182" u2="0.738037" v1="0.453613" v2="0.507324" />
-		<Element name="winterometer.tex" u1="0.738525" u2="0.765381" v1="0.453613" v2="0.507324" />
-		<Element name="winter_treestand.tex" u1="0.765869" u2="0.792725" v1="0.453613" v2="0.507324" />
-		<Element name="wormhole_limited_1.tex" u1="0.793213" u2="0.820068" v1="0.453613" v2="0.507324" />
-		<Element name="wormhole.tex" u1="0.820557" u2="0.847412" v1="0.453613" v2="0.507324" />
-		<Element name="wreck.tex" u1="0.8479" u2="0.874756" v1="0.453613" v2="0.507324" />
+		<Element name="accomplishment_shrine.tex" u1="0.001" u2="0.03025" v2="0.999" v1="0.9385" variant="" />
+		<Element name="adventure_portal.tex" u1="0.03225" u2="0.0615" v2="0.999" v1="0.9385" variant="" />
+		<Element name="ancient_altar.tex" u1="0.001" u2="0.03025" v2="0.9365" v1="0.876" variant="" />
+		<Element name="ancient_altar_broken.tex" u1="0.03225" u2="0.0615" v2="0.9365" v1="0.876" variant="" />
+		<Element name="antchest.tex" u1="0.0635" u2="0.09275" v2="0.999" v1="0.9385" variant="" />
+		<Element name="antcombhome.tex" u1="0.0635" u2="0.09275" v2="0.9365" v1="0.876" variant="" />
+		<Element name="antqueen_throne.tex" u1="0.09475" u2="0.124" v2="0.999" v1="0.9385" variant="" />
+		<Element name="aporkalypse_clock.tex" u1="0.09475" u2="0.124" v2="0.9365" v1="0.876" variant="" />
+		<Element name="atrium_gate.tex" u1="0.001" u2="0.03025" v2="0.874" v1="0.8135" variant="" />
+		<Element name="atrium_light.tex" u1="0.001" u2="0.03025" v2="0.8115" v1="0.751" variant="" />
+		<Element name="atrium_overgrowth.tex" u1="0.03225" u2="0.0615" v2="0.874" v1="0.8135" variant="" />
+		<Element name="atrium_rubble.tex" u1="0.0635" u2="0.09275" v2="0.874" v1="0.8135" variant="" />
+		<Element name="atrium_statue.tex" u1="0.03225" u2="0.0615" v2="0.8115" v1="0.751" variant="" />
+		<Element name="atrium_statue-shadow.tex" u1="0.0635" u2="0.09275" v2="0.8115" v1="0.751" variant="" />
+		<Element name="ballphinhouse.tex" u1="0.09475" u2="0.124" v2="0.874" v1="0.8135" variant="" />
+		<Element name="bambootree.tex" u1="0.09475" u2="0.124" v2="0.8115" v1="0.751" variant="" />
+		<Element name="bandittreasure+reveal.tex" u1="0.126" u2="0.15525" v2="0.999" v1="0.9385" variant="" />
+		<Element name="basalt.tex" u1="0.15725" u2="0.1865" v2="0.999" v1="0.9385" variant="" />
+		<Element name="basalt_pillar.tex" u1="0.126" u2="0.15525" v2="0.9365" v1="0.876" variant="" />
+		<Element name="basefan.tex" u1="0.1885" u2="0.21775" v2="0.999" v1="0.9385" variant="" />
+		<Element name="batcave.tex" u1="0.15725" u2="0.1865" v2="0.9365" v1="0.876" variant="" />
+		<Element name="beebox.tex" u1="0.126" u2="0.15525" v2="0.874" v1="0.8135" variant="" />
+		<Element name="beehive.tex" u1="0.15725" u2="0.1865" v2="0.874" v1="0.8135" variant="" />
+		<Element name="beemine_maxwell.tex" u1="0.126" u2="0.15525" v2="0.8115" v1="0.751" variant="" />
+		<Element name="beequeenhivegrown.tex" u1="0.1885" u2="0.21775" v2="0.9365" v1="0.876" variant="" />
+		<Element name="bermudatriangle.tex" u1="0.21975" u2="0.249" v2="0.999" v1="0.9385" variant="" />
+		<Element name="birdcage.tex" u1="0.21975" u2="0.249" v2="0.9365" v1="0.876" variant="" />
+		<Element name="buoy.tex" u1="0.1885" u2="0.21775" v2="0.874" v1="0.8135" variant="" />
+		<Element name="buriedtreasure+reveal.tex" u1="0.15725" u2="0.1865" v2="0.8115" v1="0.751" variant="" />
+		<Element name="campfire.tex" u1="0.1885" u2="0.21775" v2="0.8115" v1="0.751" variant="" />
+		<Element name="cartographydesk.tex" u1="0.21975" u2="0.249" v2="0.874" v1="0.8135" variant="" />
+		<Element name="catcoonden.tex" u1="0.21975" u2="0.249" v2="0.8115" v1="0.751" variant="" />
+		<Element name="cave_entrance.tex" u1="0.001" u2="0.03025" v2="0.749" v1="0.6885" variant="" />
+		<Element name="cave_entrance-ruins.tex" u1="0.03225" u2="0.0615" v2="0.749" v1="0.6885" variant="" />
+		<Element name="cave_hole.tex" u1="0.001" u2="0.03025" v2="0.6865" v1="0.626" variant="" />
+		<Element name="chessjunk1.tex" u1="0.03225" u2="0.0615" v2="0.6865" v1="0.626" variant="" />
+		<Element name="chessjunk2.tex" u1="0.001" u2="0.03025" v2="0.624" v1="0.5635" variant="" />
+		<Element name="chessjunk3.tex" u1="0.0635" u2="0.09275" v2="0.749" v1="0.6885" variant="" />
+		<Element name="chesspiece_bearger_marble.tex" u1="0.03225" u2="0.0615" v2="0.624" v1="0.5635" variant="" />
+		<Element name="chesspiece_bearger_stone.tex" u1="0.001" u2="0.03025" v2="0.5615" v1="0.501" variant="" />
+		<Element name="chesspiece_bishop_marble.tex" u1="0.0635" u2="0.09275" v2="0.6865" v1="0.626" variant="" />
+		<Element name="chesspiece_bishop_stone.tex" u1="0.09475" u2="0.124" v2="0.749" v1="0.6885" variant="" />
+		<Element name="chesspiece_clayhound_marble.tex" u1="0.126" u2="0.15525" v2="0.749" v1="0.6885" variant="" />
+		<Element name="chesspiece_clayhound_stone.tex" u1="0.0635" u2="0.09275" v2="0.624" v1="0.5635" variant="" />
+		<Element name="chesspiece_claywarg_marble.tex" u1="0.03225" u2="0.0615" v2="0.5615" v1="0.501" variant="" />
+		<Element name="chesspiece_claywarg_stone.tex" u1="0.09475" u2="0.124" v2="0.6865" v1="0.626" variant="" />
+		<Element name="chesspiece_deerclops_marble.tex" u1="0.0635" u2="0.09275" v2="0.5615" v1="0.501" variant="" />
+		<Element name="chesspiece_deerclops_stone.tex" u1="0.126" u2="0.15525" v2="0.6865" v1="0.626" variant="" />
+		<Element name="chesspiece_dragonfly_marble.tex" u1="0.09475" u2="0.124" v2="0.624" v1="0.5635" variant="" />
+		<Element name="chesspiece_dragonfly_stone.tex" u1="0.15725" u2="0.1865" v2="0.749" v1="0.6885" variant="" />
+		<Element name="chesspiece_formal_marble.tex" u1="0.126" u2="0.15525" v2="0.624" v1="0.5635" variant="" />
+		<Element name="chesspiece_formal_stone.tex" u1="0.09475" u2="0.124" v2="0.5615" v1="0.501" variant="" />
+		<Element name="chesspiece_hornucopia_marble.tex" u1="0.1885" u2="0.21775" v2="0.749" v1="0.6885" variant="" />
+		<Element name="chesspiece_hornucopia_stone.tex" u1="0.15725" u2="0.1865" v2="0.6865" v1="0.626" variant="" />
+		<Element name="chesspiece_knight_marble.tex" u1="0.1885" u2="0.21775" v2="0.6865" v1="0.626" variant="" />
+		<Element name="chesspiece_knight_stone.tex" u1="0.15725" u2="0.1865" v2="0.624" v1="0.5635" variant="" />
+		<Element name="chesspiece_moosegoose_marble.tex" u1="0.126" u2="0.15525" v2="0.5615" v1="0.501" variant="" />
+		<Element name="chesspiece_moosegoose_stone.tex" u1="0.21975" u2="0.249" v2="0.749" v1="0.6885" variant="" />
+		<Element name="chesspiece_muse_marble.tex" u1="0.15725" u2="0.1865" v2="0.5615" v1="0.501" variant="" />
+		<Element name="chesspiece_muse_stone.tex" u1="0.21975" u2="0.249" v2="0.6865" v1="0.626" variant="" />
+		<Element name="chesspiece_pawn_marble.tex" u1="0.1885" u2="0.21775" v2="0.624" v1="0.5635" variant="" />
+		<Element name="chesspiece_pawn_stone.tex" u1="0.21975" u2="0.249" v2="0.624" v1="0.5635" variant="" />
+		<Element name="chesspiece_pipe_marble.tex" u1="0.1885" u2="0.21775" v2="0.5615" v1="0.501" variant="" />
+		<Element name="chesspiece_pipe_stone.tex" u1="0.21975" u2="0.249" v2="0.5615" v1="0.501" variant="" />
+		<Element name="chesspiece_rook_marble.tex" u1="0.251" u2="0.28025" v2="0.999" v1="0.9385" variant="" />
+		<Element name="chesspiece_rook_stone.tex" u1="0.28225" u2="0.3115" v2="0.999" v1="0.9385" variant="" />
+		<Element name="chiminea.tex" u1="0.251" u2="0.28025" v2="0.9365" v1="0.876" variant="" />
+		<Element name="city_lamp.tex" u1="0.28225" u2="0.3115" v2="0.9365" v1="0.876" variant="" />
+		<Element name="coldfire.tex" u1="0.251" u2="0.28025" v2="0.874" v1="0.8135" variant="" />
+		<Element name="coldfirepit.tex" u1="0.3135" u2="0.34275" v2="0.999" v1="0.9385" variant="" />
+		<Element name="cookpot.tex" u1="0.28225" u2="0.3115" v2="0.874" v1="0.8135" variant="" />
+		<Element name="coralreef.tex" u1="0.251" u2="0.28025" v2="0.8115" v1="0.751" variant="" />
+		<Element name="corkchest.tex" u1="0.34475" u2="0.374" v2="0.999" v1="0.9385" variant="" />
+		<Element name="crate.tex" u1="0.3135" u2="0.34275" v2="0.9365" v1="0.876" variant="" />
+		<Element name="critterlab.tex" u1="0.34475" u2="0.374" v2="0.9365" v1="0.876" variant="" />
+		<Element name="deco_cave_bat_burrow.tex" u1="0.3135" u2="0.34275" v2="0.874" v1="0.8135" variant="" />
+		<Element name="deco_ruins_endswell.tex" u1="0.28225" u2="0.3115" v2="0.8115" v1="0.751" variant="" />
+		<Element name="deco_ruins_fountain.tex" u1="0.251" u2="0.28025" v2="0.749" v1="0.6885" variant="" />
+		<Element name="deflated_balloon.tex" u1="0.376" u2="0.40525" v2="0.999" v1="0.9385" variant="" />
+		<Element name="deflated_balloon_basket.tex" u1="0.34475" u2="0.374" v2="0.874" v1="0.8135" variant="" />
+		<Element name="doydoynest.tex" u1="0.3135" u2="0.34275" v2="0.8115" v1="0.751" variant="" />
+		<Element name="dragonflychest.tex" u1="0.28225" u2="0.3115" v2="0.749" v1="0.6885" variant="" />
+		<Element name="dragonflyfurnace.tex" u1="0.251" u2="0.28025" v2="0.6865" v1="0.626" variant="" />
+		<Element name="dragoonden.tex" u1="0.40725" u2="0.4365" v2="0.999" v1="0.9385" variant="" />
+		<Element name="dragoonegg.tex" u1="0.376" u2="0.40525" v2="0.9365" v1="0.876" variant="" />
+		<Element name="dungpile.tex" u1="0.28225" u2="0.3115" v2="0.6865" v1="0.626" variant="" />
+		<Element name="endtable.tex" u1="0.251" u2="0.28025" v2="0.624" v1="0.5635" variant="" />
+		<Element name="eyeturret.tex" u1="0.4385" u2="0.46775" v2="0.999" v1="0.9385" variant="" />
+		<Element name="fast_farmplot.tex" u1="0.40725" u2="0.4365" v2="0.9365" v1="0.876" variant="" />
+		<Element name="fence.tex" u1="0.376" u2="0.40525" v2="0.874" v1="0.8135" variant="" />
+		<Element name="fence_gate.tex" u1="0.34475" u2="0.374" v2="0.8115" v1="0.751" variant="" />
+		<Element name="firepit.tex" u1="0.3135" u2="0.34275" v2="0.749" v1="0.6885" variant="" />
+		<Element name="firesuppressor.tex" u1="0.376" u2="0.40525" v2="0.8115" v1="0.751" variant="" />
+		<Element name="fish_farm.tex" u1="0.34475" u2="0.374" v2="0.749" v1="0.6885" variant="" />
+		<Element name="fissure_lower.tex" u1="0.3135" u2="0.34275" v2="0.6865" v1="0.626" variant="" />
+		<Element name="flamegeyser.tex" u1="0.46975" u2="0.499" v2="0.999" v1="0.9385" variant="" />
+		<Element name="gargoyle_houndatk.tex" u1="0.4385" u2="0.46775" v2="0.9365" v1="0.876" variant="" />
+		<Element name="gargoyle_hounddeath.tex" u1="0.40725" u2="0.4365" v2="0.874" v1="0.8135" variant="" />
+		<Element name="gargoyle_werepigatk.tex" u1="0.28225" u2="0.3115" v2="0.624" v1="0.5635" variant="" />
+		<Element name="gargoyle_werepigdeath.tex" u1="0.251" u2="0.28025" v2="0.5615" v1="0.501" variant="" />
+		<Element name="gargoyle_werepighowl.tex" u1="0.28225" u2="0.3115" v2="0.5615" v1="0.501" variant="" />
+		<Element name="glassblock.tex" u1="0.46975" u2="0.499" v2="0.9365" v1="0.876" variant="" />
+		<Element name="glassspike_med.tex" u1="0.4385" u2="0.46775" v2="0.874" v1="0.8135" variant="" />
+		<Element name="glassspike_short.tex" u1="0.40725" u2="0.4365" v2="0.8115" v1="0.751" variant="" />
+		<Element name="glassspike_tall.tex" u1="0.3135" u2="0.34275" v2="0.624" v1="0.5635" variant="" />
+		<Element name="gnatmound.tex" u1="0.34475" u2="0.374" v2="0.6865" v1="0.626" variant="" />
+		<Element name="gravestone.tex" u1="0.376" u2="0.40525" v2="0.749" v1="0.6885" variant="" />
+		<Element name="hedge_block.tex" u1="0.40725" u2="0.4365" v2="0.749" v1="0.6885" variant="" />
+		<Element name="hedge_cone.tex" u1="0.34475" u2="0.374" v2="0.624" v1="0.5635" variant="" />
+		<Element name="hedge_layered.tex" u1="0.3135" u2="0.34275" v2="0.5615" v1="0.501" variant="" />
+		<Element name="hogusporkusator.tex" u1="0.376" u2="0.40525" v2="0.6865" v1="0.626" variant="" />
+		<Element name="homesign.tex" u1="0.46975" u2="0.499" v2="0.874" v1="0.8135" variant="" />
+		<Element name="houndmound.tex" u1="0.4385" u2="0.46775" v2="0.8115" v1="0.751" variant="" />
+		<Element name="icebox.tex" u1="0.376" u2="0.40525" v2="0.624" v1="0.5635" variant="" />
+		<Element name="icemaker.tex" u1="0.46975" u2="0.499" v2="0.8115" v1="0.751" variant="" />
+		<Element name="insanityrock.tex" u1="0.4385" u2="0.46775" v2="0.749" v1="0.6885" variant="" />
+		<Element name="klaus_sack.tex" u1="0.34475" u2="0.374" v2="0.5615" v1="0.501" variant="" />
+		<Element name="krakenchest.tex" u1="0.40725" u2="0.4365" v2="0.6865" v1="0.626" variant="" />
+		<Element name="lava_pond.tex" u1="0.4385" u2="0.46775" v2="0.6865" v1="0.626" variant="" />
+		<Element name="lavaarena_portal.tex" u1="0.40725" u2="0.4365" v2="0.624" v1="0.5635" variant="" />
+		<Element name="lavapool.tex" u1="0.46975" u2="0.499" v2="0.749" v1="0.6885" variant="" />
+		<Element name="lawnornament_1.tex" u1="0.376" u2="0.40525" v2="0.5615" v1="0.501" variant="" />
+		<Element name="lawnornament_2.tex" u1="0.46975" u2="0.499" v2="0.6865" v1="0.626" variant="" />
+		<Element name="lawnornament_3.tex" u1="0.40725" u2="0.4365" v2="0.5615" v1="0.501" variant="" />
+		<Element name="lawnornament_4.tex" u1="0.4385" u2="0.46775" v2="0.624" v1="0.5635" variant="" />
+		<Element name="lawnornament_5.tex" u1="0.46975" u2="0.499" v2="0.624" v1="0.5635" variant="" />
+		<Element name="lawnornament_6.tex" u1="0.4385" u2="0.46775" v2="0.5615" v1="0.501" variant="" />
+		<Element name="lawnornament_7.tex" u1="0.46975" u2="0.499" v2="0.5615" v1="0.501" variant="" />
+		<Element name="lightning_rod.tex" u1="0.001" u2="0.03025" v2="0.499" v1="0.4385" variant="" />
+		<Element name="lilypad.tex" u1="0.03225" u2="0.0615" v2="0.499" v1="0.4385" variant="" />
+		<Element name="limpetrock.tex" u1="0.001" u2="0.03025" v2="0.4365" v1="0.376" variant="" />
+		<Element name="luggagechest.tex" u1="0.0635" u2="0.09275" v2="0.499" v1="0.4385" variant="" />
+		<Element name="madscience_lab.tex" u1="0.03225" u2="0.0615" v2="0.4365" v1="0.376" variant="" />
+		<Element name="magmarock.tex" u1="0.001" u2="0.03025" v2="0.374" v1="0.3135" variant="" />
+		<Element name="magmarock_gold.tex" u1="0.0635" u2="0.09275" v2="0.4365" v1="0.376" variant="" />
+		<Element name="mandrakehouse.tex" u1="0.03225" u2="0.0615" v2="0.374" v1="0.3135" variant="" />
+		<Element name="marblepillar.tex" u1="0.001" u2="0.03025" v2="0.3115" v1="0.251" variant="" />
+		<Element name="marbletree.tex" u1="0.09475" u2="0.124" v2="0.499" v1="0.4385" variant="" />
+		<Element name="maxwelllight.tex" u1="0.0635" u2="0.09275" v2="0.374" v1="0.3135" variant="" />
+		<Element name="maxwelllight_area.tex" u1="0.09475" u2="0.124" v2="0.4365" v1="0.376" variant="" />
+		<Element name="maxwelllock.tex" u1="0.126" u2="0.15525" v2="0.499" v1="0.4385" variant="" />
+		<Element name="maxwellphonograph.tex" u1="0.03225" u2="0.0615" v2="0.3115" v1="0.251" variant="" />
+		<Element name="maxwellthrone.tex" u1="0.001" u2="0.03025" v2="0.249" v1="0.1885" variant="" />
+		<Element name="meatrack.tex" u1="0.09475" u2="0.124" v2="0.374" v1="0.3135" variant="" />
+		<Element name="mermhead.tex" u1="0.15725" u2="0.1865" v2="0.499" v1="0.4385" variant="" />
+		<Element name="mermhouse.tex" u1="0.126" u2="0.15525" v2="0.4365" v1="0.376" variant="" />
+		<Element name="mermhouse_fisher.tex" u1="0.03225" u2="0.0615" v2="0.249" v1="0.1885" variant="" />
+		<Element name="mermhouse-sw.tex" u1="0.001" u2="0.03025" v2="0.1865" v1="0.126" variant="" />
+		<Element name="minotaurchest.tex" u1="0.0635" u2="0.09275" v2="0.3115" v1="0.251" variant="" />
+		<Element name="molehill.tex" u1="0.1885" u2="0.21775" v2="0.499" v1="0.4385" variant="" />
+		<Element name="monkeybarrel.tex" u1="0.09475" u2="0.124" v2="0.3115" v1="0.251" variant="" />
+		<Element name="moonbase.tex" u1="0.15725" u2="0.1865" v2="0.4365" v1="0.376" variant="" />
+		<Element name="moondial.tex" u1="0.126" u2="0.15525" v2="0.374" v1="0.3135" variant="" />
+		<Element name="mound.tex" u1="0.0635" u2="0.09275" v2="0.249" v1="0.1885" variant="" />
+		<Element name="multiplayer_portal.tex" u1="0.03225" u2="0.0615" v2="0.1865" v1="0.126" variant="" />
+		<Element name="multiplayer_portal_moonrock.tex" u1="0.001" u2="0.03025" v2="0.124" v1="0.0635" variant="" />
+		<Element name="mushroom_farm.tex" u1="0.15725" u2="0.1865" v2="0.374" v1="0.3135" variant="" />
+		<Element name="mushroom_light.tex" u1="0.126" u2="0.15525" v2="0.3115" v1="0.251" variant="" />
+		<Element name="mushroom_light2.tex" u1="0.0635" u2="0.09275" v2="0.1865" v1="0.126" variant="" />
+		<Element name="nightlight.tex" u1="0.03225" u2="0.0615" v2="0.124" v1="0.0635" variant="" />
+		<Element name="nightmarelight.tex" u1="0.001" u2="0.03025" v2="0.0615" v1="0.001" variant="" />
+		<Element name="oasislake.tex" u1="0.09475" u2="0.124" v2="0.249" v1="0.1885" variant="" />
+		<Element name="obsidian_workbench.tex" u1="0.21975" u2="0.249" v2="0.499" v1="0.4385" variant="" />
+		<Element name="obsidianfirepit.tex" u1="0.1885" u2="0.21775" v2="0.4365" v1="0.376" variant="" />
+		<Element name="octopuschest.tex" u1="0.251" u2="0.28025" v2="0.499" v1="0.4385" variant="" />
+		<Element name="palmleaf_hut.tex" u1="0.1885" u2="0.21775" v2="0.374" v1="0.3135" variant="" />
+		<Element name="pandoraschest.tex" u1="0.15725" u2="0.1865" v2="0.3115" v1="0.251" variant="" />
+		<Element name="perdshrine.tex" u1="0.126" u2="0.15525" v2="0.249" v1="0.1885" variant="" />
+		<Element name="pig_guard_tower_palace+built.tex" u1="0.09475" u2="0.124" v2="0.1865" v1="0.126" variant="" />
+		<Element name="pig_guard_tower+built.tex" u1="0.0635" u2="0.09275" v2="0.124" v1="0.0635" variant="" />
+		<Element name="pig_palace.tex" u1="0.03225" u2="0.0615" v2="0.0615" v1="0.001" variant="" />
+		<Element name="pig_ruins_ant.tex" u1="0.21975" u2="0.249" v2="0.4365" v1="0.376" variant="" />
+		<Element name="pig_ruins_artichoke.tex" u1="0.126" u2="0.15525" v2="0.1865" v1="0.126" variant="" />
+		<Element name="pig_ruins_dart_statue.tex" u1="0.09475" u2="0.124" v2="0.124" v1="0.0635" variant="" />
+		<Element name="pig_ruins_head.tex" u1="0.0635" u2="0.09275" v2="0.0615" v1="0.001" variant="" />
+		<Element name="pig_ruins_idol.tex" u1="0.21975" u2="0.249" v2="0.374" v1="0.3135" variant="" />
+		<Element name="pig_ruins_pig.tex" u1="0.251" u2="0.28025" v2="0.4365" v1="0.376" variant="" />
+		<Element name="pig_ruins_plaque.tex" u1="0.28225" u2="0.3115" v2="0.499" v1="0.4385" variant="" />
+		<Element name="pig_ruins_sow.tex" u1="0.1885" u2="0.21775" v2="0.3115" v1="0.251" variant="" />
+		<Element name="pig_ruins_spear_trap.tex" u1="0.15725" u2="0.1865" v2="0.249" v1="0.1885" variant="" />
+		<Element name="pig_ruins_torch.tex" u1="0.3135" u2="0.34275" v2="0.499" v1="0.4385" variant="" />
+		<Element name="pig_ruins_truffle.tex" u1="0.15725" u2="0.1865" v2="0.1865" v1="0.126" variant="" />
+		<Element name="pig_shop_academy.tex" u1="0.126" u2="0.15525" v2="0.124" v1="0.0635" variant="" />
+		<Element name="pig_shop_antiquities.tex" u1="0.09475" u2="0.124" v2="0.0615" v1="0.001" variant="" />
+		<Element name="pig_shop_arcane.tex" u1="0.21975" u2="0.249" v2="0.3115" v1="0.251" variant="" />
+		<Element name="pig_shop_bank.tex" u1="0.28225" u2="0.3115" v2="0.4365" v1="0.376" variant="" />
+		<Element name="pig_shop_cityhall.tex" u1="0.251" u2="0.28025" v2="0.374" v1="0.3135" variant="" />
+		<Element name="pig_shop_deli.tex" u1="0.1885" u2="0.21775" v2="0.249" v1="0.1885" variant="" />
+		<Element name="pig_shop_florist.tex" u1="0.15725" u2="0.1865" v2="0.124" v1="0.0635" variant="" />
+		<Element name="pig_shop_general.tex" u1="0.126" u2="0.15525" v2="0.0615" v1="0.001" variant="" />
+		<Element name="pig_shop_hatshop.tex" u1="0.251" u2="0.28025" v2="0.3115" v1="0.251" variant="" />
+		<Element name="pig_shop_hoofspa.tex" u1="0.21975" u2="0.249" v2="0.249" v1="0.1885" variant="" />
+		<Element name="pig_shop_produce.tex" u1="0.3135" u2="0.34275" v2="0.4365" v1="0.376" variant="" />
+		<Element name="pig_shop_tinker.tex" u1="0.28225" u2="0.3115" v2="0.374" v1="0.3135" variant="" />
+		<Element name="pig_shop_weapons.tex" u1="0.1885" u2="0.21775" v2="0.1865" v1="0.126" variant="" />
+		<Element name="pighead.tex" u1="0.34475" u2="0.374" v2="0.499" v1="0.4385" variant="" />
+		<Element name="pighouse.tex" u1="0.28225" u2="0.3115" v2="0.3115" v1="0.251" variant="" />
+		<Element name="pighouse_city+beige.tex" u1="0.21975" u2="0.249" v2="0.1865" v1="0.126" variant="" />
+		<Element name="pighouse_city+brown.tex" u1="0.1885" u2="0.21775" v2="0.124" v1="0.0635" variant="" />
+		<Element name="pighouse_city+green.tex" u1="0.376" u2="0.40525" v2="0.499" v1="0.4385" variant="" />
+		<Element name="pighouse_city+pink.tex" u1="0.34475" u2="0.374" v2="0.4365" v1="0.376" variant="" />
+		<Element name="pighouse_city+red.tex" u1="0.15725" u2="0.1865" v2="0.0615" v1="0.001" variant="" />
+		<Element name="pighouse_city+white.tex" u1="0.251" u2="0.28025" v2="0.249" v1="0.1885" variant="" />
+		<Element name="pighouse_farm.tex" u1="0.3135" u2="0.34275" v2="0.374" v1="0.3135" variant="" />
+		<Element name="pighouse_mine.tex" u1="0.21975" u2="0.249" v2="0.124" v1="0.0635" variant="" />
+		<Element name="pigtorch.tex" u1="0.1885" u2="0.21775" v2="0.0615" v1="0.001" variant="" />
+		<Element name="pillar_algae.tex" u1="0.40725" u2="0.4365" v2="0.499" v1="0.4385" variant="" />
+		<Element name="pillar_atrium.tex" u1="0.376" u2="0.40525" v2="0.4365" v1="0.376" variant="" />
+		<Element name="pillar_cave.tex" u1="0.34475" u2="0.374" v2="0.374" v1="0.3135" variant="" />
+		<Element name="pillar_ruins.tex" u1="0.28225" u2="0.3115" v2="0.249" v1="0.1885" variant="" />
+		<Element name="piratihatitator.tex" u1="0.251" u2="0.28025" v2="0.1865" v1="0.126" variant="" />
+		<Element name="playerhouse_city.tex" u1="0.3135" u2="0.34275" v2="0.3115" v1="0.251" variant="" />
+		<Element name="poisonhole.tex" u1="0.34475" u2="0.374" v2="0.3115" v1="0.251" variant="" />
+		<Element name="pond.tex" u1="0.3135" u2="0.34275" v2="0.249" v1="0.1885" variant="" />
+		<Element name="pond_cave.tex" u1="0.28225" u2="0.3115" v2="0.1865" v1="0.126" variant="" />
+		<Element name="pond_mos.tex" u1="0.251" u2="0.28025" v2="0.124" v1="0.0635" variant="" />
+		<Element name="porkland_entrance.tex" u1="0.21975" u2="0.249" v2="0.0615" v1="0.001" variant="" />
+		<Element name="pottedfern.tex" u1="0.4385" u2="0.46775" v2="0.499" v1="0.4385" variant="" />
+		<Element name="primeapebarrel.tex" u1="0.40725" u2="0.4365" v2="0.4365" v1="0.376" variant="" />
+		<Element name="pugalisk_fountain.tex" u1="0.376" u2="0.40525" v2="0.374" v1="0.3135" variant="" />
+		<Element name="quagmire_altar.tex" u1="0.4385" u2="0.46775" v2="0.4365" v1="0.376" variant="" />
+		<Element name="quagmire_mealingstone.tex" u1="0.40725" u2="0.4365" v2="0.374" v1="0.3135" variant="" />
+		<Element name="quagmire_portal.tex" u1="0.376" u2="0.40525" v2="0.3115" v1="0.251" variant="" />
+		<Element name="rabbithole.tex" u1="0.28225" u2="0.3115" v2="0.124" v1="0.0635" variant="" />
+		<Element name="rabbithouse.tex" u1="0.251" u2="0.28025" v2="0.0615" v1="0.001" variant="" />
+		<Element name="rainometer.tex" u1="0.46975" u2="0.499" v2="0.499" v1="0.4385" variant="" />
+		<Element name="redbarrel.tex" u1="0.34475" u2="0.374" v2="0.249" v1="0.1885" variant="" />
+		<Element name="researchlab.tex" u1="0.3135" u2="0.34275" v2="0.1865" v1="0.126" variant="" />
+		<Element name="researchlab2.tex" u1="0.3135" u2="0.34275" v2="0.124" v1="0.0635" variant="" />
+		<Element name="researchlab3.tex" u1="0.28225" u2="0.3115" v2="0.0615" v1="0.001" variant="" />
+		<Element name="researchlab4.tex" u1="0.46975" u2="0.499" v2="0.4365" v1="0.376" variant="" />
+		<Element name="researchlab5.tex" u1="0.376" u2="0.40525" v2="0.249" v1="0.1885" variant="" />
+		<Element name="resurrectionstatue.tex" u1="0.34475" u2="0.374" v2="0.1865" v1="0.126" variant="" />
+		<Element name="resurrectionstone.tex" u1="0.40725" u2="0.4365" v2="0.3115" v1="0.251" variant="" />
+		<Element name="roc_nest_house.tex" u1="0.4385" u2="0.46775" v2="0.374" v1="0.3135" variant="" />
+		<Element name="roc_nest_rusty_lamp.tex" u1="0.376" u2="0.40525" v2="0.1865" v1="0.126" variant="" />
+		<Element name="rock_charcoal.tex" u1="0.34475" u2="0.374" v2="0.124" v1="0.0635" variant="" />
+		<Element name="rock_flintless.tex" u1="0.4385" u2="0.46775" v2="0.3115" v1="0.251" variant="" />
+		<Element name="rock_flippable.tex" u1="0.40725" u2="0.4365" v2="0.249" v1="0.1885" variant="" />
+		<Element name="rock_ice.tex" u1="0.46975" u2="0.499" v2="0.374" v1="0.3135" variant="" />
+		<Element name="rock_moon.tex" u1="0.3135" u2="0.34275" v2="0.0615" v1="0.001" variant="" />
+		<Element name="rock_moon_shell.tex" u1="0.46975" u2="0.499" v2="0.3115" v1="0.251" variant="" />
+		<Element name="rock_obsidian.tex" u1="0.34475" u2="0.374" v2="0.0615" v1="0.001" variant="" />
+		<Element name="rock_petrified_tree_tall.tex" u1="0.4385" u2="0.46775" v2="0.249" v1="0.1885" variant="" />
+		<Element name="rock1.tex" u1="0.40725" u2="0.4365" v2="0.1865" v1="0.126" variant="" />
+		<Element name="rock2.tex" u1="0.376" u2="0.40525" v2="0.124" v1="0.0635" variant="" />
+		<Element name="roottrunk_child.tex" u1="0.40725" u2="0.4365" v2="0.124" v1="0.0635" variant="" />
+		<Element name="ruins_bowl.tex" u1="0.376" u2="0.40525" v2="0.0615" v1="0.001" variant="" />
+		<Element name="ruins_chair.tex" u1="0.46975" u2="0.499" v2="0.249" v1="0.1885" variant="" />
+		<Element name="ruins_chipbowl.tex" u1="0.4385" u2="0.46775" v2="0.1865" v1="0.126" variant="" />
+		<Element name="ruins_plate.tex" u1="0.46975" u2="0.499" v2="0.1865" v1="0.126" variant="" />
+		<Element name="ruins_statue_head.tex" u1="0.4385" u2="0.46775" v2="0.124" v1="0.0635" variant="" />
+		<Element name="ruins_statue_head_nogem.tex" u1="0.40725" u2="0.4365" v2="0.0615" v1="0.001" variant="" />
+		<Element name="ruins_statue_head_nogem-shadow.tex" u1="0.4385" u2="0.46775" v2="0.0615" v1="0.001" variant="" />
+		<Element name="ruins_statue_head-shadow.tex" u1="0.46975" u2="0.499" v2="0.124" v1="0.0635" variant="" />
+		<Element name="ruins_statue_mage.tex" u1="0.46975" u2="0.499" v2="0.0615" v1="0.001" variant="" />
+		<Element name="ruins_statue_mage_nogem.tex" u1="0.501" u2="0.53025" v2="0.999" v1="0.9385" variant="" />
+		<Element name="ruins_statue_mage_nogem-shadow.tex" u1="0.53225" u2="0.5615" v2="0.999" v1="0.9385" variant="" />
+		<Element name="ruins_statue_mage-shadow.tex" u1="0.501" u2="0.53025" v2="0.9365" v1="0.876" variant="" />
+		<Element name="ruins_table.tex" u1="0.501" u2="0.53025" v2="0.874" v1="0.8135" variant="" />
+		<Element name="ruins_vase.tex" u1="0.53225" u2="0.5615" v2="0.9365" v1="0.876" variant="" />
+		<Element name="sacred_chest.tex" u1="0.5635" u2="0.59275" v2="0.999" v1="0.9385" variant="" />
+		<Element name="saltlick.tex" u1="0.501" u2="0.53025" v2="0.8115" v1="0.751" variant="" />
+		<Element name="sand_castle.tex" u1="0.5635" u2="0.59275" v2="0.9365" v1="0.876" variant="" />
+		<Element name="sandbag.tex" u1="0.53225" u2="0.5615" v2="0.874" v1="0.8135" variant="" />
+		<Element name="sandbagsmall.tex" u1="0.59475" u2="0.624" v2="0.999" v1="0.9385" variant="" />
+		<Element name="sandhill.tex" u1="0.501" u2="0.53025" v2="0.749" v1="0.6885" variant="" />
+		<Element name="sanityrock.tex" u1="0.53225" u2="0.5615" v2="0.8115" v1="0.751" variant="" />
+		<Element name="scarecrow.tex" u1="0.5635" u2="0.59275" v2="0.874" v1="0.8135" variant="" />
+		<Element name="sculptingtable.tex" u1="0.626" u2="0.65525" v2="0.999" v1="0.9385" variant="" />
+		<Element name="sculpture_bishopbody.tex" u1="0.59475" u2="0.624" v2="0.9365" v1="0.876" variant="" />
+		<Element name="sculpture_bishopbody+mined.tex" u1="0.53225" u2="0.5615" v2="0.749" v1="0.6885" variant="" />
+		<Element name="sculpture_bishopbody+repaired.tex" u1="0.501" u2="0.53025" v2="0.6865" v1="0.626" variant="" />
+		<Element name="sculpture_bishophead.tex" u1="0.59475" u2="0.624" v2="0.874" v1="0.8135" variant="" />
+		<Element name="sculpture_knightbody.tex" u1="0.5635" u2="0.59275" v2="0.8115" v1="0.751" variant="" />
+		<Element name="sculpture_knightbody+mined.tex" u1="0.65725" u2="0.6865" v2="0.999" v1="0.9385" variant="" />
+		<Element name="sculpture_knightbody+repaired.tex" u1="0.626" u2="0.65525" v2="0.9365" v1="0.876" variant="" />
+		<Element name="sculpture_knighthead.tex" u1="0.626" u2="0.65525" v2="0.874" v1="0.8135" variant="" />
+		<Element name="sculpture_rookbody.tex" u1="0.59475" u2="0.624" v2="0.8115" v1="0.751" variant="" />
+		<Element name="sculpture_rookbody+mined.tex" u1="0.5635" u2="0.59275" v2="0.749" v1="0.6885" variant="" />
+		<Element name="sculpture_rookbody+repaired.tex" u1="0.65725" u2="0.6865" v2="0.9365" v1="0.876" variant="" />
+		<Element name="sculpture_rooknose.tex" u1="0.6885" u2="0.71775" v2="0.999" v1="0.9385" variant="" />
+		<Element name="sea_chiminea.tex" u1="0.53225" u2="0.5615" v2="0.6865" v1="0.626" variant="" />
+		<Element name="sea_yard.tex" u1="0.501" u2="0.53025" v2="0.624" v1="0.5635" variant="" />
+		<Element name="sentryward.tex" u1="0.65725" u2="0.6865" v2="0.874" v1="0.8135" variant="" />
+		<Element name="sharkittenspawner+active.tex" u1="0.626" u2="0.65525" v2="0.8115" v1="0.751" variant="" />
+		<Element name="sharkittenspawner+inactive.tex" u1="0.59475" u2="0.624" v2="0.749" v1="0.6885" variant="" />
+		<Element name="shipwrecked_entrance.tex" u1="0.5635" u2="0.59275" v2="0.6865" v1="0.626" variant="" />
+		<Element name="shipwrecked_exit.tex" u1="0.6885" u2="0.71775" v2="0.9365" v1="0.876" variant="" />
+		<Element name="siestahut.tex" u1="0.71975" u2="0.749" v2="0.999" v1="0.9385" variant="" />
+		<Element name="skullchest.tex" u1="0.53225" u2="0.5615" v2="0.624" v1="0.5635" variant="" />
+		<Element name="slotmachine.tex" u1="0.501" u2="0.53025" v2="0.5615" v1="0.501" variant="" />
+		<Element name="slow_farmplot.tex" u1="0.501" u2="0.53025" v2="0.499" v1="0.4385" variant="" />
+		<Element name="slurtlehole.tex" u1="0.6885" u2="0.71775" v2="0.874" v1="0.8135" variant="" />
+		<Element name="smashingpot.tex" u1="0.65725" u2="0.6865" v2="0.8115" v1="0.751" variant="" />
+		<Element name="smelter.tex" u1="0.626" u2="0.65525" v2="0.749" v1="0.6885" variant="" />
+		<Element name="spiderden.tex" u1="0.59475" u2="0.624" v2="0.6865" v1="0.626" variant="" />
+		<Element name="spiderden_2.tex" u1="0.5635" u2="0.59275" v2="0.624" v1="0.5635" variant="" />
+		<Element name="spiderden_3.tex" u1="0.71975" u2="0.749" v2="0.9365" v1="0.876" variant="" />
+		<Element name="spiderhole.tex" u1="0.751" u2="0.78025" v2="0.999" v1="0.9385" variant="" />
+		<Element name="sprinkler.tex" u1="0.53225" u2="0.5615" v2="0.5615" v1="0.501" variant="" />
+		<Element name="stagehand.tex" u1="0.71975" u2="0.749" v2="0.874" v1="0.8135" variant="" />
+		<Element name="stalagmite_full.tex" u1="0.6885" u2="0.71775" v2="0.8115" v1="0.751" variant="" />
+		<Element name="stalagmite_tall_full.tex" u1="0.65725" u2="0.6865" v2="0.749" v1="0.6885" variant="" />
+		<Element name="statueglommer.tex" u1="0.626" u2="0.65525" v2="0.6865" v1="0.626" variant="" />
+		<Element name="statueharp.tex" u1="0.59475" u2="0.624" v2="0.624" v1="0.5635" variant="" />
+		<Element name="statuemaxwell.tex" u1="0.5635" u2="0.59275" v2="0.5615" v1="0.501" variant="" />
+		<Element name="succulent_potted.tex" u1="0.751" u2="0.78025" v2="0.9365" v1="0.876" variant="" />
+		<Element name="sunken_boat.tex" u1="0.78225" u2="0.8115" v2="0.999" v1="0.9385" variant="" />
+		<Element name="tallbirdnest.tex" u1="0.53225" u2="0.5615" v2="0.499" v1="0.4385" variant="" />
+		<Element name="tar_extractor.tex" u1="0.501" u2="0.53025" v2="0.4365" v1="0.376" variant="" />
+		<Element name="tar_pool.tex" u1="0.78225" u2="0.8115" v2="0.9365" v1="0.876" variant="" />
+		<Element name="telebase+gemsocket.tex" u1="0.751" u2="0.7724375" v2="0.874" v1="0.8164296875" variant="" />
+		<Element name="teleportato_base.tex" u1="0.8135" u2="0.84275" v2="0.999" v1="0.9385" variant="" />
+		<Element name="teleportato_checkmate.tex" u1="0.5635" u2="0.59275" v2="0.499" v1="0.4385" variant="" />
+		<Element name="teleportato_hamlet_base.tex" u1="0.53225" u2="0.5615" v2="0.4365" v1="0.376" variant="" />
+		<Element name="teleportato_sw_base.tex" u1="0.501" u2="0.53025" v2="0.374" v1="0.3135" variant="" />
+		<Element name="telipad.tex" u1="0.71975" u2="0.749" v2="0.8115" v1="0.751" variant="" />
+		<Element name="tent.tex" u1="0.6885" u2="0.71775" v2="0.749" v1="0.6885" variant="" />
+		<Element name="thumper.tex" u1="0.65725" u2="0.6865" v2="0.6865" v1="0.626" variant="" />
+		<Element name="thunderbirdnest.tex" u1="0.626" u2="0.65525" v2="0.624" v1="0.5635" variant="" />
+		<Element name="tidalpool.tex" u1="0.59475" u2="0.624" v2="0.5615" v1="0.501" variant="" />
+		<Element name="topiary_1.tex" u1="0.7744375" u2="0.8036875" v2="0.874" v1="0.8135" variant="" />
+		<Element name="topiary_2.tex" u1="0.8135" u2="0.84275" v2="0.9365" v1="0.876" variant="" />
+		<Element name="topiary_3.tex" u1="0.84475" u2="0.874" v2="0.999" v1="0.9385" variant="" />
+		<Element name="topiary_4.tex" u1="0.59475" u2="0.624" v2="0.499" v1="0.4385" variant="" />
+		<Element name="townportal.tex" u1="0.5635" u2="0.59275" v2="0.4365" v1="0.376" variant="" />
+		<Element name="treasurechest.tex" u1="0.53225" u2="0.5615" v2="0.374" v1="0.3135" variant="" />
+		<Element name="vampirebatcave.tex" u1="0.501" u2="0.53025" v2="0.3115" v1="0.251" variant="" />
+		<Element name="volcano.tex" u1="0.751" u2="0.78025" v2="0.8115" v1="0.751" variant="" />
+		<Element name="volcano_altar.tex" u1="0.71975" u2="0.749" v2="0.749" v1="0.6885" variant="" />
+		<Element name="wall_enforcedlimestone.tex" u1="0.6885" u2="0.71775" v2="0.6865" v1="0.626" variant="" />
+		<Element name="wall_hay.tex" u1="0.65725" u2="0.6865" v2="0.624" v1="0.5635" variant="" />
+		<Element name="wall_limestone.tex" u1="0.626" u2="0.65525" v2="0.5615" v1="0.501" variant="" />
+		<Element name="wall_moonrock.tex" u1="0.8056875" u2="0.8349375" v2="0.874" v1="0.8135" variant="" />
+		<Element name="wall_ruins.tex" u1="0.5635" u2="0.59275" v2="0.374" v1="0.3135" variant="" />
+		<Element name="wall_stone.tex" u1="0.53225" u2="0.5615" v2="0.3115" v1="0.251" variant="" />
+		<Element name="wall_wood.tex" u1="0.501" u2="0.53025" v2="0.249" v1="0.1885" variant="" />
+		<Element name="wall_wood_item.tex" u1="0.78225" u2="0.8115" v2="0.8115" v1="0.751" variant="" />
+		<Element name="walrus_camp.tex" u1="0.751" u2="0.78025" v2="0.749" v1="0.6885" variant="" />
+		<Element name="wardrobe.tex" u1="0.71975" u2="0.749" v2="0.6865" v1="0.626" variant="" />
+		<Element name="wargshrine.tex" u1="0.6885" u2="0.71775" v2="0.624" v1="0.5635" variant="" />
+		<Element name="wasphive.tex" u1="0.65725" u2="0.6865" v2="0.5615" v1="0.501" variant="" />
+		<Element name="waterchest.tex" u1="0.626" u2="0.65525" v2="0.499" v1="0.4385" variant="" />
+		<Element name="waterygrave.tex" u1="0.84475" u2="0.874" v2="0.9365" v1="0.876" variant="" />
+		<Element name="wildborehead.tex" u1="0.876" u2="0.90525" v2="0.999" v1="0.9385" variant="" />
+		<Element name="wildborehouse.tex" u1="0.59475" u2="0.624" v2="0.4365" v1="0.376" variant="" />
+		<Element name="winona_battery_high.tex" u1="0.8369375" u2="0.8661875" v2="0.874" v1="0.8135" variant="" />
+		<Element name="winona_battery_low.tex" u1="0.6885" u2="0.71775" v2="0.5615" v1="0.501" variant="" />
+		<Element name="winona_catapult.tex" u1="0.65725" u2="0.6865" v2="0.499" v1="0.4385" variant="" />
+		<Element name="winona_spotlight.tex" u1="0.626" u2="0.65525" v2="0.4365" v1="0.376" variant="" />
+		<Element name="winter_treestand.tex" u1="0.876" u2="0.90525" v2="0.9365" v1="0.876" variant="" />
+		<Element name="winterometer.tex" u1="0.90725" u2="0.9365" v2="0.999" v1="0.9385" variant="" />
+		<Element name="wormhole.tex" u1="0.59475" u2="0.624" v2="0.374" v1="0.3135" variant="" />
+		<Element name="wormhole_limited_1.tex" u1="0.5635" u2="0.59275" v2="0.3115" v1="0.251" variant="" />
+		<Element name="wreck.tex" u1="0.53225" u2="0.5615" v2="0.249" v1="0.1885" variant="" />
 	</Elements>
 </Atlas>
