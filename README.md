@@ -4,6 +4,14 @@
 
 Some mods written by me, mainly to solve some of the problems that I have been plagued by Don't Starve for so long.
 
+## [DST->DT] Too Many Items 
+
+[单机版](https://steamcommunity.com/sharedfiles/filedetails/?id=1708556678)
+
+将联机版的Too Many Items的框架移植到单机版，同时做了大量改进与补充，具体可见创意工坊页面。
+
+Transplant the framework of "Too Many Items" mod of Don't Starve Together to Don't Starve. A lot of improvements and supplements have been made, which can be seen in the steam Workshop page.
+
 
 
 ## coffee and nettle for everyone 所有人都可以吃咖啡和荨麻
