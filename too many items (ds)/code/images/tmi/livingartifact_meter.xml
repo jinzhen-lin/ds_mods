@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Atlas>
+	<Texture filename="livingartifact_meter.tex" />
+	<Elements>
+		<Element name="livingartifact_meter.tex" u1="0.0078125" u2="0.617188" v1="0.382812" v2="0.992188" />
+	</Elements>
+</Atlas>

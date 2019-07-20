@@ -63,7 +63,7 @@ function TMI_Menubar:InitMenu()
     self.pagetext = self:AddChild(Text(DEFAULTFONT, fontsize))
     self.pagetext:SetString("1 / 2")
     self.pagetext:SetColour(1, 1, 1, 0.6)
-    self.pagetext:SetPosition((pos[8] + pos[9]) / 2, - 178, 0)
+    self.pagetext:SetPosition((pos[8] + pos[9]) / 2, -162, 0)
 end
 
 function TMI_Menubar:InitSidebar()

@@ -16,7 +16,7 @@ local TMI_Inventory = Class(Widget, function(self, fn)
         self.buildfn = fn
         self.size = 76
         self:SetScale(self.base_scale)
-        self:SetPosition(-125, 185, 0)
+        self:SetPosition(-125, 200, 0)
 
         self.listcontrol = ItemListControl()
         self.slots = self:AddChild(Widget("SLOTS"))
@@ -62,7 +62,7 @@ function TMI_Inventory:Build()
         local row = math.floor(positions / NUM_COLUMS) * self.size
 
         local x = self.size * remainder
-        slot:SetPosition(x,-row,0)
+        slot:SetPosition(x, -row, 0)
         positions = positions + 1
     end
 

@@ -22,7 +22,7 @@ local TooManyItems = Class(Widget, function(self)
 
     self.shieldpos_x = -250
     self.shieldsize_x = 350
-    self.shieldsize_y = 480
+    self.shieldsize_y = 510
     self.shield = self.root:AddChild( Image("images/ui.xml", "black.tex") )
     self.shield:SetScale(1, 1, 1)
     self.shield:SetPosition(self.shieldpos_x, 0, 0)

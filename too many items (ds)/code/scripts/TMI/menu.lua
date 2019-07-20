@@ -52,6 +52,24 @@ local function BeavernessSet()
     end
 end
 
+local function LivingArtifactPowerSet()
+    if not IsDLCEnabled(PORKLAND_DLC) then
+        return
+    end
+    if TheInput:IsKeyDown(KEY_CTRL) then
+        if GetPlayer().livingartifact ~= nil then
+            GetPlayer().livingartifact.timeremaining = 0
+        end
+    else
+        if GetPlayer().livingartifact ~= nil then
+            GetPlayer().livingartifact.timeremaining = GetPlayer().livingartifact.timemax
+        else
+            local inst = SpawnPrefab("living_artifact")
+            inst.components.machine.turnonfn(inst)
+        end
+    end
+end
+
 local function SayString(enable, mode_str)
     local s = enable and STRINGS.TOO_MANY_ITEMS_UI.ENABLE_FORMAT or STRINGS.TOO_MANY_ITEMS_UI.DISABLE_FORMAT
     GetPlayer().components.talker:Say(s:format(mode_str)) 
@@ -134,8 +152,9 @@ local variables = _TMI.locals()
 local Menu = Class(function(self, owner, pos)
     self.owner = owner
     self.shield = self.owner.owner.shield
-        local pos_y1 = -178
-        local pos_y2 = -213
+        local pos_y1 = -162
+        local pos_y2 = -197
+        local pos_y3 = -232
 
     local function Close()
       self.owner.owner:Close()
@@ -200,11 +219,11 @@ local Menu = Class(function(self, owner, pos)
             image = "wetness_meter.tex",
             pos = {pos[1], pos_y2},
         },
-        ["temperature"] = {
-            tip = STRINGS.TOO_MANY_ITEMS_UI.BUTTON_TEMPERATURE,
-            fn = TemperatureSet,
-            atlas = "images/tmi/thermal_measurer_build.xml",
-            image = "thermal_measurer_build.tex",
+        ["living_artifact"] = {
+            tip = STRINGS.TOO_MANY_ITEMS_UI.BUTTON_LIVING_ARTIFACT,
+            fn = LivingArtifactPowerSet,
+            atlas = "images/tmi/livingartifact_meter.xml",
+            image = "livingartifact_meter.tex",
             pos = {pos[2], pos_y2},
         },
         ["beaverness"] = {
@@ -255,6 +274,13 @@ local Menu = Class(function(self, owner, pos)
             atlas = "images/ui.xml",
             image = "arrow_right.tex",
             pos = {pos[9], pos_y2},
+        },
+        ["temperature"] = {
+            tip = STRINGS.TOO_MANY_ITEMS_UI.BUTTON_TEMPERATURE,
+            fn = TemperatureSet,
+            atlas = "images/tmi/thermal_measurer_build.xml",
+            image = "thermal_measurer_build.tex",
+            pos = {pos[1], pos_y3},
         },
     }
     for _, fn in pairs(_TMI.IconbuttonlistPostInit) do

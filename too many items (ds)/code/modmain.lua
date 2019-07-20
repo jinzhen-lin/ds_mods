@@ -12,6 +12,8 @@ Assets =
     Asset("ATLAS", "images/tmi/logmeter.xml"),
     Asset("IMAGE", "images/tmi/wetness_meter.tex"),
     Asset("ATLAS", "images/tmi/wetness_meter.xml"),
+    Asset("IMAGE", "images/tmi/livingartifact_meter.tex"),
+    Asset("ATLAS", "images/tmi/livingartifact_meter.xml"),
     Asset("IMAGE", "images/tmi/thermal_measurer_build.tex"),
     Asset("ATLAS", "images/tmi/thermal_measurer_build.xml"),
     Asset("ATLAS", "images/tmi/close.xml"),
