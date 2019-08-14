@@ -164,6 +164,11 @@ local function LoadTranslation()
             modimport("Stringslocalization_"..configlang..".lua")
         end
     else
+        LOC = _G.require("languages/loc")
+        if LOC.GetLocaleCode() == "zh" then
+            modimport("Stringslocalization_chs.lua")
+            return
+        end
         local lang = _G.LanguageTranslator.defaultlang or nil
         if lang ~= nil and support_languages[lang] ~= nil then
             lang = support_languages[lang]
