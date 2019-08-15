@@ -147,7 +147,14 @@ end
 function ItemListControl:Search()
     local searchlist = {}
     local list = self:GetList()
-    local current_desclist = self.desclist[TOOMANYITEMS.DATA.listinuse]
+    local current_desclist = {}
+    if TOOMANYITEMS.DATA.listinuse == "special" then
+        for _, v in pairs(TOOMANYITEMS.DATA.specialitems) do
+            current_desclist[v] = GetItemDesc(v)
+        end
+    else
+        current_desclist = self.desclist[TOOMANYITEMS.DATA.listinuse] or {}
+    end
     local item = TOOMANYITEMS.DATA.search
 
     for _, v in ipairs(list) do
