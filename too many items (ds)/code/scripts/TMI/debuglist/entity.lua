@@ -193,6 +193,7 @@ local function PickEntity()
         not v:HasTag("trap") and
         not v:HasTag("mine") and
         not v:HasTag("cage") and
+        not v:HasTag("bookshelfed") and
         inv then
             if c.trap ~= nil and c.trap:IsSprung() then
                 c.trap:Harvest(player)

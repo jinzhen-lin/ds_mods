@@ -156,6 +156,21 @@ local support_languages = {
     cht = "cht",
 }
 
+local function is_module_avaliable(name)
+    if _G.package.loaded[name] then
+        return true
+    else
+        for _, searcher in ipairs(_G.package.searchers or _G.package.loaders) do
+            local loader = searcher(name)
+            if type(loader) == 'function' then
+                _G.package.preload[name] = loader
+                return true
+            end
+        end
+        return false
+    end
+end
+
 local function LoadTranslation()
     modimport("Stringslocalization.lua")
     local configlang = GetModConfigData("LANG")
@@ -164,10 +179,12 @@ local function LoadTranslation()
             modimport("Stringslocalization_"..configlang..".lua")
         end
     else
-        LOC = _G.require("languages/loc")
-        if LOC.GetLocaleCode() == "zh" then
-            modimport("Stringslocalization_chs.lua")
-            return
+        if is_module_avaliable("languages/loc") then
+            LOC = _G.require("languages/loc")
+            if LOC.GetLocaleCode() == "zh" then
+                modimport("Stringslocalization_chs.lua")
+                return
+            end
         end
         local lang = _G.LanguageTranslator.defaultlang or nil
         if lang ~= nil and support_languages[lang] ~= nil then
