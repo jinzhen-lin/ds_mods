@@ -62,6 +62,8 @@ local function FertilizePlant()
                 obj.components.grower:Fertilize(poop)
             elseif obj.components.pickable and obj.components.pickable:CanBeFertilized() then
                 obj.components.pickable:Fertilize(poop)
+            elseif obj.components.hackable and obj.components.hackable:CanBeFertilized() then
+                obj.components.hackable:Fertilize(poop)
             end
         end
     end
