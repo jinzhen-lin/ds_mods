@@ -315,3 +315,26 @@ end
 _G.TheInput:AddKeyUpHandler(_G.TOOMANYITEMS.TMI_TOGGLE_KEY, ShowTMIMenu)
 
 modimport("map_free_teleport.lua")
+
+AddComponentPostInit("combat", function(self)
+    local _oldSetTarget = self.SetTarget
+    function self:SetTarget(target)
+        if not target and target ~= nil and target:HasTag("tmi_hide") then
+            return
+        else
+            return _oldSetTarget(self, target)
+        end
+    end
+
+    local _oldCanBeAttacked = self.CanBeAttacked
+    function self:CanBeAttacked(attacker)
+        if self.inst:HasTag("tmi_hide") then
+            return false
+        else
+            return _oldCanBeAttacked(self, attacker)
+        end
+    end
+end)
+
+
+

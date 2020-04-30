@@ -84,6 +84,33 @@ local function GodMode()
     end
 end
 
+
+local no_aggro_mode_enabled = false
+local function NoAggroMode()
+    local player = GetPlayer()
+    if not player then
+        return
+    end
+    if no_aggro_mode_enabled then
+        player:RemoveTag("notarget")
+        player:RemoveTag("tmi_hide")
+        local x, y, z = player.Transform:GetWorldPosition()
+        local ents = TheSim:FindEntities(x, y, z, 10000)
+        for k, v in pairs(ents) do
+            if v and v.components and v.components.combat and v.components.combat:TargetIs(player) then
+                v.components.combat:GiveUp()
+            end
+        end
+        no_aggro_mode_enabled = not no_aggro_mode_enabled
+        SayString(no_aggro_mode_enabled, STRINGS.TOO_MANY_ITEMS_UI.NO_AGGRO_MODE)
+    else
+        no_aggro_mode_enabled = not no_aggro_mode_enabled
+        player:AddTag("notarget")
+        player:AddTag("tmi_hide")
+        SayString(no_aggro_mode_enabled, STRINGS.TOO_MANY_ITEMS_UI.NO_AGGRO_MODE)
+    end
+end
+
 local function CreativeMode()
     GetPlayer().components.builder:GiveAllRecipes()
     SayString(GetPlayer().components.builder.freebuildmode, STRINGS.TOO_MANY_ITEMS_UI.CREATIVEMODE)
@@ -281,6 +308,13 @@ local Menu = Class(function(self, owner, pos)
             atlas = "images/tmi/thermal_measurer_build.xml",
             image = "thermal_measurer_build.tex",
             pos = {pos[1], pos_y3},
+        },
+        ["no_aggro_mode"] = {
+            tip = STRINGS.TOO_MANY_ITEMS_UI.BUTTON_NO_AGGRO_MODE,
+            fn = NoAggroMode,
+            atlas = "images/inventoryimages.xml",
+            image = "bushhat.tex",
+            pos = {pos[2], pos_y3},
         },
     }
     for _, fn in pairs(_TMI.IconbuttonlistPostInit) do
