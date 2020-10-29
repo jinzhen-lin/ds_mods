@@ -64,7 +64,9 @@ local function ReBundling(doer, item, item_list)
                     bundler.inst.sg:GoToState("bundling")
                 end
                 for k, v in pairs(item_list) do
-                    bundler.bundlinginst.components.container:GiveItem(v)
+                    if v:IsValid() then
+                        bundler.bundlinginst.components.container:GiveItem(v)
+                    end
                 end
             end
         end
@@ -215,7 +217,7 @@ local function GetUseitemRepackRes(inst, know_bundlewrap, wrap_material, rewrap)
         if wrap_material.prefab == "rope" then
             if know_bundlewrap then
                 wrap_item = _G.SpawnPrefab("bundlewrap")
-                wrap_material.components.inventoryitem:RemoveFromOwner(false)
+                wrap_material.components.stackable:Get():Remove()
                 loottable = {}
             else
                 return false
@@ -228,7 +230,7 @@ local function GetUseitemRepackRes(inst, know_bundlewrap, wrap_material, rewrap)
                 iswet = wrap_material.components.inventoryitem:IsWet()
                 wrap_item.components.inventoryitem:InheritMoisture(moisture, iswet)
             end
-            wrap_material.components.inventoryitem:RemoveFromOwner(false)
+            wrap_material.components.stackable:Get():Remove()
             loottable = {"waxpaper"}
         else
             return false
@@ -241,7 +243,7 @@ local function GetUseitemRepackRes(inst, know_bundlewrap, wrap_material, rewrap)
                 local iswet = wrap_material.components.inventoryitem:IsWet()
                 wrap_item.components.inventoryitem:InheritMoisture(moisture, iswet)
             end
-            wrap_material.components.inventoryitem:RemoveFromOwner(false)
+            wrap_material.components.stackable:Get():Remove()
             loottable = {}
         else
             return false
@@ -275,10 +277,11 @@ local function GetItemRepackRes(inst, know_bundlewrap, itemtable, rewrap)
             use_material = true
             material_num = v.components.stackable.stacksize
             if material_num > 1 then
-                v.components.stackable.stacksize = material_num - 1
+                v.components.stackable:Get():Remove()
                 table.insert(itemtable_tmp, v)
             else
                 v:Remove()
+                itemtable[k] = nil
             end
         else
             table.insert(itemtable_tmp, v)
@@ -300,7 +303,7 @@ local function GetItemRepackRes(inst, know_bundlewrap, itemtable, rewrap)
     else
         return false
     end
-    return true, wrap_item, loottable, itemtable
+    return true, wrap_item, loottable--, itemtable
 end
 
 
@@ -332,12 +335,18 @@ local function UnwrapAction(act, rewrap, drop, normal)
     elseif wrap_material ~= nil then
         success, wrap_item, loottable = GetUseitemRepackRes(inst, know_bundlewrap, wrap_material, rewrap)
     elseif IsIncluded(inst.prefab, {"bundle", "gift"}) then
-        success, wrap_item, loottable, itemtable = GetItemRepackRes(inst, know_bundlewrap, itemtable, rewrap)
+        success, wrap_item, loottable = GetItemRepackRes(inst, know_bundlewrap, itemtable, rewrap)
     else
         return false
     end
-    if not success then return false end
+    if not success then
+        for k, v in pairs(itemtable) do
+            v:Remove()
+        end
+        return false
+    end
     OnUnwrap(inst, doer, loottable, itemtable, wrap_item, rewrap, drop)
+
     return true
 end
 

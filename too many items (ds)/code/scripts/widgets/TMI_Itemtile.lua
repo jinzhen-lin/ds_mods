@@ -61,7 +61,7 @@ function ItemTile:GetAsset(find)
             table.insert(itematlas_list, "images/tmi/living.xml")
         elseif listinuse == "building" then
             table.insert(itematlas_list, "images/tmi/building.xml")
-        end      
+        end
     elseif TOOMANYITEMS.LIST.inventory_imgname[self.item] then
         table.insert(itemimage_list, TOOMANYITEMS.LIST.inventory_imgname[self.item]..".tex")
     elseif AllRecipes[self.item] and AllRecipes[self.item].atlas and AllRecipes[self.item].image then

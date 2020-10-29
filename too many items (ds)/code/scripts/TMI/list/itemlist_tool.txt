@@ -2,7 +2,7 @@ amulet
 antler
 axe
 ballpein_hammer
-banditmap
+banditmap+treasure
 bedroll_furry
 bedroll_straw
 bell

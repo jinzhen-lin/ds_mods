@@ -29,6 +29,16 @@ if GetModConfigData("SEEDPOD") then
 end
 
 
+if GetModConfigData("TEA") then
+    -- 改变茶树种子的食物分类
+    local function AlterSeedPod(inst)
+        inst.components.edible.foodtype = "TEA"
+    end
+    AddPrefabPostInit("tea", AlterSeedPod)
+    AddPrefabPostInit("icedtea", AlterSeedPod)
+end
+
+
 -- 为食物类别表格添加茶树种子、咖啡和荨麻这三种食物类别
 local function ModifyFoodTable(foodtable, carnivore)
     if type(foodtable) == "table" and (carnivore or table.contains(foodtable, "VEGGIE")) then
@@ -37,6 +47,9 @@ local function ModifyFoodTable(foodtable, carnivore)
         end
         if GetModConfigData("NETTLE") and not table.contains(foodtable, "NETTLE") then
             table.insert(foodtable, "NETTLE")
+        end
+        if GetModConfigData("TEA") and not table.contains(foodtable, "TEA") then
+            table.insert(foodtable, "TEA")
         end
     end
     if type(foodtable) == "table" and (carnivore or table.contains(foodtable, "SEEDS")) then

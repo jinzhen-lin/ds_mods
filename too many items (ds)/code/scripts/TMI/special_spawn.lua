@@ -272,6 +272,22 @@ special_spawn["telebase"] = {
     gemsocket = function(inst) inst:PushEvent("onbuilt") end
 }
 
+-- 直接代码生成的藏宝图没有绑定宝藏
+special_spawn["banditmap"] = {
+    treasure = function(inst) 
+        print("===")
+        local pos = GetPlayer():GetPosition()
+        local offset = FindGroundOffset(pos, math.random() * 2 * math.pi, math.random(120, 200), 18)
+        local spawn_pos = pos + offset
+        local treasure = SpawnPrefab("bandittreasure")
+
+		treasure.Transform:SetPosition(spawn_pos:Get())
+		inst.treasure = treasure
+        inst.treasureguid = treasure.GUID
+        print("111")
+    end
+}
+
 for item, fn in pairs(_TMI.SpecialSpawn) do
     local _, _, prefabname, condition = item:find("(.*)+(.*)")
     if prefabname ~= nil and condition ~= nil then

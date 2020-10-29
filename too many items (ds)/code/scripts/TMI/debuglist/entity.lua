@@ -8,7 +8,10 @@ local function DeleteEntity()
     end
     local function CanDelete(inst)
         if inst and inst ~= GetWorld() and not InInv(inst) and inst.Transform then
-            if inst:HasTag("player") then
+            local x, y, z = inst:GetPosition():Get()
+            if x == 0 and y == 0 and z == 0 then
+                return false
+            elseif inst:HasTag("player") then
                 if inst ~= player then
                     return true
                 end
@@ -153,6 +156,7 @@ local function HarvestPlant()
             obj.AnimState and
             obj.components and
             obj.prefab and
+            obj.prefab ~= "birdcage" and
             not string.find(obj.prefab, "mandrake") then
                 tryharvest(obj)
             end
@@ -317,6 +321,18 @@ local function SetDurability()
     end
 end
 
+local function CopyEntity()
+    local player = GetPlayer()
+    if not player or not player.components.inventory then
+        return
+    end
+    local inventory = player.components.inventory
+    local active_item = inventory:GetActiveItem()
+    local data = active_item:GetSaveRecord()
+    local new_item = SpawnSaveRecord(data)
+    player.components.inventory:GiveItem(new_item)
+end
+
 local res = {
     tittle = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_TEXT,
     tag = "entity",
@@ -390,6 +406,13 @@ local res = {
             name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_SETDURABILITY,
             tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_SETDURABILITYTIP,
             fn = SetDurability,
+        },
+        {
+            beta = false,
+            pos = "all",
+            name = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_COPY,
+            tip = STRINGS.TOO_MANY_ITEMS_UI.DEBUG_ENTITY_COPY,
+            fn = CopyEntity,
         }
     },
 }
