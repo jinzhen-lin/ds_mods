@@ -16,7 +16,19 @@ local function DeleteEntity()
                     return true
                 end
             else
-                return true
+                if inst.prefab:sub(-3) == "_fx" then
+                    return false
+                end
+                if Prefabs[inst.prefab] and Prefabs[inst.prefab].path then
+                    local prefabpath = Prefabs[inst.prefab].path
+                    if prefabpath:sub(1, 10) == "common/fx/" then
+                        return false
+                    end
+                    if prefabpath:sub(1, 3) == "fx/" then
+                        return false
+                    end
+                    return true
+                end
             end
         end
         return false
@@ -42,6 +54,7 @@ local function DeleteEntity()
                         obj.components.firefx:Extinguish()
                     end
                 end
+                print(obj.prefab)
                 obj:Remove()
             end
         end
