@@ -7,7 +7,7 @@ local function DeleteEntity()
         return inv and inv.owner and true or false
     end
     local function CanDelete(inst)
-        if inst and inst ~= GetWorld() and not InInv(inst) and inst.Transform then
+        if inst and inst.prefab and inst ~= GetWorld() and not InInv(inst) and inst.Transform then
             local x, y, z = inst:GetPosition():Get()
             if x == 0 and y == 0 and z == 0 then
                 return false
